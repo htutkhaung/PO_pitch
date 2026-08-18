@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDatabaseExplorer();
   initTangTangSimulator();
   initForecastingSimulator();
+  initGeoSeasonalityFilter();
 });
 
 // 1. Background Telemetry Particle Network
@@ -920,4 +921,100 @@ function initForecastingSimulator() {
   marketSelect.addEventListener('change', update);
   pacingSlider.addEventListener('input', update);
   update();
+}
+
+
+// 12. Geo-Targeted Seasonality Filter Engine
+function initGeoSeasonalityFilter() {
+  const filterSelect = document.getElementById('geo-season-filter');
+  const table = document.getElementById('geo-market-table');
+  if (!filterSelect || !table) return;
+
+  const tbody = table.querySelector('tbody');
+  if (!tbody) return;
+
+  const seasonDatasets = {
+    all: {
+      title: "Full Year Consolidated (12 Months)",
+      badgeColor: "#38bdf8",
+      totalRev: "฿248.5M YTD",
+      avgStay: "7.16 Nights",
+      avgAdr: "฿8,340",
+      aiRecommendation: "<strong>AI Seasonality Strategy:</strong> Core European long-stay baseline (31.5%) provides strong base occupancy; deploy Xiaohongshu & Douyin digital campaigns 45 days prior to Chinese Golden Weeks to capture high-margin direct villas.",
+      rows: [
+        { market: "🇬🇧 UK & Western Europe", rev: "฿78.4M", share: "31.5%", stay: "11.4 Nights", adr: "฿8,850", flight: "Daily 14 USM", badge: "pod-badge" },
+        { market: "🇨🇳 China & East Asia", rev: "฿64.2M", share: "25.8%", stay: "5.8 Nights", adr: "฿7,400", flight: "Direct HKG/CN", badge: "pod-badge" },
+        { market: "🇹🇭 Domestic Thailand", rev: "฿48.6M", share: "19.6%", stay: "2.8 Nights", adr: "฿5,200", flight: "Weekend Spikes", badge: "pod-badge" },
+        { market: "🇦🇪 Middle East & GCC", rev: "฿32.8M", share: "13.2%", stay: "8.2 Nights", adr: "฿12,400", flight: "Qatar/Emirates", badge: "pod-badge" },
+        { market: "🇦🇺 Australia & Others", rev: "฿24.5M", share: "9.9%", stay: "7.6 Nights", adr: "฿7,900", flight: "SQ Transit", badge: "pod-badge" }
+      ]
+    },
+    high: {
+      title: "High & Peak Season (Nov – Feb / Jul – Aug)",
+      badgeColor: "#10b981",
+      totalRev: "฿152.8M (5 Months)",
+      avgStay: "8.08 Nights",
+      avgAdr: "฿10,580",
+      aiRecommendation: "<strong>AI High-Season Strategy:</strong> Flight load factors into Samui Airport exceed 94%. AI enforces strict ADR rate-stepping (+18% to +25%) and minimum 3-night stay restrictions to maximize RevPAG and Gross Operating Profit.",
+      rows: [
+        { market: "🇬🇧 UK & Western Europe", rev: "฿56.2M", share: "36.8%", stay: "13.2 Nights", adr: "฿11,200", flight: "Peak Flight Load (96%)", badge: "pod-badge" },
+        { market: "🇨🇳 China & East Asia", rev: "฿39.8M", share: "26.1%", stay: "6.4 Nights", adr: "฿9,800", flight: "CNY Charter Surge", badge: "pod-badge" },
+        { market: "🇦🇪 Middle East & GCC", rev: "฿24.6M", share: "16.1%", stay: "9.5 Nights", adr: "฿15,600", flight: "Luxury Pool Villas", badge: "pod-badge" },
+        { market: "🇹🇭 Domestic Thailand", rev: "฿18.4M", share: "12.1%", stay: "2.5 Nights", adr: "฿6,800", flight: "Festive Holidays", badge: "pod-badge" },
+        { market: "🇦🇺 Australia & Others", rev: "฿13.8M", share: "8.9%", stay: "8.8 Nights", adr: "฿9,500", flight: "Winter Escape", badge: "pod-badge" }
+      ]
+    },
+    green: {
+      title: "Green & Shoulder Season (Mar – Jun / Sep – Oct)",
+      badgeColor: "#f59e0b",
+      totalRev: "฿95.7M (7 Months)",
+      avgStay: "6.24 Nights",
+      avgAdr: "฿6,520",
+      aiRecommendation: "<strong>AI Green-Season Strategy:</strong> Domestic Thailand market surges to 31.6% share. AI dynamically bundles dining vouchers (Babou & Tang Tang) and spa credits into direct packages on LINE Official to sustain 72%+ base occupancy.",
+      rows: [
+        { market: "🇹🇭 Domestic Thailand", rev: "฿30.2M", share: "31.6%", stay: "3.1 Nights", adr: "฿4,600", flight: "Songkran & Weekends", badge: "pod-badge" },
+        { market: "🇨🇳 China & East Asia", rev: "฿24.4M", share: "25.5%", stay: "5.2 Nights", adr: "฿5,800", flight: "Group FIT Packages", badge: "pod-badge" },
+        { market: "🇬🇧 UK & Western Europe", rev: "฿22.2M", share: "23.2%", stay: "9.6 Nights", adr: "฿6,900", flight: "Long-Stay Retirees", badge: "pod-badge" },
+        { market: "🇦🇺 Australia & Others", rev: "฿10.7M", share: "11.2%", stay: "6.8 Nights", adr: "฿6,400", flight: "Direct Perth/Sydney", badge: "pod-badge" },
+        { market: "🇦🇪 Middle East & GCC", rev: "฿8.2M", share: "8.5%", stay: "6.5 Nights", adr: "฿8,900", flight: "Post-Ramadan FIT", badge: "pod-badge" }
+      ]
+    }
+  };
+
+  function renderSeasonData(seasonKey) {
+    const data = seasonDatasets[seasonKey] || seasonDatasets.all;
+
+    // Smooth opacity transition
+    tbody.style.opacity = '0';
+    tbody.style.transition = 'opacity 0.25s ease';
+
+    setTimeout(() => {
+      tbody.innerHTML = data.rows.map(r => `
+        <tr style="transition: background 0.2s ease;">
+          <td><strong>${r.market}</strong></td>
+          <td style="color: #f8fafc; font-weight: 700;">${r.rev}</td>
+          <td><span style="background: rgba(56, 189, 248, 0.15); color: #38bdf8; padding: 2px 8px; border-radius: 12px; font-size: 11px; font-weight: 600;">${r.share}</span></td>
+          <td>${r.stay}</td>
+          <td style="color: #10b981; font-weight: 600;">${r.adr}</td>
+          <td><span class="${r.badge}">${r.flight}</span></td>
+        </tr>
+      `).join('');
+
+      tbody.style.opacity = '1';
+
+      // Update strategic guidance alert if element exists
+      const aiAlertBox = document.getElementById('geo-ai-strategy-alert');
+      if (aiAlertBox) {
+        aiAlertBox.innerHTML = data.aiRecommendation;
+        aiAlertBox.style.borderLeftColor = data.badgeColor;
+      }
+    }, 150);
+  }
+
+  filterSelect.addEventListener('change', (e) => {
+    renderSeasonData(e.target.value);
+  });
+
+  // Initial render with current selected value
+  renderSeasonData(filterSelect.value || 'all');
 }
