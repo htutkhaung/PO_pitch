@@ -2,7 +2,7 @@
 
 Executive Scrollytelling Web Experience & 30-Slide Digital Transformation Presentation Platform for **Muang Samui Group**.
 
-🌐 **Live Webpage**: [https://htutkhaung.github.io/msg-executive-scrollytelling/](https://htutkhaung.github.io/msg-executive-scrollytelling/)
+🌐 **Live Webpage**: [https://htutkhaung.github.io/PO_pitch/](https://htutkhaung.github.io/PO_pitch/)
 
 ---
 
@@ -42,7 +42,7 @@ To preview locally using Python's built-in HTTP server or any static server:
 
 ```bash
 # Navigate to the project directory
-cd /Users/nick-personal/.gemini/antigravity-ide/scratch/msg-executive-scrollytelling
+cd /Users/nick-personal/.gemini/antigravity-ide/scratch/PO_pitch
 
 # Start a local HTTP server
 python3 -m http.server 8080
