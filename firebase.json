@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "msg-executive-deck-777",
     "public": ".",
     "ignore": [
       "firebase.json",
@@ -10,17 +11,6 @@
       {
         "source": "**",
         "destination": "/index.html"
-      }
-    ],
-    "headers": [
-      {
-        "source": "**/*.@(jpg|jpeg|gif|png|svg|webp|js|css)",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "max-age=31536000"
-          }
-        ]
       }
     ]
   }
