@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Autonomous Hospitality & Real Asset Intelligence | MSG TECH</title>
+  <title>Autonomous Hospitality & Real Asset Intelligence - Muang Samui Group | MSG TECH</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -50,37 +50,57 @@
 <!-- ========================================================================= -->
 <main id="scrollytelling-mode-view" class="scrollytelling-wrapper" style="padding-top: 60px;">
 
-  <!-- SECTION 1: Sticky Scroll-Driven Canvas Scrubber Hero -->
+  <!-- SECTION 1: SEPARATED SPLIT SCROLL-SCRUBBING HERO -->
   <section class="scrubber-hero-section">
     <div class="scrubber-sticky-viewport">
-      <div class="scrubber-canvas-container">
-        <canvas id="scrubber-canvas"></canvas>
-      </div>
+      <div class="scrubber-split-grid">
+        
+        <!-- Left Column: Story Narrative Card (Never covers the canvas) -->
+        <div class="scrubber-narrative-container">
+          <div class="scrubber-narrative-card" id="scrubber-narrative">
+            <span class="section-tag">EXECUTIVE TRANSFORMATIONAL BLUEPRINT</span>
+            <h2 style="font-family: var(--font-heading); font-size: 30px; color: #fff; margin: 10px 0 12px 0; line-height: 1.2;">
+              Autonomous Hospitality & Real Asset Intelligence
+            </h2>
+            <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 16px;">
+              Modernizing Muang Samui Group Operations from Fragmented Legacy Systems to an Integrated Enterprise Operating Engine.
+            </p>
+            <div style="display: flex; flex-direction: column; gap: 8px; font-size: 12px; color: #cbd5e1; background: rgba(15, 23, 42, 0.6); padding: 12px; border-radius: 8px; border: 1px solid var(--border-subtle);">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-hotel" style="color: var(--cyan-primary); width: 16px;"></i>
+                <span><strong>2 Premier 5-Star Resorts:</strong> Muang Samui Spa Resort & Royal Villas</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-utensils" style="color: var(--emerald-primary); width: 16px;"></i>
+                <span><strong>4 Standalone Outlets:</strong> Babou, Tang Tang, Nanyuan Dining</span>
+              </div>
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-map-location-dot" style="color: var(--amber-primary); width: 16px;"></i>
+                <span><strong>Prime Island Real Estate:</strong> Land deeds & commercial holdings</span>
+              </div>
+            </div>
+          </div>
 
-      <!-- Scrubber Overlay Content (Syncs with scroll) -->
-      <div class="scrubber-narrative-overlay" id="scrubber-narrative">
-        <span class="section-tag">EXECUTIVE TRANSFORMATIONAL BLUEPRINT</span>
-        <h2 style="font-family: var(--font-heading); font-size: 32px; color: #fff; margin: 10px 0 14px 0;">
-          Autonomous Hospitality & Real Asset Intelligence
-        </h2>
-        <p style="color: var(--text-muted); font-size: 15px; line-height: 1.6; max-width: 720px; margin: 0 auto 16px auto;">
-          Modernizing Muang Samui Group Operations from Fragmented Legacy Systems to an Integrated Enterprise Operating Engine.
-        </p>
-        <div style="display: flex; justify-content: center; gap: 16px; font-size: 12px; color: #cbd5e1;">
-          <span><i class="fa-solid fa-hotel" style="color: var(--cyan-primary);"></i> 2 Premier 5-Star Resorts</span>
-          <span><i class="fa-solid fa-utensils" style="color: var(--emerald-primary);"></i> 4 Standalone Dining Outlets</span>
-          <span><i class="fa-solid fa-map-location-dot" style="color: var(--amber-primary);"></i> Prime Island Real Estate</span>
+          <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid var(--border-subtle); padding: 10px 16px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between;">
+            <span style="font-size: 11px; color: var(--text-muted);"><i class="fa-solid fa-arrow-down" style="color: var(--cyan-primary); margin-right: 6px;"></i> Scroll down to scrub live telemetry</span>
+            <span style="font-size: 11px; color: var(--cyan-primary); font-weight: 700; font-family: var(--font-heading);" id="scrubber-frame-idx">FRAME 001 / 120</span>
+          </div>
         </div>
+
+        <!-- Right Column: Completely Unobstructed Moving Canvas -->
+        <div class="scrubber-canvas-container">
+          <canvas id="scrubber-canvas"></canvas>
+        </div>
+
       </div>
 
-      <!-- Live Scrubber Wheel Indicator -->
+      <!-- Live Scrubber Wheel Progress Fill -->
       <div class="scrubber-progress-indicator">
-        <i class="fa-solid fa-mouse-pointer"></i>
-        <span>SCROLL TO SCRUB ARCHITECTURE</span>
+        <i class="fa-solid fa-arrows-up-down"></i>
+        <span>SCROLL-DRIVEN SEQUENCE</span>
         <div class="scrubber-progress-bar">
           <div class="scrubber-progress-fill" id="scrubber-fill"></div>
         </div>
-        <span id="scrubber-frame-idx">FRAME 001 / 120</span>
       </div>
     </div>
   </section>
@@ -535,7 +555,7 @@
 </main>
 
 <!-- ========================================================================= -->
-<!-- MODE 2: 30-SLIDE EXECUTIVE PRESENTATION DECK (Print & Present Mode)      -->
+<!-- MODE 2: COMPLETE 30-SLIDE EXECUTIVE PRESENTATION DECK (Full 30 Slides)    -->
 <!-- ========================================================================= -->
 <section id="presentation-deck-mode">
 
@@ -547,10 +567,10 @@
         <span style="background: #38bdf8; color: #0f172a; padding: 4px 12px; border-radius: 20px; font-weight: 800; font-size: 11px; letter-spacing: 1.5px;">MSG TECH LEADERSHIP</span>
         <span style="color: #64748b; font-size: 12px; font-family: 'Space Grotesk';">EXECUTIVE TRANSFORMATIONAL BLUEPRINT</span>
       </div>
-      <h1 style="font-family: var(--font-heading); font-size: 38px; font-weight: 800; color: #f8fafc; line-height: 1.15; margin-bottom: 12px;">
+      <h1 class="hero-title" style="font-family: var(--font-heading); font-size: 38px; font-weight: 800; color: #f8fafc; line-height: 1.15; margin-bottom: 14px;">
         Autonomous Hospitality & Real Asset Intelligence
       </h1>
-      <p style="font-size: 17px; color: #38bdf8; font-weight: 500; margin-bottom: 20px; line-height: 1.4;">
+      <p class="hero-subtitle" style="font-size: 17px; color: #38bdf8; font-weight: 500; margin-bottom: 20px; line-height: 1.4;">
         Modernizing Muang Samui Group Operations from Fragmented Legacy Systems to an Integrated Enterprise Engine
       </p>
       
@@ -559,23 +579,23 @@
           <p style="color: #cbd5e1; font-size: 13px; line-height: 1.5;">
             Unifying 2 Premier 5-Star Resorts (Muang Samui Spa Resort & Royal Muang Samui Villas), 4 Standalone Dining Outlets (Babou, Tang Tang, Nanyuan, etc.), and Prime Island Real Estate Assets into a Single Automated Operating Engine.
           </p>
-          <div class="speaker-note">
+          <div class="speaker-note" style="margin-top: 10px;">
             <i class="fa-solid fa-quote-left" style="color: #38bdf8; margin-right: 6px;"></i>
             "Khun Chairman, CEO, CFO, and Department Heads: Today, we are not presenting minor software patches or static charts. We are introducing an end-to-end digital operating system that unifies your isolated departments into an automated, real-time command center."
           </div>
         </div>
         
         <div style="display: flex; flex-direction: column; gap: 8px;">
-          <div class="glass-card highlight-cyan" style="padding: 10px 14px;">
+          <div class="tile highlight" style="padding: 10px 14px;">
             <p style="font-size: 9px; color: #64748b; text-transform: uppercase; letter-spacing: 1px;">Presented To</p>
             <p style="color: #f8fafc; font-weight: 700; font-size: 12px;">Chairman, CEO, MD, CFO & HODs</p>
           </div>
-          <div class="glass-card highlight-emerald" style="padding: 10px 14px;">
+          <div class="tile accent" style="padding: 10px 14px;">
             <p style="font-size: 9px; color: #64748b; text-transform: uppercase; letter-spacing: 1px;">Presenter & Role</p>
             <p style="color: #10b981; font-weight: 700; font-size: 12px;">Htut Khaung Kyawoo</p>
             <p style="color: #94a3b8; font-size: 10px;">Strategic Product Owner & Full-Stack Systems Lead</p>
           </div>
-          <div class="glass-card" style="padding: 10px 14px;">
+          <div class="tile" style="padding: 10px 14px;">
             <p style="font-size: 9px; color: #64748b; text-transform: uppercase; letter-spacing: 1px;">Duration & Format</p>
             <p style="color: #f8fafc; font-weight: 600; font-size: 11px;">30 Mins (20-Min Pitch + 10-Min Q&A)</p>
           </div>
@@ -592,37 +612,40 @@
       <div class="grid-2" style="grid-template-columns: 52% 45%;">
         <div>
           <h3 style="color: #f87171; font-size: 17px; margin-bottom: 10px;">5 Isolated Legacy Systems Across Koh Samui Assets</h3>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; font-size: 12px;">
-            <li><strong style="color:#fff;">• System Isolation:</strong> Hotel Front Desk (OperaCloud), F&B Outlets (Micros/FoodStory), Stores (MC Inventory), Finance (SunSystems), and HR (TigerSoft) operate without automated API cross-talk.</li>
-            <li><strong style="color:#fff;">• Operational Admin Friction:</strong> Staff spend 1–2 hours per shift compiling manual daily reports, physical PR/PO paper slips, and offline room checklists.</li>
-            <li><strong style="color:#fff;">• Executive Blind Spots:</strong> The CFO and MD must wait for end-of-month manual consolidations to get true P&L visibility across properties and standalone dining.</li>
+          <ul class="bullet-list" style="margin-bottom: 14px; font-size: 12px;">
+            <li><strong>System Isolation:</strong> Hotel Front Desk (OperaCloud), F&B Outlets (Micros/FoodStory), Stores (MC Inventory), Finance (SunSystems), and HR (TigerSoft) operate without automated API cross-talk.</li>
+            <li><strong>Operational Admin Friction:</strong> Staff spend 1–2 hours per shift compiling manual daily reports, physical PR/PO paper slips, and offline room checklists.</li>
+            <li><strong>Executive Blind Spots:</strong> The CFO and MD must wait for end-of-month manual consolidations to get true P&L visibility across properties and standalone dining.</li>
           </ul>
-          <div style="border-left: 4px solid #ef4444; background: rgba(239, 68, 68, 0.08); padding: 12px; border-radius: 8px;">
+          <div class="tile" style="border-left: 4px solid #ef4444; background: rgba(239, 68, 68, 0.08); padding: 12px;">
             <p style="font-size: 11px; color: #f87171; font-weight: 700; margin-bottom: 2px;"><i class="fa-solid fa-triangle-exclamation"></i> DIRECT COMMERCIAL LOSS & LEAKAGE:</p>
             <p style="font-size: 11px; color: #cbd5e1; line-height: 1.4;">Unmonitored villa utility waste, delayed supplier price-variance alerts, manual paper night audits, and uncaptured cross-outlet guest spend.</p>
           </div>
         </div>
         
-        <div class="glass-card" style="border: 1px solid rgba(239, 68, 68, 0.3);">
+        <div class="arch-card" style="background: rgba(15, 23, 42, 0.95); border: 1px solid rgba(239, 68, 68, 0.3);">
           <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 6px;">
             <span style="font-size: 11px; color: #f87171; font-weight: 700; font-family: 'Space Grotesk';">DISCONNECTED SYSTEM SILOS</span>
             <span style="font-size: 9px; color: #64748b; background: rgba(239, 68, 68, 0.2); padding: 2px 6px; border-radius: 10px;">CURRENT STATE</span>
           </div>
           
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px;">
-            <div style="background:#1e293b; padding:6px; border-radius:4px; font-size:10px;"><i class="fa-solid fa-hotel" style="color:#38bdf8;"></i> <strong>OperaCloud</strong><br><span style="font-size:8px; color:#64748b;">Front Desk & RSVN</span></div>
-            <div style="background:#1e293b; padding:6px; border-radius:4px; font-size:10px;"><i class="fa-solid fa-utensils" style="color:#10b981;"></i> <strong>Micros / FoodStory</strong><br><span style="font-size:8px; color:#64748b;">Resort & Dining</span></div>
-            <div style="background:#1e293b; padding:6px; border-radius:4px; font-size:10px;"><i class="fa-solid fa-boxes-packing" style="color:#f59e0b;"></i> <strong>MC Inventory</strong><br><span style="font-size:8px; color:#64748b;">Stores & Purchasing</span></div>
-            <div style="background:#1e293b; padding:6px; border-radius:4px; font-size:10px;"><i class="fa-solid fa-file-invoice-dollar" style="color:#818cf8;"></i> <strong>Infor SunSystems</strong><br><span style="font-size:8px; color:#64748b;">Financial Ledger</span></div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 6px;">
+            <div class="arch-node"><i class="fa-solid fa-hotel"></i> <div><strong>OperaCloud</strong><br><span style="font-size:9px; color:#64748b;">Front Desk & RSVN</span></div></div>
+            <div class="arch-node"><i class="fa-solid fa-utensils"></i> <div><strong>Micros / FoodStory</strong><br><span style="font-size:9px; color:#64748b;">Resort & Standalone POS</span></div></div>
+            <div class="arch-node"><i class="fa-solid fa-boxes-packing"></i> <div><strong>MC Inventory</strong><br><span style="font-size:9px; color:#64748b;">Stores & Procurement</span></div></div>
+            <div class="arch-node"><i class="fa-solid fa-file-invoice-dollar"></i> <div><strong>Infor SunSystems</strong><br><span style="font-size:9px; color:#64748b;">Financial Ledger</span></div></div>
           </div>
           
           <div style="text-align: center; margin: 8px 0; color: #ef4444; font-weight: 700; font-size: 10px; background: rgba(239, 68, 68, 0.1); padding: 5px; border-radius: 6px; border: 1px dashed rgba(239, 68, 68, 0.4);">
             <i class="fa-solid fa-arrow-down-up-across-line"></i> NO AUTOMATED API SYNC — MANUAL EXCEL & PAPER HANDOFFS
           </div>
           
-          <div style="background: rgba(30, 41, 59, 0.8); border: 1px solid rgba(239,68,68,0.3); padding: 8px; border-radius: 6px; font-size: 10px;">
-            <strong style="color:#f87171;">Manual Night Audit & Monthly Reports</strong><br>
-            <span style="font-size:9px; color:#94a3b8;">15–30 Days Latency for CFO Executive P&L Insights</span>
+          <div class="arch-node" style="border-color: rgba(239, 68, 68, 0.4); background: rgba(30, 41, 59, 0.8);">
+            <i class="fa-solid fa-user-xmark" style="color:#ef4444;"></i>
+            <div>
+              <strong style="color:#f87171;">Manual Night Audit & Monthly Reports</strong><br>
+              <span style="font-size:9px; color:#94a3b8;">15–30 Days Latency for CFO Executive P&L Insights</span>
+            </div>
           </div>
         </div>
       </div>
@@ -635,9 +658,9 @@
     <h2 class="deck-slide-title">Executive PO vs. Tactical BA: Big 4 Governance Model <span class="tag">STRATEGIC GOVERNANCE</span></h2>
     <div class="deck-content">
       <div class="grid-2" style="grid-template-columns: 50% 47%;">
-        <div class="glass-card" style="padding: 14px;">
+        <div class="arch-card" style="padding: 14px;">
           <div style="text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 6px; margin-bottom: 8px;">
-            <span style="font-size: 11px; color: #38bdf8; font-weight: 700; font-family: 'Space Grotesk';">BIG 4 ENGAGEMENT STRUCTURE (Deloitte / EY / PwC / KPMG)</span>
+            <span style="font-size: 11px; color: #38bdf8; font-weight: 700; font-family: 'Space Grotesk';">BIG 4 FIRM ENGAGEMENT STRUCTURE (Deloitte / EY / PwC / KPMG)</span>
           </div>
           
           <div style="background: #1e293b; border: 1px solid #38bdf8; border-radius: 6px; padding: 6px; text-align: center; margin-bottom: 8px;">
@@ -702,35 +725,49 @@
     </div>
   </div>
 
-  <!-- Additional Slides 4 to 30 rendered with high aesthetic standard -->
   <!-- SLIDE 4: Real-World Systems Track Record -->
   <div class="deck-slide-card" id="slide4">
     <span class="deck-slide-badge">SLIDE 04 / 30</span>
     <h2 class="deck-slide-title">Real-World Systems Leadership Track Record <span class="tag">PROVEN SCALE</span></h2>
     <div class="deck-content">
+      <p style="margin-bottom: 14px; color: #cbd5e1; font-size: 13px;">
+        Backed by deep engineering and product leadership across complex multi-system environments:
+      </p>
       <div class="grid-4">
-        <div class="glass-card">
-          <div style="font-size: 24px; color: var(--cyan-primary); margin-bottom: 8px;"><i class="fa-solid fa-hotel"></i></div>
-          <h3 style="font-size: 14px; color: #38bdf8;">Hotel PMS & Distribution</h3>
-          <p style="font-size: 11px; color: #cbd5e1; line-height: 1.35;">Architected switch.cm core booking channels, multi-property distribution, and PMS modules (Opera-level complexity).</p>
+        <div class="tile">
+          <div class="icon-box"><i class="fa-solid fa-hotel"></i></div>
+          <h3 style="font-size: 14px; color: #38bdf8;">Global Hotel PMS & Channels</h3>
+          <p style="font-size: 11px; line-height: 1.35; color: #cbd5e1;">Architected switch.cm core booking channels, multi-property distribution, rate plans, and PMS modules (Opera-level enterprise complexity).</p>
+          <div style="margin-top: auto; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 9px; color: #64748b;">
+            DOMAIN: Hospitality PMS & Distribution
+          </div>
         </div>
 
-        <div class="glass-card highlight-cyan">
-          <div style="font-size: 24px; color: var(--cyan-primary); margin-bottom: 8px;"><i class="fa-solid fa-rocket"></i></div>
-          <h3 style="font-size: 14px; color: #38bdf8;">SpaceX-Grade Telemetry</h3>
-          <p style="font-size: 11px; color: #cbd5e1; line-height: 1.35;">Engineered real-time state tracking, telemetry processing, and hardware control logic for SpaceX simulator control platforms.</p>
+        <div class="tile highlight">
+          <div class="icon-box"><i class="fa-solid fa-rocket"></i></div>
+          <h3 style="font-size: 14px; color: #38bdf8;">SpaceX-Grade Simulation</h3>
+          <p style="font-size: 11px; line-height: 1.35; color: #cbd5e1;">Engineered real-time state tracking, telemetry processing, and hardware control logic for SpaceX simulator control platforms.</p>
+          <div style="margin-top: auto; padding-top: 6px; border-top: 1px solid rgba(56, 189, 248, 0.2); font-size: 9px; color: #38bdf8;">
+            DOMAIN: Aerospace Hardware Simulation
+          </div>
         </div>
 
-        <div class="glass-card highlight-emerald">
-          <div style="font-size: 24px; color: var(--emerald-primary); margin-bottom: 8px;"><i class="fa-solid fa-store"></i></div>
+        <div class="tile accent">
+          <div class="icon-box"><i class="fa-solid fa-store"></i></div>
           <h3 style="font-size: 14px; color: #10b981;">Enterprise ERP (Dubai)</h3>
-          <p style="font-size: 11px; color: #cbd5e1; line-height: 1.35;">Engineered end-to-end custom multi-module ERP for Sephora (Dubai), unifying real-time inventory, procurement, and POS (SAP custom-fit).</p>
+          <p style="font-size: 11px; line-height: 1.35; color: #cbd5e1;">Engineered end-to-end custom multi-module ERP for Sephora (Dubai), unifying real-time inventory, procurement, and POS (SAP custom-fit).</p>
+          <div style="margin-top: auto; padding-top: 6px; border-top: 1px solid rgba(16, 185, 129, 0.2); font-size: 9px; color: #10b981;">
+            DOMAIN: Global Retail & Supply Chain
+          </div>
         </div>
 
-        <div class="glass-card">
-          <div style="font-size: 24px; color: var(--amber-primary); margin-bottom: 8px;"><i class="fa-solid fa-utensils"></i></div>
+        <div class="tile">
+          <div class="icon-box"><i class="fa-solid fa-utensils"></i></div>
           <h3 style="font-size: 14px; color: #f59e0b;">Omnichannel Restaurant OS</h3>
-          <p style="font-size: 11px; color: #cbd5e1; line-height: 1.35;">Built Tang Tang from scratch: 4-tier edge hardware, cloud database, KDS, and real-time TV queue engine running in sub-50ms synchrony.</p>
+          <p style="font-size: 11px; line-height: 1.35; color: #cbd5e1;">Built Tang Tang from scratch: 4-tier edge hardware, cloud database, KDS, and real-time TV queue engine running in sub-50ms synchrony.</p>
+          <div style="margin-top: auto; padding-top: 6px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 9px; color: #f59e0b;">
+            DOMAIN: Edge Hardware & Realtime Cloud
+          </div>
         </div>
       </div>
     </div>
@@ -739,7 +776,7 @@
   <!-- SLIDE 5: The Tang Tang Benchmark -->
   <div class="deck-slide-card" id="slide5">
     <span class="deck-slide-badge">SLIDE 05 / 30</span>
-    <h2 class="deck-slide-title">The Tang Tang Benchmark: Proving Solo Full-Stack Mastery <span class="tag">PROOF OF CONCEPT</span></h2>
+    <h2 class="deck-slide-title">The Tang Tang Benchmark: Proving Solo Full-Stack Mastery <span class="tag">PROOFS OF CONCEPT</span></h2>
     <div class="deck-content">
       <div class="grid-2" style="grid-template-columns: 52% 45%;">
         <div>
@@ -747,14 +784,14 @@
           <p style="margin-bottom: 12px; font-size: 12px; line-height: 1.45; color: #cbd5e1;">
             Before touching resort-wide transformation, we engineered a complete operating system from the ground up for Tang Tang. It bridges physical hardware, edge computing, real-time cloud data, and kitchen display automation.
           </p>
-          <ul style="font-size: 12px; list-style: none; display: flex; flex-direction: column; gap: 8px;">
-            <li><strong>• Multi-Form Factor Hardware:</strong> 21.5" Self-Service Kiosks (RK3576V chip), 15.6" Cashier POS (Sunmi D3), and Next.js TV Queue Boards.</li>
-            <li><strong>• Sub-50ms Realtime Synchronization:</strong> Instant order dispatch across floor staff, kitchen display screens, and pickup TVs via WebSockets.</li>
-            <li><strong>• Solo Engineering Victory:</strong> Handled Product Ownership, Low-level Serial Hardware Drivers, Cloud Backend, and DevOps 100% end-to-end.</li>
+          <ul class="bullet-list" style="font-size: 12px;">
+            <li><strong>Multi-Form Factor Hardware:</strong> 21.5" Self-Service Kiosks (RK3576V chip), 15.6" Cashier POS (Sunmi D3), and Next.js TV Queue Boards.</li>
+            <li><strong>Sub-50ms Realtime Synchronization:</strong> Instant order dispatch across floor staff, kitchen display screens, and pickup TVs via WebSockets.</li>
+            <li><strong>Solo Engineering Victory:</strong> Handled Product Ownership, Low-level Serial Hardware Drivers, Cloud Backend, and DevOps 100% end-to-end.</li>
           </ul>
         </div>
 
-        <div class="glass-card highlight-cyan" style="display: flex; flex-direction: column; gap: 10px; padding: 18px;">
+        <div class="tile highlight" style="display: flex; flex-direction: column; gap: 10px; padding: 18px;">
           <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
             <span style="font-size: 10px; color: #38bdf8; font-weight: 700; text-transform: uppercase;">4 Software Architectures Running as One</span>
             <strong style="color: #f8fafc; font-size: 15px; display: block; margin-top: 2px;">Hardware + Edge + Cloud + KDS + TV</strong>
@@ -767,6 +804,967 @@
               Proves complete technical mastery over low-level hardware serial drivers, database RLS security, and complex financial accounting logic without relying on external agencies.
             </p>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: Tang Tang Multi-Architecture Diagram -->
+  <div class="deck-slide-card" id="slide6">
+    <span class="deck-slide-badge">SLIDE 06 / 30</span>
+    <h2 class="deck-slide-title">Tang Tang Architecture: 4 Systems Operating as One <span class="tag">SYSTEM BLUEPRINT</span></h2>
+    <div class="deck-content">
+      <div class="grid-3" style="gap: 14px;">
+        <div class="tile highlight">
+          <div class="icon-box"><i class="fa-solid fa-tablet-button"></i></div>
+          <h3 style="font-size: 15px; color: #38bdf8;">Tier 1: Edge & Hardware</h3>
+          <p style="font-size: 10px; color: #64748b; font-weight: 700;">FLUTTER + NATIVE KOTLIN</p>
+          <ul class="bullet-list" style="font-size: 11px; margin-top: 4px;">
+            <li>21.5" Kiosks & 15.6" Desktop POS.</li>
+            <li>Custom Android Canvas 203 DPI bitmap rasterizer for Masung thermal printers.</li>
+            <li>RS232-to-USB serial drivers for digital weighing scale balances & cash drawers.</li>
+          </ul>
+        </div>
+
+        <div class="tile accent">
+          <div class="icon-box"><i class="fa-solid fa-server"></i></div>
+          <h3 style="font-size: 15px; color: #10b981;">Tier 2: Realtime Cloud</h3>
+          <p style="font-size: 10px; color: #64748b; font-weight: 700;">SUPABASE + POSTGRESQL 15+</p>
+          <ul class="bullet-list" style="font-size: 11px; margin-top: 4px;">
+            <li>36 Logical Database Tables across 7 modules.</li>
+            <li>52 Row-Level Security (RLS) Policies partitioning branch permissions.</li>
+            <li>22 Stored RPC database functions handling atomic inventory & pricing logic.</li>
+          </ul>
+        </div>
+
+        <div class="tile">
+          <div class="icon-box"><i class="fa-solid fa-desktop"></i></div>
+          <h3 style="font-size: 15px; color: #f59e0b;">Tiers 3 & 4: Web, KDS & TV</h3>
+          <p style="font-size: 10px; color: #64748b; font-weight: 700;">REACT 19 + NEXT.JS + CDN</p>
+          <ul class="bullet-list" style="font-size: 11px; margin-top: 4px;">
+            <li>React 19 Admin Portal & Kitchen KDS.</li>
+            <li>Next.js TV Queue display with automated Web Speech synthesis.</li>
+            <li>Digital QR E-Receipt CDN PDF pipeline for paperless checkout.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top: 14px; background: rgba(15, 23, 42, 0.9); padding: 10px 16px; border-radius: 8px; border: 1px dashed rgba(56, 189, 248, 0.4); text-align: center;">
+        <p style="color: #38bdf8; font-weight: 700; font-size: 12px;">
+          <i class="fa-solid fa-circle-check" style="color: #10b981; margin-right: 6px;"></i>
+          UNIFIED OPERATIONAL ECOSYSTEM — ZERO THIRD-PARTY INTEGRATION FRICTION OR RECURRING SOFTWARE MARKS
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 7: Hardware Driver Engineering -->
+  <div class="deck-slide-card" id="slide7">
+    <span class="deck-slide-badge">SLIDE 07 / 30</span>
+    <h2 class="deck-slide-title">Deep Hardware Driver Engineering: Beyond Simple iPad Apps <span class="tag">NATIVE INTERACTION</span></h2>
+    <div class="deck-content">
+      <div class="grid-2" style="grid-template-columns: 48% 49%;">
+        <div>
+          <h3 style="font-size: 16px; color: #f87171; margin-bottom: 8px;">Why Off-the-Shelf Apps Fail in High-Speed Hospitality</h3>
+          <p style="font-size: 12px; margin-bottom: 12px; line-height: 1.4;">
+            Most off-the-shelf POS systems run simple web pages inside iPad wrappers. When hardware disconnects, web drivers crash, thermal printers output garbled Thai/Chinese text, or cash drawers freeze.
+          </p>
+          <div class="tile highlight" style="padding: 12px;">
+            <strong style="color: #38bdf8; font-size: 12px;">Low-Level Native Drivers Built Custom (Kotlin + C++ NDK):</strong>
+            <ul class="bullet-list" style="font-size: 11px; margin-top: 6px;">
+              <li><strong>Masung MA90 203 DPI Rasterizer:</strong> Native Android Canvas bitmap graphics engine rendering perfect Thai/Chinese typography and emojis onto ESC/POS rolls.</li>
+              <li><strong>BT-100U USB Cash Drawer Protocol:</strong> Custom USB-serial controller handling electrical pulse width, DTR/RTS lines, and line coding directly over raw USB.</li>
+              <li><strong>RS232 Weight Scale Parser:</strong> Sliding-frame regex regex buffers extracting live tare and balance weights from Shekel & Rongta digital scales for Mala Tang concept.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="arch-card" style="padding: 14px; background: #0b1329;">
+          <div style="font-size: 11px; color: #10b981; font-weight: 700; font-family: 'Space Grotesk'; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 6px; margin-bottom: 10px;">
+            HARDWARE INTERFACE ARCHITECTURE SCHEMATIC
+          </div>
+          
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <div class="arch-node"><i class="fa-solid fa-print"></i> <div><strong>203 DPI ESC/POS Thermal Printer</strong><br><span style="font-size:9px; color:#94a3b8;">Custom Bitmap Rasterizer (Zero Garbled Font ROM Bugs)</span></div></div>
+            <div class="arch-node"><i class="fa-solid fa-cash-register"></i> <div><strong>BT-100U Solenoid Cash Drawer</strong><br><span style="font-size:9px; color:#94a3b8;">Direct USB Pulse Control (VID: 0x067B PID: 0x23A3)</span></div></div>
+            <div class="arch-node"><i class="fa-solid fa-weight-scale"></i> <div><strong>RS232 Digital Weight Scale Balance</strong><br><span style="font-size:9px; color:#94a3b8;">Real-time Tare/Weight Stream Buffer for Pay-by-Weight</span></div></div>
+            <div class="arch-node"><i class="fa-solid fa-barcode"></i> <div><strong>2D Omnidirectional Scanner</strong><br><span style="font-size:9px; color:#94a3b8;">Instant Barcode Ingestion & Dynamic PromptPay QR</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 8: Database Engine Schema -->
+  <div class="deck-slide-card" id="slide8">
+    <span class="deck-slide-badge">SLIDE 08 / 30</span>
+    <h2 class="deck-slide-title">Enterprise Database Engine: 36 Tables Across 7 Modules <span class="tag">DATA ARCHITECTURE</span></h2>
+    <div class="deck-content">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width: 22%;">Module Domain</th>
+            <th style="width: 33%;">Core Database Schemas / Tables</th>
+            <th>Non-Technical Business Purpose & Operational Impact</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. Multi-Branch & Governance</strong></td>
+            <td><code>restaurants</code>, <code>restaurant_staff</code>, <code>action_logs</code></td>
+            <td>Manages store branches, VAT settings (inclusive/exclusive), staff roles, and complete employee audit trail of every action.</td>
+          </tr>
+          <tr>
+            <td><strong>2. Dynamic Menu Engine</strong></td>
+            <td><code>categories</code>, <code>menu_items</code>, <code>modifier_groups</code></td>
+            <td>Multi-language menus (TH/EN/ZH), dynamic add-ons, spicy levels, barcodes, and pay-by-weight scale rules.</td>
+          </tr>
+          <tr>
+            <td><strong>3. Order & Payment Core</strong></td>
+            <td><code>orders</code>, <code>order_payments</code>, <code>bill_transfer_logs</code></td>
+            <td>Handles cash, PromptPay QR (Beam API), WeChat/Alipay, split payments, refunds, and queue tracking in sub-50ms.</td>
+          </tr>
+          <tr>
+            <td><strong>4. Inventory & Costing</strong></td>
+            <td><code>inventory_stock</code>, <code>ingredients</code>, <code>product_costs</code></td>
+            <td>Real-time ingredient stock deduction on dish sale, theoretical vs. actual food cost per dish, and purchase order workflow.</td>
+          </tr>
+          <tr>
+            <td><strong>5. Financials & Shift Audits</strong></td>
+            <td><code>shifts</code>, <code>invoices</code>, <code>taxes</code>, <code>accounting_ledgers</code></td>
+            <td>Cash float tracking, drawer counts, end-of-day X/Z reports, tax invoices, and double-entry accounting ledgers.</td>
+          </tr>
+          <tr>
+            <td><strong>6. Tables & Dine-in</strong></td>
+            <td><code>tables</code>, <code>table_reservations</code></td>
+            <td>Dine-in table floor plan layout, live seating status, table transfer tracking, and advance reservations.</td>
+          </tr>
+          <tr>
+            <td><strong>7. Loyalty & Engagement</strong></td>
+            <td><code>members</code>, <code>promotions</code>, <code>kiosk_ads</code></td>
+            <td>Member phone lookup loyalty, bowl milestone discounts (10th/20th bowl rewards), and idle screen video kiosk ads.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SLIDE 9: Security & Atomic Logic -->
+  <div class="deck-slide-card" id="slide9">
+    <span class="deck-slide-badge">SLIDE 09 / 30</span>
+    <h2 class="deck-slide-title">Mission-Critical Security & Atomic Business Logic <span class="tag">ACID COMPLIANCE</span></h2>
+    <div class="deck-content">
+      <div class="grid-2" style="grid-template-columns: 48% 49%;">
+        <div class="tile highlight">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+            <i class="fa-solid fa-shield-halved" style="color: #38bdf8; font-size: 20px;"></i>
+            <h3 style="font-size: 16px; color: #38bdf8; margin: 0;">52 Row-Level Security (RLS) Policies</h3>
+          </div>
+          <p style="font-size: 12px; color: #cbd5e1; line-height: 1.4;">
+            Guarantees that database permissions are strictly isolated at the database level rather than relying on web browser code.
+          </p>
+          <ul class="bullet-list" style="font-size: 11px; margin-top: 8px;">
+            <li><strong>Role Isolation:</strong> Kiosk screens can only insert orders; cashiers cannot modify historical prices; public users cannot view financial ledgers.</li>
+            <li><strong>Branch Partitioning:</strong> Multi-tenant security ensures data from Resort A cannot leak into Standalone Dining B.</li>
+          </ul>
+        </div>
+
+        <div class="tile accent">
+          <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+            <i class="fa-solid fa-code" style="color: #10b981; font-size: 20px;"></i>
+            <h3 style="font-size: 16px; color: #10b981; margin: 0;">22 Stored RPC Database Functions</h3>
+          </div>
+          <p style="font-size: 12px; color: #cbd5e1; line-height: 1.4;">
+            Atomic database procedures executing multi-table transactions in sub-second locks so data is never corrupted.
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 6px; margin-top: 8px;">
+            <div style="background: rgba(15,23,42,0.8); padding: 6px 10px; border-radius: 4px; font-family: monospace; font-size: 10px; color: #38bdf8;">
+              <code>create_order()</code> — Atomic pricing lock & queue generation.
+            </div>
+            <div style="background: rgba(15,23,42,0.8); padding: 6px 10px; border-radius: 4px; font-family: monospace; font-size: 10px; color: #10b981;">
+              <code>deduct_inventory_on_payment()</code> — Real-time recipe ingredient deduction.
+            </div>
+            <div style="background: rgba(15,23,42,0.8); padding: 6px 10px; border-radius: 4px; font-family: monospace; font-size: 10px; color: #f59e0b;">
+              <code>resolve_tv_queue_restaurant()</code> — Instant WebSpeech audio broadcast trigger.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 10: Market Valuation -->
+  <div class="deck-slide-card" id="slide10">
+    <span class="deck-slide-badge">SLIDE 10 / 30</span>
+    <h2 class="deck-slide-title">Market Valuation: What This Build Costs in the Open Market <span class="tag">FINANCIAL VALUE</span></h2>
+    <div class="deck-content">
+      <p style="margin-bottom: 10px; font-size: 12px; color: #cbd5e1;">
+        Building an enterprise OS of this scope typically requires an entire software agency or a 7-person engineering team:
+      </p>
+      <table class="custom-table" style="margin-bottom: 12px;">
+        <thead>
+          <tr>
+            <th>Role in Standard Software Agency</th>
+            <th>Headcount</th>
+            <th>Duration</th>
+            <th>Market Rate (Monthly)</th>
+            <th>Total Est. Cost (USD)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Lead Product Owner / Solution Architect</strong></td>
+            <td>1</td>
+            <td>7 Months</td>
+            <td>$10,000 – $14,000</td>
+            <td>$70,000 – $98,000</td>
+          </tr>
+          <tr>
+            <td><strong>Senior Mobile / Flutter & Hardware Engineer</strong></td>
+            <td>2</td>
+            <td>7 Months</td>
+            <td>$8,000 – $12,000</td>
+            <td>$112,000 – $168,000</td>
+          </tr>
+          <tr>
+            <td><strong>Senior Full-Stack & Database Architect</strong></td>
+            <td>1</td>
+            <td>7 Months</td>
+            <td>$9,000 – $13,000</td>
+            <td>$63,000 – $91,000</td>
+          </tr>
+          <tr>
+            <td><strong>Senior Frontend Engineer (React 19 / Next.js)</strong></td>
+            <td>1</td>
+            <td>6 Months</td>
+            <td>$7,500 – $10,500</td>
+            <td>$45,000 – $63,000</td>
+          </tr>
+          <tr>
+            <td><strong>DevOps & QA / Hardware Test Engineer</strong></td>
+            <td>1</td>
+            <td>5 Months</td>
+            <td>$6,000 – $9,000</td>
+            <td>$30,000 – $45,000</td>
+          </tr>
+          <tr>
+            <td><strong>UI/UX Designer (Kiosk, POS, Admin)</strong></td>
+            <td>1</td>
+            <td>3 Months</td>
+            <td>$6,000 – $8,500</td>
+            <td>$18,000 – $25,500</td>
+          </tr>
+          <tr style="background: rgba(56, 189, 248, 0.15); font-weight: 700;">
+            <td style="color: #38bdf8;">AGENCY EQUIVALENT TOTAL COST</td>
+            <td style="color: #38bdf8;">7 People</td>
+            <td style="color: #38bdf8;">6–8 Months</td>
+            <td style="color: #38bdf8;">—</td>
+            <td style="color: #38bdf8;">$338,000 – $490,500 USD (~฿12M–฿17.5M THB)</td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 10px 14px; border-radius: 6px; text-align: center;">
+        <p style="color: #10b981; font-weight: 700; font-size: 12px;">
+          <i class="fa-solid fa-gem"></i> SOLO EXECUTION VALUE: Delivering this complete 4-tier ecosystem as a single PO/Architect eliminated $300k+ in agency bloat and 6+ months of cross-team coordination delay.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 11: On-Site Audit Findings -->
+  <div class="deck-slide-card" id="slide11">
+    <span class="deck-slide-badge">SLIDE 11 / 30</span>
+    <h2 class="deck-slide-title">On-Site Strategy Audit: Muang Samui System Topology <span class="tag">SYSTEM MAP</span></h2>
+    <div class="deck-content">
+      <div class="grid-2" style="grid-template-columns: 50% 47%;">
+        <div class="arch-card" style="padding: 14px;">
+          <div style="font-size: 11px; color: #38bdf8; font-weight: 700; font-family: 'Space Grotesk'; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 6px; margin-bottom: 8px;">
+            MSG CURRENT SYSTEM TOPOLOGY DIAGRAM
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <div class="arch-node"><i class="fa-solid fa-hotel"></i> <div><strong>OperaCloud PMS</strong><br><span style="font-size:9px; color:#94a3b8;">Central Front Office & Room Reservations</span></div></div>
+            <div class="arch-node"><i class="fa-solid fa-utensils"></i> <div><strong>Micros RES & FoodStory POS</strong><br><span style="font-size:9px; color:#94a3b8;">Hotel Outlets (Micros) & Standalone Dining (FoodStory)</span></div></div>
+            <div class="arch-node"><i class="fa-solid fa-warehouse"></i> <div><strong>MC Materials Control</strong><br><span style="font-size:9px; color:#94a3b8;">Store Inventory, Purchasing & Receiving</span></div></div>
+            <div class="arch-node"><i class="fa-solid fa-calculator"></i> <div><strong>Infor SunSystems</strong><br><span style="font-size:9px; color:#94a3b8;">General Accounting & Financial Ledgers</span></div></div>
+            <div class="arch-node"><i class="fa-solid fa-users"></i> <div><strong>TigerSoft HR</strong><br><span style="font-size:9px; color:#94a3b8;">Time Attendance & Payroll Data</span></div></div>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-size: 16px; color: #f8fafc; margin-bottom: 8px;">On-Site Whiteboard Diagnostic Insights</h3>
+          <ul class="bullet-list" style="font-size: 12px;">
+            <li><strong>OperaCloud to SunSystems:</strong> Connected via trial balance interface, but daily revenue reconciliations still require manual spot-checks.</li>
+            <li><strong>FoodStory Outlets (Babou, Tang Tang, Nanyuan):</strong> Send sales reports manually to accounting without real-time ledger posting.</li>
+            <li><strong>MC Materials Control:</strong> Purchasing requests (PR) and goods receipt vouchers (VC) rely on paper handoffs and scanned PDFs.</li>
+            <li><strong>TigerSoft HR:</strong> Operates in complete isolation from daily revenue, hiding labor productivity ratios per shift.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 12: Ingestion Bottlenecks -->
+  <div class="deck-slide-card" id="slide12">
+    <span class="deck-slide-badge">SLIDE 12 / 30</span>
+    <h2 class="deck-slide-title">The Ingestion Bottlenecks: Where Revenue & Time Leaks <span class="tag">FRICTION ANALYSIS</span></h2>
+    <div class="deck-content">
+      <div class="grid-3" style="gap: 14px; margin-bottom: 14px;">
+        <div class="tile" style="border-top: 3px solid #ef4444;">
+          <div class="icon-box" style="background: rgba(239, 68, 68, 0.15); color: #ef4444;"><i class="fa-solid fa-file-excel"></i></div>
+          <h3 style="font-size: 14px; color: #f87171;">Friction 1: Standalone Outlets</h3>
+          <p style="font-size: 11px; line-height: 1.4;">
+            Babou, Tang Tang, and Nanyuan run on FoodStory. Sales are manually compiled into daily Excel sheets for Accounting, creating 24–48 hour reporting lag.
+          </p>
+        </div>
+
+        <div class="tile" style="border-top: 3px solid #f59e0b;">
+          <div class="icon-box" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b;"><i class="fa-solid fa-scroll"></i></div>
+          <h3 style="font-size: 14px; color: #f59e0b;">Friction 2: Paper Procurement</h3>
+          <p style="font-size: 11px; line-height: 1.4;">
+            Purchase Requests (PR) and Purchase Orders (PO) in MC Inventory rely on physical signatures and physical store sign-offs before SunSystems entry.
+          </p>
+        </div>
+
+        <div class="tile" style="border-top: 3px solid #38bdf8;">
+          <div class="icon-box" style="background: rgba(56, 189, 248, 0.15); color: #38bdf8;"><i class="fa-solid fa-clock-history"></i></div>
+          <h3 style="font-size: 14px; color: #38bdf8;">Friction 3: Delayed P&L Close</h3>
+          <p style="font-size: 11px; line-height: 1.4;">
+            The CFO's team spends 10–15 days after month-end manually reconciling Opera, FoodStory, MC, and TigerSoft before producing true executive P&L statements.
+          </p>
+        </div>
+      </div>
+
+      <div style="background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.3); padding: 12px; border-radius: 8px; text-align: center;">
+        <strong style="color: #f87171; font-size: 12px;">MSG TECH SOLUTION:</strong>
+        <span style="color: #cbd5e1; font-size: 12px; margin-left: 6px;">Replace manual paper and Excel bridges with automated API webhooks feeding directly into a unified Master Command Center.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 13: Group Master Command Center -->
+  <div class="deck-slide-card" id="slide13">
+    <span class="deck-slide-badge">SLIDE 13 / 30</span>
+    <h2 class="deck-slide-title">The Group Master Command Center: Executive Overview <span class="tag">COMMAND CENTER</span></h2>
+    <div class="deck-content">
+      <div class="grid-2" style="grid-template-columns: 58% 39%;">
+        <div class="arch-card" style="padding: 16px; background: #080e1a; border-color: rgba(56, 189, 248, 0.4);">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px; margin-bottom: 10px;">
+            <span style="font-size: 12px; color: #38bdf8; font-weight: 700; font-family: 'Space Grotesk';">MSG REAL-TIME EXECUTIVE DASHBOARD MOCKUP</span>
+            <span style="font-size: 9px; background: rgba(16, 185, 129, 0.2); color: #10b981; padding: 2px 8px; border-radius: 10px;">LIVE SYNC</span>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 10px;">
+            <div style="background: #1e293b; padding: 8px; border-radius: 6px; text-align: center;">
+              <span style="font-size: 9px; color: #64748b;">Consolidated Rev</span>
+              <p style="font-size: 14px; font-weight: 700; color: #10b981;">฿1,280,450</p>
+            </div>
+            <div style="background: #1e293b; padding: 8px; border-radius: 6px; text-align: center;">
+              <span style="font-size: 9px; color: #64748b;">Group RevPAR</span>
+              <p style="font-size: 14px; font-weight: 700; color: #38bdf8;">฿4,850</p>
+            </div>
+            <div style="background: #1e293b; padding: 8px; border-radius: 6px; text-align: center;">
+              <span style="font-size: 9px; color: #64748b;">F&B Cost %</span>
+              <p style="font-size: 14px; font-weight: 700; color: #f59e0b;">28.4%</p>
+            </div>
+          </div>
+
+          <div style="background: #0f172a; padding: 10px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.08);">
+            <div style="display: flex; justify-content: space-between; font-size: 10px; color: #cbd5e1; margin-bottom: 4px;">
+              <span>Muang Samui Spa Resort</span>
+              <span style="color: #10b981;">92% Occ | ฿640k Rev</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 10px; color: #cbd5e1; margin-bottom: 4px;">
+              <span>Royal Muang Samui Villas</span>
+              <span style="color: #10b981;">88% Occ | ฿480k Rev</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; font-size: 10px; color: #cbd5e1;">
+              <span>Standalone Dining (Babou/Tang Tang)</span>
+              <span style="color: #38bdf8;">฿160.4k Rev</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div class="tile highlight">
+            <h3 style="font-size: 14px; color: #38bdf8;">Core Executive Capabilities</h3>
+            <ul class="bullet-list" style="font-size: 11px; margin-top: 4px;">
+              <li><strong>Single-Screen Health:</strong> Total daily revenue, RevPAR, TrevPAR, and live F&B margin across all locations.</li>
+              <li><strong>Automated Executive Digest:</strong> Automated daily WhatsApp/Email summary sent to Chairman, CEO, MD, and CFO at 08:00 AM.</li>
+              <li><strong>Instant Drill-Down:</strong> Drill down from group performance to individual outlets, rooms, or cost centers in 1 click.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 14: Custom Software vs Power BI -->
+  <div class="deck-slide-card" id="slide14">
+    <span class="deck-slide-badge">SLIDE 14 / 30</span>
+    <h2 class="deck-slide-title">Why Custom Software Engine Outperforms Passive Power BI <span class="tag">ACTIVE ENGINE</span></h2>
+    <div class="deck-content">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th style="width: 25%;">Feature Dimension</th>
+            <th style="width: 35%;">Standard Power BI / Basic Dashboard</th>
+            <th style="width: 40%;">MSG TECH Custom Enterprise Engine</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. Data Flow</strong></td>
+            <td>One-way (Read-only static charts).</td>
+            <td><strong style="color: #10b981;">Two-way (Read + Write + Action Triggers).</strong></td>
+          </tr>
+          <tr>
+            <td><strong>2. Operational Actionability</strong></td>
+            <td>You see an error on chart, then call someone.</td>
+            <td><strong style="color: #10b981;">Approve PR/PO or lock menu items directly on-screen.</strong></td>
+          </tr>
+          <tr>
+            <td><strong>3. Update Latency</strong></td>
+            <td>Scheduled batch sync (often delayed hours).</td>
+            <td><strong style="color: #10b981;">Sub-second live database synchronization via WebSockets.</strong></td>
+          </tr>
+          <tr>
+            <td><strong>4. Hardware Integration</strong></td>
+            <td>None (Cloud database only).</td>
+            <td><strong style="color: #10b981;">Direct integration with IoT smart meters & POS hardware.</strong></td>
+          </tr>
+          <tr>
+            <td><strong>5. Enterprise Licensing</strong></td>
+            <td>Recurring per-user monthly software license fees.</td>
+            <td><strong style="color: #10b981;">Proprietary group ownership with zero user-seat caps.</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SLIDE 15: Drill-Down 1 - F&B & Outlets -->
+  <div class="deck-slide-card" id="slide15">
+    <span class="deck-slide-badge">SLIDE 15 / 30</span>
+    <h2 class="deck-slide-title">Department Drill-Down 1: F&B & Outlets Command <span class="tag">DRILL-DOWN 01</span></h2>
+    <div class="deck-content">
+      <div class="grid-3" style="gap: 14px;">
+        <div class="tile highlight">
+          <div class="icon-box"><i class="fa-solid fa-utensils"></i></div>
+          <h3 style="font-size: 15px; color: #38bdf8;">Central POS Aggregation</h3>
+          <p style="font-size: 11px; line-height: 1.4;">
+            Blends hotel dining (Micros RES) and standalone eateries (Babou, Tang Tang, Nanyuan via FoodStory) into a single real-time revenue stream.
+          </p>
+        </div>
+
+        <div class="tile accent">
+          <div class="icon-box"><i class="fa-solid fa-chart-pie"></i></div>
+          <h3 style="font-size: 15px; color: #10b981;">Recipe Margin Control</h3>
+          <p style="font-size: 11px; line-height: 1.4;">
+            Cross-references live dish sales against <strong>MC Inventory</strong> recipe costs to flag actual vs. theoretical food cost percentage variances automatically.
+          </p>
+        </div>
+
+        <div class="tile">
+          <div class="icon-box"><i class="fa-solid fa-chair"></i></div>
+          <h3 style="font-size: 15px; color: #f59e0b;">Table Turn & Seat Yield</h3>
+          <p style="font-size: 11px; line-height: 1.4;">
+            Displays live table turn rates, seat occupancy, and average guest spend across beachfront dining and external restaurant branches.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 16: Drill-Down 2 - Front Office & RSVN -->
+  <div class="deck-slide-card" id="slide16">
+    <span class="deck-slide-badge">SLIDE 16 / 30</span>
+    <h2 class="deck-slide-title">Department Drill-Down 2: Front Office & Central Reservations <span class="tag">DRILL-DOWN 02</span></h2>
+    <div class="deck-content">
+      <div class="grid-2" style="grid-template-columns: 50% 47%;">
+        <div class="tile highlight">
+          <h3 style="font-size: 15px; color: #38bdf8;">Central Booking & Folio Ingestion</h3>
+          <ul class="bullet-list" style="font-size: 12px; margin-top: 8px;">
+            <li><strong>Booking Ingestion Funnel:</strong> Real-time tracking of direct website bookings, OTA channels via OXI/Channel Manager, and walk-ins.</li>
+            <li><strong>Guest Spend Attribution:</strong> Live guest folio tracking combining room charges, spa treatments, and restaurant tabs across properties.</li>
+            <li><strong>Arrival/Departure Velocity:</strong> Automated room readiness tracking to optimize check-in flows and reduce front desk queueing.</li>
+          </ul>
+        </div>
+
+        <div class="arch-card" style="padding: 14px;">
+          <div style="font-size: 11px; color: #10b981; font-weight: 700; font-family: 'Space Grotesk'; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 6px; margin-bottom: 8px;">
+            ROOMS DIVISION REAL-TIME METRICS
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+            <div style="background: #1e293b; padding: 8px; border-radius: 6px;"><span style="font-size: 9px; color: #94a3b8;">Occupancy Rate</span><p style="font-size: 14px; font-weight: 700; color: #10b981;">91.4%</p></div>
+            <div style="background: #1e293b; padding: 8px; border-radius: 6px;"><span style="font-size: 9px; color: #94a3b8;">Average Daily Rate</span><p style="font-size: 14px; font-weight: 700; color: #38bdf8;">฿5,300</p></div>
+            <div style="background: #1e293b; padding: 8px; border-radius: 6px;"><span style="font-size: 9px; color: #94a3b8;">Direct Booking %</span><p style="font-size: 14px; font-weight: 700; color: #f59e0b;">38.2%</p></div>
+            <div style="background: #1e293b; padding: 8px; border-radius: 6px;"><span style="font-size: 9px; color: #94a3b8;">Guest Folio Spend</span><p style="font-size: 14px; font-weight: 700; color: #e2e8f0;">฿1,850/day</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 17: Drill-Down 3 - Spa & Wellness -->
+  <div class="deck-slide-card" id="slide17">
+    <span class="deck-slide-badge">SLIDE 17 / 30</span>
+    <h2 class="deck-slide-title">Department Drill-Down 3: Spa, Wellness & Facility Utilization <span class="tag">DRILL-DOWN 03</span></h2>
+    <div class="deck-content">
+      <div class="grid-3" style="gap: 14px;">
+        <div class="tile">
+          <div class="icon-box"><i class="fa-solid fa-spa"></i></div>
+          <h3 style="font-size: 15px; color: #38bdf8;">Therapist Schedule Engine</h3>
+          <p style="font-size: 11px; line-height: 1.4;">
+            Replaces paper booking forms with an automated therapist scheduling and treatment room turnaround engine.
+          </p>
+        </div>
+
+        <div class="tile highlight">
+          <div class="icon-box"><i class="fa-solid fa-fire-flame-curved"></i></div>
+          <h3 style="font-size: 15px; color: #38bdf8;">Treatment Heatmaps</h3>
+          <p style="font-size: 11px; line-height: 1.4;">
+            Live heatmaps showing peak treatment hours, therapist utilization rates, and most-booked spa packages.
+          </p>
+        </div>
+
+        <div class="tile accent">
+          <div class="icon-box"><i class="fa-solid fa-tags"></i></div>
+          <h3 style="font-size: 15px; color: #10b981;">Dynamic Promo Yield</h3>
+          <p style="font-size: 11px; line-height: 1.4;">
+            Identifies underperforming treatment hours to automatically trigger off-peak wellness promotions to in-house resort guests.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 18: Drill-Down 4 - Housekeeping & HK -->
+  <div class="deck-slide-card" id="slide18">
+    <span class="deck-slide-badge">SLIDE 18 / 30</span>
+    <h2 class="deck-slide-title">Department Drill-Down 4: Housekeeping & Maintenance Mobile SLAs <span class="tag">DRILL-DOWN 04</span></h2>
+    <div class="deck-content">
+      <div class="grid-2" style="grid-template-columns: 50% 47%;">
+        <div>
+          <h3 style="font-size: 16px; color: #f8fafc; margin-bottom: 8px;">Replacing Walkie-Talkie Chaos with Mobile SLAs</h3>
+          <ul class="bullet-list" style="font-size: 12px;">
+            <li><strong>Mobile Task Checklists:</strong> Housekeepers update room cleaning status on mobile handsets directly linked to OperaCloud.</li>
+            <li><strong>Automated Work Orders:</strong> Maintenance issues reported by HK automatically trigger work tickets on Engineering handsets.</li>
+            <li><strong>Turnaround SLA Tracking:</strong> Tracks average minutes to clean and inspect villas to minimize guest check-in wait times.</li>
+          </ul>
+        </div>
+
+        <div class="arch-card" style="padding: 14px;">
+          <div style="font-size: 11px; color: #38bdf8; font-weight: 700; font-family: 'Space Grotesk'; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 6px; margin-bottom: 8px;">
+            HOUSEKEEPING & ENGINEERING MOBILE FLOW
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <div class="arch-node"><i class="fa-solid fa-broom"></i> <div><strong>HK Mobile Checklist</strong><br><span style="font-size:9px; color:#94a3b8;">Cleaned / Inspected status pushes to OperaCloud</span></div></div>
+            <div class="arch-node"><i class="fa-solid fa-wrench"></i> <div><strong>Auto-Dispatch to Engineering</strong><br><span style="font-size:9px; color:#94a3b8;">AC or plumbing fault flags instantly on technician phone</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 19: Drill-Down 5 - Procurement & MC Stores -->
+  <div class="deck-slide-card" id="slide19">
+    <span class="deck-slide-badge">SLIDE 19 / 30</span>
+    <h2 class="deck-slide-title">Department Drill-Down 5: Procurement, Stores & MC Control <span class="tag">DRILL-DOWN 05</span></h2>
+    <div class="deck-content">
+      <div class="grid-3" style="gap: 14px;">
+        <div class="tile highlight">
+          <div class="icon-box"><i class="fa-solid fa-file-signature"></i></div>
+          <h3 style="font-size: 15px; color: #38bdf8;">Digital PR/PO Workflow</h3>
+          <p style="font-size: 11px; line-height: 1.4;">
+            Digitizes Purchase Requests (PR) and Purchase Orders (PO) with mobile HOD approvals, eliminating paper slips.
+          </p>
+        </div>
+
+        <div class="tile accent">
+          <div class="icon-box"><i class="fa-solid fa-arrow-trend-up"></i></div>
+          <h3 style="font-size: 15px; color: #10b981;">Supplier Price-Drift Alerts</h3>
+          <p style="font-size: 11px; line-height: 1.4;">
+            Automatically alerts Cost Control when supplier quotes diverge from approved historical contract prices in MC Inventory.
+          </p>
+        </div>
+
+        <div class="tile">
+          <div class="icon-box"><i class="fa-solid fa-boxes-stacked"></i></div>
+          <h3 style="font-size: 15px; color: #f59e0b;">Stock Velocity Analytics</h3>
+          <p style="font-size: 11px; line-height: 1.4;">
+            Monitors fast-moving vs. dead stock across food walk-ins, wine cellars, and housekeeping linen closets.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 20: Drill-Down 6 - Finance & SunSystems -->
+  <div class="deck-slide-card" id="slide20">
+    <span class="deck-slide-badge">SLIDE 20 / 30</span>
+    <h2 class="deck-slide-title">Department Drill-Down 6: Finance, Audit & Infor SunSystems <span class="tag">DRILL-DOWN 06</span></h2>
+    <div class="deck-content">
+      <div class="grid-2" style="grid-template-columns: 52% 45%;">
+        <div class="arch-card" style="padding: 14px;">
+          <div style="font-size: 11px; color: #10b981; font-weight: 700; font-family: 'Space Grotesk'; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 6px; margin-bottom: 8px;">
+            AUTOMATED 3-WAY FINANCIAL MATCHING ENGINE
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <div class="arch-node"><i class="fa-solid fa-receipt"></i> <div><strong>Step 1: POS End-of-Day Sales</strong><br><span style="font-size:9px; color:#94a3b8;">Micros RES & FoodStory Terminal Audit</span></div></div>
+            <div class="arch-node"><i class="fa-solid fa-moon"></i> <div><strong>Step 2: Opera PMS Night Audit</strong><br><span style="font-size:9px; color:#94a3b8;">Trial Balance & Room Charge Reconciliation</span></div></div>
+            <div class="arch-node"><i class="fa-solid fa-book-journal-whills"></i> <div><strong>Step 3: Infor SunSystems Post</strong><br><span style="font-size:9px; color:#94a3b8;">Automated General Ledger Posting</span></div></div>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-size: 16px; color: #f8fafc; margin-bottom: 8px;">CFO Financial Benefits</h3>
+          <ul class="bullet-list" style="font-size: 12px;">
+            <li><strong>Automated 3-Way Match:</strong> Cross-verifies POS sales, Opera night audit trial balances, and SunSystems ledger entries automatically.</li>
+            <li><strong>Discrepancy Flags:</strong> Highlights unposted room charges, credit card terminal mismatches, or cash float variances instantly.</li>
+            <li><strong>Click-of-a-Button P&L:</strong> Reduces monthly financial close from 15 days down to real-time daily visibility.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 21: Drill-Down 7 - HR & TigerSoft -->
+  <div class="deck-slide-card" id="slide21">
+    <span class="deck-slide-badge">SLIDE 21 / 30</span>
+    <h2 class="deck-slide-title">Department Drill-Down 7: HR, Overtime & Labor Productivity <span class="tag">DRILL-DOWN 07</span></h2>
+    <div class="deck-content">
+      <div class="grid-3" style="gap: 14px;">
+        <div class="tile highlight">
+          <div class="icon-box"><i class="fa-solid fa-fingerprint"></i></div>
+          <h3 style="font-size: 15px; color: #38bdf8;">TigerSoft Biometric Mapping</h3>
+          <p style="font-size: 11px; line-height: 1.4;">
+            Maps biometric time-clock data from <strong>TigerSoft</strong> directly against hourly department revenue.
+          </p>
+        </div>
+
+        <div class="tile accent">
+          <div class="icon-box"><i class="fa-solid fa-user-clock"></i></div>
+          <h3 style="font-size: 15px; color: #10b981;">Shift Labor Efficiency</h3>
+          <p style="font-size: 11px; line-height: 1.4;">
+            Identifies overstaffed slow periods and understaffed peak service shifts to optimize department roster scheduling.
+          </p>
+        </div>
+
+        <div class="tile">
+          <div class="icon-box"><i class="fa-solid fa-stopwatch"></i></div>
+          <h3 style="font-size: 15px; color: #f59e0b;">Overtime (OT) Burn Control</h3>
+          <p style="font-size: 11px; line-height: 1.4;">
+            Real-time overtime expense alerts sent to HODs before OT thresholds are breached in payroll.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 22: Drill-Down 8 - Island Land & Real Estate Assets -->
+  <div class="deck-slide-card" id="slide22">
+    <span class="deck-slide-badge">SLIDE 22 / 30</span>
+    <h2 class="deck-slide-title">Department Drill-Down 8: Island Land & Real Estate Assets <span class="tag">DRILL-DOWN 08</span></h2>
+    <div class="deck-content">
+      <div class="grid-2" style="grid-template-columns: 50% 47%;">
+        <div class="tile highlight">
+          <h3 style="font-size: 15px; color: #38bdf8;">Centralized Real Estate Registry</h3>
+          <ul class="bullet-list" style="font-size: 12px; margin-top: 8px;">
+            <li><strong>Digital Title Deed Registry:</strong> Centralized cloud database managing land deeds, boundary coordinates, and zoning parameters for group holdings across Koh Samui.</li>
+            <li><strong>Maintenance & Lease Logs:</strong> Schedules preventive maintenance and tracks lease terms for non-hotel commercial real estate assets.</li>
+            <li><strong>Valuation & Development ROI:</strong> Tracks land valuation trends and models potential ROI for future hospitality developments.</li>
+          </ul>
+        </div>
+
+        <div class="arch-card" style="padding: 14px;">
+          <div style="font-size: 11px; color: #10b981; font-weight: 700; font-family: 'Space Grotesk'; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 6px; margin-bottom: 8px;">
+            KOH SAMUI REAL ESTATE ASSET PORTFOLIO
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <div class="arch-node"><i class="fa-solid fa-map-location-dot"></i> <div><strong>Chaweng Beach Prime Plots</strong><br><span style="font-size:9px; color:#94a3b8;">Hotel & Commercial Strip Assets</span></div></div>
+            <div class="arch-node"><i class="fa-solid fa-mountain-sun"></i> <div><strong>Choeng Mon Hillside & Villa Parcels</strong><br><span style="font-size:9px; color:#94a3b8;">Royal Villas Expansion Holdings</span></div></div>
+            <div class="arch-node"><i class="fa-solid fa-building-flag"></i> <div><strong>Off-Site Dining Commercial Titles</strong><br><span style="font-size:9px; color:#94a3b8;">Babou, Tang Tang & Nanyuan Leases/Deeds</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 23: Smart Utility Conversions -->
+  <div class="deck-slide-card" id="slide23">
+    <span class="deck-slide-badge">SLIDE 23 / 30</span>
+    <h2 class="deck-slide-title">Smart Infrastructure: IoT Room Telemetry & Utility Tracking <span class="tag">IOT TELEMETRY</span></h2>
+    <div class="deck-content">
+      <div class="grid-2" style="grid-template-columns: 52% 45%;">
+        <div>
+          <h3 style="font-size: 16px; color: #38bdf8; margin-bottom: 8px;">18% to 25% Reduction in Resort Utility Overhead</h3>
+          <ul class="bullet-list" style="font-size: 12px; margin-bottom: 12px;">
+            <li><strong>IoT Sub-Meter Telemetry:</strong> Real-time electricity (kWh) and water flow tracking per villa, suite, and common facility.</li>
+            <li><strong>Automated Waste Detection:</strong> Automatically detects air conditioning running in empty rooms or open balcony doors.</li>
+            <li><strong>Plumbing Leak Detection:</strong> Flags continuous water-flow anomalies instantly to prevent pipe bursts and excessive utility bills.</li>
+          </ul>
+          <div class="tile accent" style="padding: 10px;">
+            <strong style="color: #10b981; font-size: 12px;"><i class="fa-solid fa-leaf"></i> ROI Projection:</strong>
+            <span style="font-size: 11px; color: #cbd5e1;">A 20% reduction in villa utility waste saves ฿1.5M–฿2.8M THB annually across both resorts.</span>
+          </div>
+        </div>
+
+        <div class="arch-card" style="padding: 14px;">
+          <div style="font-size: 11px; color: #38bdf8; font-weight: 700; font-family: 'Space Grotesk'; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 6px; margin-bottom: 8px;">
+            SMART ROOM IOT ARCHITECTURE
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <div class="arch-node"><i class="fa-solid fa-bolt"></i> <div><strong>Digital Electrical Sub-Meter</strong><br><span style="font-size:9px; color:#94a3b8;">MQTT stream tracking kWh per villa</span></div></div>
+            <div class="arch-node"><i class="fa-solid fa-faucet-drip"></i> <div><strong>Pulse Water Meter</strong><br><span style="font-size:9px; color:#94a3b8;">Continuous flow anomaly parser</span></div></div>
+            <div class="arch-node"><i class="fa-solid fa-door-open"></i> <div><strong>Door Sensor & HVAC Bridge</strong><br><span style="font-size:9px; color:#94a3b8;">Auto-throttles AC when doors open</span></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 24: Facility Space Analytics -->
+  <div class="deck-slide-card" id="slide24">
+    <span class="deck-slide-badge">SLIDE 24 / 30</span>
+    <h2 class="deck-slide-title">Facility Space Analytics: Revenue Per Square Meter <span class="tag">SPACE YIELD</span></h2>
+    <div class="deck-content">
+      <div class="grid-3" style="gap: 14px;">
+        <div class="tile highlight">
+          <div class="icon-box"><i class="fa-solid fa-shoe-prints"></i></div>
+          <h3 style="font-size: 15px; color: #38bdf8;">Foot-Traffic Density</h3>
+          <p style="font-size: 11px; line-height: 1.4;">
+            Measures guest density across beach pavilions, pool decks, fitness centers, and restaurant lounges.
+          </p>
+        </div>
+
+        <div class="tile accent">
+          <div class="icon-box"><i class="fa-solid fa-chart-line"></i></div>
+          <h3 style="font-size: 15px; color: #10b981;">Under-Utilized Space Repurposing</h3>
+          <p style="font-size: 11px; line-height: 1.4;">
+            Identifies low-yield square footage to convert into high-margin private beachfront cabanas or popup cocktail bars.
+          </p>
+        </div>
+
+        <div class="tile">
+          <div class="icon-box"><i class="fa-solid fa-temperature-arrow-down"></i></div>
+          <h3 style="font-size: 15px; color: #f59e0b;">Dynamic HVAC Scheduling</h3>
+          <p style="font-size: 11px; line-height: 1.4;">
+            Scales public area air conditioning and lighting automatically based on historical foot-traffic trends.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 25: Cloud Modernization & Notion AI -->
+  <div class="deck-slide-card" id="slide25">
+    <span class="deck-slide-badge">SLIDE 25 / 30</span>
+    <h2 class="deck-slide-title">Cloud Workspace & Notion Business AI Knowledge Base <span class="tag">AI WORKSPACE</span></h2>
+    <div class="deck-content">
+      <div class="grid-2" style="grid-template-columns: 50% 47%;">
+        <div class="tile highlight">
+          <h3 style="font-size: 15px; color: #38bdf8;">Enterprise Cloud Infrastructure</h3>
+          <ul class="bullet-list" style="font-size: 12px; margin-top: 8px;">
+            <li><strong>Microsoft 365 / Google Workspace Migration:</strong> Transitions local files and static desktop folders into secure, backed-up cloud drives.</li>
+            <li><strong>Notion Business AI Knowledge Base:</strong> Centralized repository indexing Standard Operating Procedures (SOPs), onboarding guides, and maintenance manuals.</li>
+            <li><strong>Bilingual AI Querying:</strong> Operational staff can query procedures in natural-language Thai or English on their mobile devices.</li>
+          </ul>
+        </div>
+
+        <div class="arch-card" style="padding: 14px;">
+          <div style="font-size: 11px; color: #10b981; font-weight: 700; font-family: 'Space Grotesk'; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 6px; margin-bottom: 8px;">
+            NOTION AI BILINGUAL QUERY EXAMPLE
+          </div>
+          <div style="background: #1e293b; padding: 10px; border-radius: 6px; font-size: 11px; color: #38bdf8; margin-bottom: 6px;">
+            <i class="fa-solid fa-circle-question"></i> "What is the SOP for night audit emergency procedures?"
+          </div>
+          <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 10px; border-radius: 6px; font-size: 11px; color: #cbd5e1; line-height: 1.35;">
+            <strong style="color: #10b981;">Notion AI Response (TH/EN):</strong><br>
+            "Step 1: Execute OperaCloud End-of-Day run. Step 2: Cross-verify POS totals against SunSystems ledger..."
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 26: 11-Department Modernization Matrix -->
+  <div class="deck-slide-card" id="slide26">
+    <span class="deck-slide-badge">SLIDE 26 / 30</span>
+    <h2 class="deck-slide-title">11-Department Operational Modernization Matrix <span class="tag">FULL SCOPE</span></h2>
+    <div class="deck-content">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Department</th>
+            <th>Legacy Offline / Fragmented State</th>
+            <th>Upgraded MSG TECH Online State</th>
+            <th>Connected Core Systems</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>1. Front Office</strong></td>
+            <td>Manual logbooks, offline checks</td>
+            <td>Centralized arrival portal, digital check-in</td>
+            <td>OperaCloud $\leftrightarrow$ Command Hub</td>
+          </tr>
+          <tr>
+            <td><strong>2. RSVN</strong></td>
+            <td>Disconnected channel audits</td>
+            <td>Dynamic booking pipeline, OTA yield tracking</td>
+            <td>OperaCloud $\leftrightarrow$ Channel Engine</td>
+          </tr>
+          <tr>
+            <td><strong>3. F&B (Resorts)</strong></td>
+            <td>Manual daily covers report</td>
+            <td>Real-time table turn & recipe margin tracking</td>
+            <td>Micros RES $\leftrightarrow$ MC Inventory</td>
+          </tr>
+          <tr>
+            <td><strong>4. Standalone F&B</strong></td>
+            <td>FoodStory manual daily export</td>
+            <td>Direct automated revenue feed into master P&L</td>
+            <td>FoodStory $\leftrightarrow$ Cloud Data Lake</td>
+          </tr>
+          <tr>
+            <td><strong>5. Spa & Wellness</strong></td>
+            <td>Paper booking forms</td>
+            <td>Digital therapist scheduling & room heatmap</td>
+            <td>Custom Booking $\leftrightarrow$ POS</td>
+          </tr>
+          <tr>
+            <td><strong>6. Housekeeping</strong></td>
+            <td>Walkie-talkie room dispatch</td>
+            <td>Mobile task queue with room turnaround SLAs</td>
+            <td>OperaCloud $\leftrightarrow$ Mobile App</td>
+          </tr>
+          <tr>
+            <td><strong>7. Engineering</strong></td>
+            <td>Manual monthly meter reading</td>
+            <td><strong>IoT Smart Meters</strong>: Live kWh/Water per room</td>
+            <td>IoT Gateway $\leftrightarrow$ Alert Engine</td>
+          </tr>
+          <tr>
+            <td><strong>8. Purchasing</strong></td>
+            <td>Physical PR/PO signature slips</td>
+            <td>Digital multi-level approvals & price drift alerts</td>
+            <td>MC Control $\leftrightarrow$ SunSystems</td>
+          </tr>
+          <tr>
+            <td><strong>9. Accounting</strong></td>
+            <td>Weekly multi-system reconciliation</td>
+            <td>Automated 3-way daily audit reconciliation</td>
+            <td>Sun $\leftrightarrow$ Opera $\leftrightarrow$ POS</td>
+          </tr>
+          <tr>
+            <td><strong>10. HR & Admin</strong></td>
+            <td>TigerSoft offline leave logs</td>
+            <td>Shift-to-revenue labor productivity analytics</td>
+            <td>TigerSoft $\leftrightarrow$ Cloud Portal</td>
+          </tr>
+          <tr>
+            <td><strong>11. Land Assets</strong></td>
+            <td>Local files & paper titles</td>
+            <td>Digital land registry & maintenance tracking</td>
+            <td>Cloud Real Estate Portal</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- SLIDE 27: Commercial Partnership -->
+  <div class="deck-slide-card" id="slide27">
+    <span class="deck-slide-badge">SLIDE 27 / 30</span>
+    <h2 class="deck-slide-title">Commercial Partnership: Pilot Terms & Family Advantage <span class="tag">WIN-WIN MODEL</span></h2>
+    <div class="deck-content">
+      <div class="grid-3" style="gap: 14px;">
+        <div class="tile highlight">
+          <div class="icon-box"><i class="fa-solid fa-vial"></i></div>
+          <h3 style="font-size: 15px; color: #38bdf8;">Pilot Testbeds</h3>
+          <p style="font-size: 11px; line-height: 1.4;">
+            Deploy initial pilot at <strong>Muang Samui Spa Resort</strong> (Chaweng) and <strong>Royal Muang Samui Villas</strong> (Choeng Mon).
+          </p>
+        </div>
+
+        <div class="tile accent">
+          <div class="icon-box"><i class="fa-solid fa-percent"></i></div>
+          <h3 style="font-size: 15px; color: #10b981;">10%–30% Family Discount</h3>
+          <p style="font-size: 11px; line-height: 1.4;">
+            Exclusive group pricing discount on enterprise development fees before public market commercial release.
+          </p>
+        </div>
+
+        <div class="tile">
+          <div class="icon-box"><i class="fa-solid fa-headset"></i></div>
+          <h3 style="font-size: 15px; color: #f59e0b;">Lifetime SLA Support</h3>
+          <p style="font-size: 11px; line-height: 1.4;">
+            Direct priority developer access, continuous system enhancements, and zero third-party license markups.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 28: 90-Day Roadmap -->
+  <div class="deck-slide-card" id="slide28">
+    <span class="deck-slide-badge">SLIDE 28 / 30</span>
+    <h2 class="deck-slide-title">90-Day Phased Implementation Roadmap <span class="tag">EXECUTION PLAN</span></h2>
+    <div class="deck-content">
+      <div class="grid-3" style="gap: 14px;">
+        <div class="tile" style="border-left: 4px solid #38bdf8;">
+          <span style="font-size: 10px; color: #38bdf8; font-weight: 700;">MONTH 01</span>
+          <h3 style="font-size: 14px; color: #f8fafc; margin-top: 2px;">Discovery & Core Pipes</h3>
+          <ul class="bullet-list" style="font-size: 11px; margin-top: 6px;">
+            <li>Full API audit of OperaCloud, Micros, FoodStory, MC, Sun, and TigerSoft.</li>
+            <li>Deploy M365/Google Workspace & Notion Business AI foundations.</li>
+            <li>Initiate initial HOD workflow onboarding.</li>
+          </ul>
+        </div>
+
+        <div class="tile" style="border-left: 4px solid #10b981;">
+          <span style="font-size: 10px; color: #10b981; font-weight: 700;">MONTH 02</span>
+          <h3 style="font-size: 14px; color: #f8fafc; margin-top: 2px;">Dashboard & IoT Pilot</h3>
+          <ul class="bullet-list" style="font-size: 11px; margin-top: 6px;">
+            <li>Launch Group Master Command Center with live F&B and Room feeds.</li>
+            <li>Install smart IoT utility sub-meters across first 10 test villas.</li>
+            <li>Deploy digital PR/PO approval workflow for Stores.</li>
+          </ul>
+        </div>
+
+        <div class="tile" style="border-left: 4px solid #f59e0b;">
+          <span style="font-size: 10px; color: #f59e0b; font-weight: 700;">MONTH 03</span>
+          <h3 style="font-size: 14px; color: #f8fafc; margin-top: 2px;">Full Rollout & Sign-Off</h3>
+          <ul class="bullet-list" style="font-size: 11px; margin-top: 6px;">
+            <li>Complete 3-way financial reconciliation bridge into SunSystems.</li>
+            <li>Roll out HK & Engineering mobile task tracking resort-wide.</li>
+            <li>Final board review & operational handover.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 29: Board Risk Management & Q&A -->
+  <div class="deck-slide-card" id="slide29">
+    <span class="deck-slide-badge">SLIDE 29 / 30</span>
+    <h2 class="deck-slide-title">Executive Q&A & Board Risk Mitigation <span class="tag">RISK GOVERNANCE</span></h2>
+    <div class="deck-content">
+      <div class="grid-2" style="grid-template-columns: 50% 47%;">
+        <div class="tile highlight">
+          <strong style="color: #38bdf8; font-size: 13px;">CFO Question:</strong>
+          <p style="font-size: 11px; color: #e2e8f0; font-style: italic; margin-top: 2px;">"Why can't our internal team or a standard BA make Power BI charts for our 5 systems?"</p>
+          <p style="font-size: 11px; color: #cbd5e1; margin-top: 6px; line-height: 1.35;">
+            <strong>Answer:</strong> A BA connects data to build passive charts. If an underlying API breaks, a room over-consumes power, or inventory drifts in MC Control, a BA cannot re-engineer software. As an experienced PO/Architect, I build an active operating engine with automated alerts and action triggers tailored to your exact business rules.
+          </p>
+        </div>
+
+        <div class="tile accent">
+          <strong style="color: #10b981; font-size: 13px;">HOD Concern:</strong>
+          <p style="font-size: 11px; color: #e2e8f0; font-style: italic; margin-top: 2px;">"Our floor staff are used to paper and Excel. Will this disrupt daily work?"</p>
+          <p style="font-size: 11px; color: #cbd5e1; margin-top: 6px; line-height: 1.35;">
+            <strong>Answer:</strong> No. We do not do overnight forced cutovers. We implement a gradual, department-by-department rollout with hands-on training, replacing duplicate manual entries with mobile cloud forms that save staff 1 to 2 hours of admin work every shift.
+          </p>
         </div>
       </div>
     </div>

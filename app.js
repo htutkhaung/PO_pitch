@@ -28,7 +28,7 @@ function initBackgroundTelemetry() {
   window.addEventListener('resize', resize);
   resize();
 
-  const particleCount = Math.min(width > 768 ? 60 : 30, 70);
+  const particleCount = Math.min(width > 768 ? 50 : 25, 60);
   for (let i = 0; i < particleCount; i++) {
     particles.push({
       x: Math.random() * width,
@@ -78,7 +78,7 @@ function initBackgroundTelemetry() {
   animate();
 }
 
-// 2. Scrollytelling Sticky Canvas Scrubber Engine
+// 2. Scrollytelling Split Canvas Scrubber Engine
 function initScrubberCanvas() {
   const canvas = document.getElementById('scrubber-canvas');
   const section = document.querySelector('.scrubber-hero-section');
@@ -91,8 +91,9 @@ function initScrubberCanvas() {
   let width, height;
 
   function resize() {
-    width = canvas.width = canvas.parentElement.clientWidth;
-    height = canvas.height = canvas.parentElement.clientHeight;
+    const parent = canvas.parentElement;
+    width = canvas.width = parent.clientWidth;
+    height = canvas.height = parent.clientHeight;
   }
   window.addEventListener('resize', resize);
   resize();
@@ -101,26 +102,34 @@ function initScrubberCanvas() {
     {
       progress: 0.0,
       title: "Isolated Island Operations",
-      desc: "5 disconnected legacy software systems (OperaCloud, MC Inventory, SunSystems, FoodStory, TigerSoft) operating in fragmented silos across Koh Samui.",
-      badge: "LEGACY STATE"
+      desc: "5 disconnected legacy systems (OperaCloud, MC Inventory, SunSystems, FoodStory, TigerSoft) operating in fragmented silos across Koh Samui.",
+      badge: "LEGACY STATE",
+      tagColor: "var(--rose-primary)",
+      extra: "Manual paper slips, Excel night audits, 15-day delayed P&L visibility."
     },
     {
       progress: 0.33,
       title: "Real-Time Telemetry & Event Mesh",
       desc: "Deploying high-speed event brokers and IoT telemetry sub-meters across resorts, dining outlets, and island land parcels.",
-      badge: "INGESTION MESH"
+      badge: "INGESTION MESH",
+      tagColor: "var(--cyan-primary)",
+      extra: "MQTT stream protocols, sub-second WebSocket updates, automated price-drift alerts."
     },
     {
       progress: 0.66,
       title: "Atomic Data Lake & 3-Way Reconciliation",
       desc: "Sub-second transaction reconciliation matching POS terminals, night audits, and SunSystems ledgers automatically.",
-      badge: "SECURITY & ACID"
+      badge: "SECURITY & ACID",
+      tagColor: "var(--emerald-primary)",
+      extra: "36 PostgreSQL tables, 52 RLS policies, 22 atomic database RPC functions."
     },
     {
       progress: 0.95,
       title: "Autonomous Enterprise Command Center",
       desc: "Single-screen real-time intelligence for the Chairman, CEO, MD, and CFO with automated departmental task routing.",
-      badge: "UNIFIED FUTURE"
+      badge: "UNIFIED FUTURE",
+      tagColor: "var(--amber-primary)",
+      extra: "18%–25% utility reduction, live RevPAR tracking, 0-day financial close."
     }
   ];
 
@@ -139,7 +148,7 @@ function initScrubberCanvas() {
       frameText.textContent = `FRAME ${frameNum.toString().padStart(3, '0')} / 120`;
     }
 
-    // Update narrative overlay based on progress
+    // Update narrative card based on progress
     let matched = narratives[0];
     for (let item of narratives) {
       if (progress >= item.progress) matched = item;
@@ -147,9 +156,17 @@ function initScrubberCanvas() {
 
     if (narrativeOverlay) {
       narrativeOverlay.innerHTML = `
-        <span class="section-tag">${matched.badge}</span>
-        <h2 style="font-family: var(--font-heading); font-size: 28px; color: #fff; margin: 8px 0 12px 0;">${matched.title}</h2>
-        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; max-width: 680px; margin: 0 auto;">${matched.desc}</p>
+        <span class="section-tag" style="border-color: ${matched.tagColor}; color: ${matched.tagColor};">${matched.badge}</span>
+        <h2 style="font-family: var(--font-heading); font-size: 28px; color: #fff; margin: 10px 0 12px 0; line-height: 1.25;">
+          ${matched.title}
+        </h2>
+        <p style="color: var(--text-muted); font-size: 14px; line-height: 1.6; margin-bottom: 14px;">
+          ${matched.desc}
+        </p>
+        <div style="background: rgba(15, 23, 42, 0.6); padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border-subtle); font-size: 12px; color: #cbd5e1;">
+          <i class="fa-solid fa-microchip" style="color: ${matched.tagColor}; margin-right: 6px;"></i>
+          <strong>Key Mechanism:</strong> ${matched.extra}
+        </div>
       `;
     }
   }
@@ -165,10 +182,13 @@ function initScrubberCanvas() {
     const centerY = height / 2;
     const p = currentProgress; // 0 to 1
 
+    // Scale calculation based on canvas size
+    const baseScale = Math.min(width, height) / 500;
+
     // Draw central hub node expanding with progress
-    const radius = 50 + p * 40;
+    const radius = (45 + p * 35) * baseScale;
     const gradient = ctx.createRadialGradient(centerX, centerY, 5, centerX, centerY, radius * 2);
-    gradient.addColorStop(0, 'rgba(56, 189, 248, 0.4)');
+    gradient.addColorStop(0, 'rgba(56, 189, 248, 0.35)');
     gradient.addColorStop(1, 'rgba(15, 23, 42, 0.0)');
     ctx.fillStyle = gradient;
     ctx.beginPath();
@@ -181,25 +201,26 @@ function initScrubberCanvas() {
     ctx.fillStyle = '#0f172a';
     ctx.fill();
     ctx.lineWidth = 2;
-    ctx.strokeStyle = '#38bdf8';
+    ctx.strokeStyle = p > 0.4 ? '#38bdf8' : '#64748b';
     ctx.stroke();
 
     // Draw Core Title
     ctx.fillStyle = '#f8fafc';
-    ctx.font = `700 ${Math.max(12, Math.floor(14 * (0.8 + p * 0.4)))}px 'Space Grotesk'`;
+    ctx.font = `700 ${Math.max(10, Math.floor(13 * baseScale))}px 'Space Grotesk'`;
     ctx.textAlign = 'center';
-    ctx.fillText('MSG COMMAND HUB', centerX, centerY - 6);
-    ctx.fillStyle = '#38bdf8';
-    ctx.font = `600 10px 'Space Grotesk'`;
-    ctx.fillText('REALTIME CORE', centerX, centerY + 12);
+    ctx.fillText('MSG COMMAND HUB', centerX, centerY - 4);
+    ctx.fillStyle = p > 0.4 ? '#38bdf8' : '#94a3b8';
+    ctx.font = `600 ${Math.max(8, Math.floor(9.5 * baseScale))}px 'Space Grotesk'`;
+    ctx.fillText(p > 0.5 ? 'REALTIME CORE' : 'FRAGMENTED SILOS', centerX, centerY + 12);
 
     // Orbiting Satellite Nodes (Systems)
+    const baseDist = 140 * baseScale;
     const nodes = [
-      { name: 'OperaCloud PMS', sub: 'Front / RSVN', angle: 0 + p * Math.PI * 0.5, dist: 160 + p * 40, color: '#38bdf8' },
-      { name: 'Micros / FoodStory', sub: 'Resorts & Dining', angle: 1.2 + p * Math.PI * 0.5, dist: 170 + p * 30, color: '#10b981' },
-      { name: 'MC Materials Control', sub: 'Stores & Stock', angle: 2.4 + p * Math.PI * 0.5, dist: 160 + p * 40, color: '#f59e0b' },
-      { name: 'Infor SunSystems', sub: 'Finance & Ledger', angle: 3.6 + p * Math.PI * 0.5, dist: 175 + p * 35, color: '#818cf8' },
-      { name: 'TigerSoft HR', sub: 'Biometrics & OT', angle: 4.8 + p * Math.PI * 0.5, dist: 165 + p * 45, color: '#f43f5e' }
+      { name: 'OperaCloud PMS', sub: 'Front / RSVN', angle: 0 + p * Math.PI * 0.6, dist: baseDist, color: '#38bdf8' },
+      { name: 'Micros / FoodStory', sub: 'Resorts & Dining', angle: 1.25 + p * Math.PI * 0.6, dist: baseDist * 1.05, color: '#10b981' },
+      { name: 'MC Materials', sub: 'Stores & Stock', angle: 2.5 + p * Math.PI * 0.6, dist: baseDist, color: '#f59e0b' },
+      { name: 'Infor SunSystems', sub: 'Finance & Ledger', angle: 3.75 + p * Math.PI * 0.6, dist: baseDist * 1.08, color: '#818cf8' },
+      { name: 'TigerSoft HR', sub: 'Biometrics & OT', angle: 5.0 + p * Math.PI * 0.6, dist: baseDist, color: '#f43f5e' }
     ];
 
     nodes.forEach(node => {
@@ -210,14 +231,14 @@ function initScrubberCanvas() {
       ctx.beginPath();
       ctx.moveTo(centerX, centerY);
       ctx.lineTo(nx, ny);
-      ctx.strokeStyle = p > 0.4 ? `rgba(56, 189, 248, ${0.15 + p * 0.4})` : 'rgba(239, 68, 68, 0.2)';
+      ctx.strokeStyle = p > 0.35 ? `rgba(56, 189, 248, ${0.15 + p * 0.45})` : 'rgba(239, 68, 68, 0.25)';
       ctx.setLineDash(p > 0.6 ? [] : [4, 4]);
       ctx.lineWidth = 1.5;
       ctx.stroke();
       ctx.setLineDash([]);
 
       // Traveling data packet
-      if (p > 0.3) {
+      if (p > 0.25) {
         const packetProgress = (Date.now() * 0.0015 + node.angle) % 1;
         const px = centerX + (nx - centerX) * packetProgress;
         const py = centerY + (ny - centerY) * packetProgress;
@@ -231,20 +252,21 @@ function initScrubberCanvas() {
       }
 
       // Satellite node box
-      ctx.fillStyle = 'rgba(15, 23, 42, 0.9)';
+      const nodeR = 26 * baseScale;
+      ctx.fillStyle = 'rgba(15, 23, 42, 0.92)';
       ctx.beginPath();
-      ctx.arc(nx, ny, 32, 0, Math.PI * 2);
+      ctx.arc(nx, ny, nodeR, 0, Math.PI * 2);
       ctx.fill();
       ctx.strokeStyle = node.color;
       ctx.lineWidth = 1.5;
       ctx.stroke();
 
       ctx.fillStyle = '#ffffff';
-      ctx.font = "bold 9px 'Space Grotesk'";
-      ctx.fillText(node.name.split(' ')[0], nx, ny - 3);
+      ctx.font = `bold ${Math.max(8, Math.floor(9 * baseScale))}px 'Space Grotesk'`;
+      ctx.fillText(node.name.split(' ')[0], nx, ny - 2);
       ctx.fillStyle = 'rgba(203, 213, 225, 0.8)';
-      ctx.font = "8px 'Plus Jakarta Sans'";
-      ctx.fillText(node.sub, nx, ny + 8);
+      ctx.font = `${Math.max(7, Math.floor(7.5 * baseScale))}px 'Plus Jakarta Sans'`;
+      ctx.fillText(node.sub, nx, ny + 9);
     });
 
     requestAnimationFrame(renderScrubber);
@@ -293,16 +315,12 @@ function initDiscoveryCalculator() {
     document.getElementById('calc-hours-val').textContent = `${hours} Hours`;
 
     let rate = 350;
-    let label = 'Independent Senior PO / Dual Lead ($175–$300/hr)';
     if (tier === 'big4') {
       rate = 500;
-      label = 'Big 4 Senior Director / Advisory Lead ($350–$600+/hr)';
     } else if (tier === 'boutique') {
       rate = 275;
-      label = 'Boutique IT Agency Lead Consultant ($200–$350/hr)';
     } else {
       rate = 225;
-      label = 'Independent Strategic PO Lead ($175–$300/hr)';
     }
 
     const total = hours * rate;
