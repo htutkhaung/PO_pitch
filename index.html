@@ -152,49 +152,82 @@
       </div>
     </div>
 
-        <div style="width: 2px; height: 24px; background: var(--border-subtle);"></div>
-
-        <div class="org-pods-grid">
-          <div class="pod-card">
-            <span class="pod-badge">SUBUNIT 1</span>
-            <strong style="color: #fff; font-size: 13px;">Core PMS & Folios</strong>
-            <ul style="list-style: none; font-size: 11px; color: var(--text-muted); display: flex; flex-direction: column; gap: 3px;">
-              <li><i class="fa-solid fa-user-pen" style="color: var(--emerald-primary);"></i> 1 Business Analyst (BA)</li>
-              <li><i class="fa-solid fa-code"></i> 2 FE + 1 BE Engineers</li>
-              <li><i class="fa-solid fa-vial"></i> 1 QC Test Engineer</li>
-            </ul>
+                <!-- Big 4 Team Headcount Breakdown Bar -->
+        <div style="background: rgba(15, 23, 42, 0.95); border: 1px solid var(--border-accent); border-radius: 10px; padding: 14px 20px; width: 100%; margin-top: 14px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="background: rgba(56, 189, 248, 0.2); width: 36px; height: 36px; border-radius: 8px; display: grid; place-items: center; color: var(--cyan-primary); font-size: 16px;">
+              <i class="fa-solid fa-users"></i>
+            </div>
+            <div>
+              <strong style="color: #fff; font-size: 13.5px;">Total Team Under PO Command: <span style="color: var(--cyan-primary);">21 People</span></strong>
+              <p style="font-size: 11px; color: #94a3b8; margin-top: 1px;">1 PO Lead • 2 PM & Architecture • 4 Pods × 4 Engineers (16) • 2 Shared DevOps/QA</p>
+            </div>
           </div>
-
-          <div class="pod-card">
-            <span class="pod-badge">SUBUNIT 2</span>
-            <strong style="color: #fff; font-size: 13px;">Data & Analytics</strong>
-            <ul style="list-style: none; font-size: 11px; color: var(--text-muted); display: flex; flex-direction: column; gap: 3px;">
-              <li><i class="fa-solid fa-user-pen" style="color: var(--emerald-primary);"></i> 1 Business Analyst (BA)</li>
-              <li><i class="fa-solid fa-code"></i> 2 FE + 1 BE Engineers</li>
-              <li><i class="fa-solid fa-vial"></i> 1 QC Test Engineer</li>
-            </ul>
-          </div>
-
-          <div class="pod-card">
-            <span class="pod-badge">SUBUNIT 3</span>
-            <strong style="color: #fff; font-size: 13px;">System Integrations</strong>
-            <ul style="list-style: none; font-size: 11px; color: var(--text-muted); display: flex; flex-direction: column; gap: 3px;">
-              <li><i class="fa-solid fa-user-pen" style="color: var(--emerald-primary);"></i> 1 Business Analyst (BA)</li>
-              <li><i class="fa-solid fa-code"></i> 2 FE + 1 BE Engineers</li>
-              <li><i class="fa-solid fa-vial"></i> 1 QC Test Engineer</li>
-            </ul>
-          </div>
-
-          <div class="pod-card">
-            <span class="pod-badge">SUBUNIT 4</span>
-            <strong style="color: #fff; font-size: 13px;">Security & Hardware</strong>
-            <ul style="list-style: none; font-size: 11px; color: var(--text-muted); display: flex; flex-direction: column; gap: 3px;">
-              <li><i class="fa-solid fa-user-pen" style="color: var(--emerald-primary);"></i> 1 Business Analyst (BA)</li>
-              <li><i class="fa-solid fa-code"></i> 2 FE + 1 BE Engineers</li>
-              <li><i class="fa-solid fa-vial"></i> 1 QC Test Engineer</li>
-            </ul>
+          <div style="display: flex; gap: 8px;">
+            <span class="pod-badge" style="background: rgba(16,185,129,0.15); color: #10b981;">4 People / Subunit</span>
+            <span class="pod-badge" style="background: rgba(56,189,248,0.15); color: #38bdf8;">1 BA Embedded per Pod</span>
           </div>
         </div>
+
+        <div style="width: 2px; height: 20px; background: var(--border-subtle); margin: 6px auto;"></div>
+
+        <div class="org-pods-grid">
+          <!-- SUBUNIT 1 -->
+          <div class="pod-card" style="border-top: 3px solid var(--cyan-primary);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+              <span class="pod-badge" style="background: rgba(56,189,248,0.2); color: #38bdf8;">SUBUNIT 1 (4 People)</span>
+            </div>
+            <strong style="color: #fff; font-size: 13px;">Core PMS & Folios</strong>
+            <ul style="list-style: none; font-size: 11.5px; color: #cbd5e1; display: flex; flex-direction: column; gap: 5px; margin-top: 6px;">
+              <li><i class="fa-solid fa-user-tie" style="color: var(--emerald-primary); width: 14px;"></i> 1 Business Analyst (BA)</li>
+              <li><i class="fa-solid fa-user" style="color: var(--cyan-primary); width: 14px;"></i> 2 Frontend (FE) Engineers</li>
+              <li><i class="fa-solid fa-user" style="color: #818cf8; width: 14px;"></i> 1 Backend (BE) Engineer</li>
+              <li><i class="fa-solid fa-user-check" style="color: var(--amber-primary); width: 14px;"></i> 1 QC Test Engineer</li>
+            </ul>
+          </div>
+
+          <!-- SUBUNIT 2 -->
+          <div class="pod-card" style="border-top: 3px solid var(--emerald-primary);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+              <span class="pod-badge" style="background: rgba(16,185,129,0.2); color: #10b981;">SUBUNIT 2 (4 People)</span>
+            </div>
+            <strong style="color: #fff; font-size: 13px;">Data & Analytics</strong>
+            <ul style="list-style: none; font-size: 11.5px; color: #cbd5e1; display: flex; flex-direction: column; gap: 5px; margin-top: 6px;">
+              <li><i class="fa-solid fa-user-tie" style="color: var(--emerald-primary); width: 14px;"></i> 1 Business Analyst (BA)</li>
+              <li><i class="fa-solid fa-user" style="color: var(--cyan-primary); width: 14px;"></i> 2 Frontend (FE) Engineers</li>
+              <li><i class="fa-solid fa-user" style="color: #818cf8; width: 14px;"></i> 1 Backend (BE) Engineer</li>
+              <li><i class="fa-solid fa-user-check" style="color: var(--amber-primary); width: 14px;"></i> 1 QC Test Engineer</li>
+            </ul>
+          </div>
+
+          <!-- SUBUNIT 3 -->
+          <div class="pod-card" style="border-top: 3px solid #818cf8;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+              <span class="pod-badge" style="background: rgba(129,140,248,0.2); color: #818cf8;">SUBUNIT 3 (4 People)</span>
+            </div>
+            <strong style="color: #fff; font-size: 13px;">System Integrations</strong>
+            <ul style="list-style: none; font-size: 11.5px; color: #cbd5e1; display: flex; flex-direction: column; gap: 5px; margin-top: 6px;">
+              <li><i class="fa-solid fa-user-tie" style="color: var(--emerald-primary); width: 14px;"></i> 1 Business Analyst (BA)</li>
+              <li><i class="fa-solid fa-user" style="color: var(--cyan-primary); width: 14px;"></i> 2 Frontend (FE) Engineers</li>
+              <li><i class="fa-solid fa-user" style="color: #818cf8; width: 14px;"></i> 1 Backend (BE) Engineer</li>
+              <li><i class="fa-solid fa-user-check" style="color: var(--amber-primary); width: 14px;"></i> 1 QC Test Engineer</li>
+            </ul>
+          </div>
+
+          <!-- SUBUNIT 4 -->
+          <div class="pod-card" style="border-top: 3px solid var(--amber-primary);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+              <span class="pod-badge" style="background: rgba(245,158,11,0.2); color: #f59e0b;">SUBUNIT 4 (4 People)</span>
+            </div>
+            <strong style="color: #fff; font-size: 13px;">Security & Hardware</strong>
+            <ul style="list-style: none; font-size: 11.5px; color: #cbd5e1; display: flex; flex-direction: column; gap: 5px; margin-top: 6px;">
+              <li><i class="fa-solid fa-user-tie" style="color: var(--emerald-primary); width: 14px;"></i> 1 Business Analyst (BA)</li>
+              <li><i class="fa-solid fa-user" style="color: var(--cyan-primary); width: 14px;"></i> 2 Frontend (FE) Engineers</li>
+              <li><i class="fa-solid fa-user" style="color: #818cf8; width: 14px;"></i> 1 Backend (BE) Engineer</li>
+              <li><i class="fa-solid fa-user-check" style="color: var(--amber-primary); width: 14px;"></i> 1 QC Test Engineer</li>
+            </ul>
+          </div>
+        </div></div>
       </div>
     </div>
 
