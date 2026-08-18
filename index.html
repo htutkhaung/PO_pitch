@@ -270,52 +270,193 @@
       </p>
     </div>
 
-    <!-- 4-Tier Interactive System Architecture -->
-    <div class="grid-4" style="margin-bottom: 24px;">
-      <div class="glass-card highlight-cyan">
-        <div style="font-size: 24px; color: var(--cyan-primary); margin-bottom: 10px;"><i class="fa-solid fa-tablet-screen-button"></i></div>
-        <strong style="font-size: 14px; color: #fff;">Tier 1: Edge & Hardware</strong>
-        <p style="font-size: 11px; color: var(--text-muted); margin: 6px 0;">Flutter + Native Android Kotlin</p>
-        <ul style="font-size: 11px; color: #cbd5e1; list-style: none; display: flex; flex-direction: column; gap: 4px;">
-          <li>• 21.5" Self-Service Kiosks</li>
-          <li>• 15.6" Desktop Cashier Terminals</li>
-          <li>• 203 DPI Masung Bitmap Rasterizer</li>
-          <li>• RS232 Weight Scale Parser</li>
-        </ul>
+    <!-- Interactive Tang Tang 4-Systems Operating Architecture Simulator -->
+    <div class="tangtang-sim-wrapper">
+      <div class="sim-telemetry-header">
+        <div>
+          <span class="section-tag" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald-primary);">LIVE INTERACTIVE EVENT MESH</span>
+          <h3 style="font-family: var(--font-heading); font-size: 20px; color: #fff; margin-top: 4px;">
+            <i class="fa-solid fa-network-wired" style="color: var(--cyan-primary); margin-right: 8px;"></i>
+            4-Tier Realtime Ecosystem: 2 Kiosks $\to$ Cloud DB $\to$ KDS & TV
+          </h3>
+        </div>
+        <div class="sim-live-stats">
+          <div class="stat-chip live"><i class="fa-solid fa-circle-dot fa-fade"></i> WEBSOCKET: CONNECTED</div>
+          <div class="stat-chip"><i class="fa-solid fa-gauge-high" style="color: var(--cyan-primary);"></i> LATENCY: <span id="sim-latency-metric" style="color: var(--cyan-primary); font-weight:700;">26ms</span></div>
+          <div class="stat-chip"><i class="fa-solid fa-shield-halved" style="color: var(--emerald-primary);"></i> 52 RLS ACTIVE</div>
+        </div>
       </div>
 
-      <div class="glass-card highlight-emerald">
-        <div style="font-size: 24px; color: var(--emerald-primary); margin-bottom: 10px;"><i class="fa-solid fa-database"></i></div>
-        <strong style="font-size: 14px; color: #fff;">Tier 2: Realtime Cloud</strong>
-        <p style="font-size: 11px; color: var(--text-muted); margin: 6px 0;">Supabase / PostgreSQL 15+</p>
-        <ul style="font-size: 11px; color: #cbd5e1; list-style: none; display: flex; flex-direction: column; gap: 4px;">
-          <li>• 36 Enterprise Schemas & Tables</li>
-          <li>• 52 Row-Level Security (RLS) Policies</li>
-          <li>• 22 Stored Atomic RPC Functions</li>
-          <li>• Sub-50ms Event Mesh via WebSockets</li>
-        </ul>
+      <!-- Main Visual Stage with 3 Columns & Connecting SVG Canvas -->
+      <div class="arch-visual-stage">
+        
+        <!-- Left: Tier 1 Edge Hardware (2 Kiosks + POS) -->
+        <div class="tier-column">
+          <span style="font-size: 10px; color: var(--cyan-primary); font-weight: 700; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 1px;">
+            Tier 1: Edge & Hardware (Flutter + Kotlin)
+          </span>
+
+          <!-- Kiosk 1 -->
+          <div class="device-node-card" id="node-kiosk-1">
+            <div class="device-icon-box" style="background: rgba(56, 189, 248, 0.15); color: var(--cyan-primary); border: 1px solid var(--border-accent);">
+              <i class="fa-solid fa-tablet-button"></i>
+            </div>
+            <div style="flex: 1;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong style="color: #fff; font-size: 12.5px;">21.5" Self-Kiosk #1</strong>
+                <span class="pod-badge" style="font-size: 8px;">Online</span>
+              </div>
+              <p style="font-size: 10px; color: var(--text-muted); margin-top: 2px;">RK3576V • Masung 203 DPI Rasterizer</p>
+            </div>
+          </div>
+
+          <!-- Kiosk 2 -->
+          <div class="device-node-card" id="node-kiosk-2">
+            <div class="device-icon-box" style="background: rgba(56, 189, 248, 0.15); color: var(--cyan-primary); border: 1px solid var(--border-accent);">
+              <i class="fa-solid fa-tablet-button"></i>
+            </div>
+            <div style="flex: 1;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong style="color: #fff; font-size: 12.5px;">21.5" Self-Kiosk #2</strong>
+                <span class="pod-badge" style="font-size: 8px;">Online</span>
+              </div>
+              <p style="font-size: 10px; color: var(--text-muted); margin-top: 2px;">RK3576V • 2D Omnidirectional Scanner</p>
+            </div>
+          </div>
+
+          <!-- Cashier Terminal -->
+          <div class="device-node-card" id="node-cashier-pos">
+            <div class="device-icon-box" style="background: rgba(245, 158, 11, 0.15); color: var(--amber-primary); border: 1px solid rgba(245, 158, 11, 0.3);">
+              <i class="fa-solid fa-cash-register"></i>
+            </div>
+            <div style="flex: 1;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong style="color: #fff; font-size: 12.5px;">15.6" Cashier POS (Sunmi)</strong>
+                <span class="pod-badge" style="font-size: 8px; background: rgba(245,158,11,0.2); color: var(--amber-primary);">Staff</span>
+              </div>
+              <p style="font-size: 10px; color: var(--text-muted); margin-top: 2px;">RS232 Weight Scale • BT-100U Drawer</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Center: Tier 2 Realtime Cloud Database & Event Mesh -->
+        <div class="tier-column" style="align-items: center;">
+          <span style="font-size: 10px; color: var(--emerald-primary); font-weight: 700; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 1px;">
+            Tier 2: Realtime Cloud (Supabase / Postgres 15+)
+          </span>
+
+          <div class="cloud-core-container" id="node-cloud-core">
+            <div class="cloud-core-icon">
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <div>
+              <h4 style="font-family: var(--font-heading); font-size: 16px; color: #fff; margin-bottom: 2px;">Supabase Realtime Hub</h4>
+              <p style="font-size: 11px; color: var(--cyan-primary); font-weight: 600;">PostgreSQL 15+ ACID Core</p>
+            </div>
+
+            <!-- Database specs chips -->
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; width: 100%; margin-top: 4px;">
+              <div style="background: rgba(15,23,42,0.85); border: 1px solid var(--border-subtle); padding: 5px; border-radius: 6px; font-size: 9.5px; color: #cbd5e1;">
+                <strong style="color: var(--cyan-primary);">36 Tables</strong> across 7 modules
+              </div>
+              <div style="background: rgba(15,23,42,0.85); border: 1px solid var(--border-subtle); padding: 5px; border-radius: 6px; font-size: 9.5px; color: #cbd5e1;">
+                <strong style="color: var(--emerald-primary);">52 RLS Policies</strong> per-branch
+              </div>
+              <div style="background: rgba(15,23,42,0.85); border: 1px solid var(--border-subtle); padding: 5px; border-radius: 6px; font-size: 9.5px; color: #cbd5e1;">
+                <strong style="color: var(--amber-primary);">22 Stored RPCs</strong> atomic logic
+              </div>
+              <div style="background: rgba(15,23,42,0.85); border: 1px solid var(--border-subtle); padding: 5px; border-radius: 6px; font-size: 9.5px; color: #cbd5e1;">
+                <strong style="color: var(--purple-primary);">&lt; 50ms</strong> WebSocket mesh
+              </div>
+            </div>
+
+            <div style="background: rgba(56, 189, 248, 0.1); border: 1px dashed rgba(56, 189, 248, 0.4); padding: 6px 12px; border-radius: 6px; width: 100%; font-size: 10px; color: #cbd5e1; display: flex; align-items: center; justify-content: center; gap: 6px;">
+              <i class="fa-solid fa-bolt" style="color: var(--amber-primary);"></i>
+              <span><code>deduct_inventory_on_payment()</code> Stored Proc</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Tiers 3 & 4 (Kitchen KDS, Next.js TV Queue & CDN) -->
+        <div class="tier-column">
+          <span style="font-size: 10px; color: var(--purple-primary); font-weight: 700; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 1px;">
+            Tiers 3 & 4: Operations & Output (React 19 / Next.js)
+          </span>
+
+          <!-- Kitchen KDS Screen -->
+          <div class="device-node-card" id="node-kds">
+            <div class="device-icon-box" style="background: rgba(16, 185, 129, 0.15); color: var(--emerald-primary); border: 1px solid rgba(16, 185, 129, 0.3);">
+              <i class="fa-solid fa-kitchen-set"></i>
+            </div>
+            <div style="flex: 1;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong style="color: #fff; font-size: 12.5px;">React 19 Kitchen KDS</strong>
+                <span id="kds-ticket-counter" class="pod-badge" style="font-size: 8px;">2 Cooking</span>
+              </div>
+              <p style="font-size: 10px; color: var(--text-muted); margin-top: 2px;">Live Order Grid • Prep Countdown Timers</p>
+            </div>
+          </div>
+
+          <!-- Next.js TV Queue Display -->
+          <div class="device-node-card" id="node-tv-queue">
+            <div class="device-icon-box" style="background: rgba(129, 140, 248, 0.15); color: var(--purple-primary); border: 1px solid rgba(129, 140, 248, 0.3);">
+              <i class="fa-solid fa-tv"></i>
+            </div>
+            <div style="flex: 1;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong style="color: #fff; font-size: 12.5px;">Next.js TV Queue Board</strong>
+                <span id="tv-ready-counter" class="pod-badge" style="font-size: 8px; background: rgba(129,140,248,0.2); color: var(--purple-primary);">1 Ready</span>
+              </div>
+              <p style="font-size: 10px; color: var(--text-muted); margin-top: 2px;">Web Speech Audio Chime • Multi-Lang Voice</p>
+            </div>
+          </div>
+
+          <!-- E-Receipt CDN -->
+          <div class="device-node-card" id="node-e-receipt">
+            <div class="device-icon-box" style="background: rgba(56, 189, 248, 0.15); color: var(--cyan-primary); border: 1px solid var(--border-accent);">
+              <i class="fa-solid fa-qrcode"></i>
+            </div>
+            <div style="flex: 1;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong style="color: #fff; font-size: 12.5px;">Cloud CDN E-Receipt</strong>
+                <span class="pod-badge" style="font-size: 8px;">Paperless</span>
+              </div>
+              <p style="font-size: 10px; color: var(--text-muted); margin-top: 2px;">Dynamic QR Code • Instant Cloud PDF</p>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <div class="glass-card">
-        <div style="font-size: 24px; color: var(--amber-primary); margin-bottom: 10px;"><i class="fa-solid fa-desktop"></i></div>
-        <strong style="font-size: 14px; color: #fff;">Tier 3: Admin & KDS</strong>
-        <p style="font-size: 11px; color: var(--text-muted); margin: 6px 0;">React 19 + Vite + TypeScript</p>
-        <ul style="font-size: 11px; color: #cbd5e1; list-style: none; display: flex; flex-direction: column; gap: 4px;">
-          <li>• Real-time Kitchen KDS Grid</li>
-          <li>• Recipe Costing & Inventory Audits</li>
-          <li>• Multi-Tenant Shift Reports</li>
-        </ul>
+      <!-- Interactive Action Simulation Bar -->
+      <div class="sim-buttons-panel">
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+          <button class="sim-trigger-btn" id="btn-sim-kiosk1">
+            <i class="fa-solid fa-plus-circle" style="color: var(--cyan-primary);"></i>
+            <span>Order Kiosk #1 (Mala Tang 620g)</span>
+          </button>
+          <button class="sim-trigger-btn" id="btn-sim-kiosk2">
+            <i class="fa-solid fa-plus-circle" style="color: var(--cyan-primary);"></i>
+            <span>Order Kiosk #2 (Fried Noodles)</span>
+          </button>
+          <button class="sim-trigger-btn kds-bump" id="btn-sim-bump">
+            <i class="fa-solid fa-bell" style="color: var(--emerald-primary);"></i>
+            <span>Kitchen Bump $\to$ TV Announcement</span>
+          </button>
+        </div>
+
+        <div>
+          <button class="sim-trigger-btn auto-stream" id="btn-sim-autostream">
+            <i class="fa-solid fa-play"></i>
+            <span id="autostream-label">Run Realtime Telemetry Demo</span>
+          </button>
+        </div>
       </div>
 
-      <div class="glass-card">
-        <div style="font-size: 24px; color: var(--purple-primary); margin-bottom: 10px;"><i class="fa-solid fa-tv"></i></div>
-        <strong style="font-size: 14px; color: #fff;">Tier 4: TV Queue & CDN</strong>
-        <p style="font-size: 11px; color: var(--text-muted); margin: 6px 0;">Next.js + Web Speech API</p>
-        <ul style="font-size: 11px; color: #cbd5e1; list-style: none; display: flex; flex-direction: column; gap: 4px;">
-          <li>• TV Pickup Queue Announcements</li>
-          <li>• Automated Voice Synthesis</li>
-          <li>• QR Digital E-Receipt PDF Pipeline</li>
-        </ul>
+      <!-- Live Telemetry Stream Ticker -->
+      <div class="live-feed-ticker" id="sim-live-ticker">
+        <i class="fa-solid fa-terminal" style="color: var(--cyan-primary);"></i>
+        <span id="ticker-text">SYSTEM READY: Listening for WebSocket events on 36 PostgreSQL tables (Latency: 26ms)...</span>
       </div>
     </div>
 
@@ -788,45 +929,75 @@
     <span class="deck-slide-badge">SLIDE 06 / 30</span>
     <h2 class="deck-slide-title">Tang Tang Architecture: 4 Systems Operating as One <span class="tag">SYSTEM BLUEPRINT</span></h2>
     <div class="deck-content">
-      <div class="grid-3" style="gap: 14px;">
-        <div class="tile highlight">
-          <div class="icon-box"><i class="fa-solid fa-tablet-button"></i></div>
-          <h3 style="font-size: 15px; color: #38bdf8;">Tier 1: Edge & Hardware</h3>
-          <p style="font-size: 10px; color: #64748b; font-weight: 700;">FLUTTER + NATIVE KOTLIN</p>
-          <ul class="bullet-list" style="font-size: 11px; margin-top: 4px;">
-            <li>21.5" Kiosks & 15.6" Desktop POS.</li>
-            <li>Custom Android Canvas 203 DPI bitmap rasterizer for Masung thermal printers.</li>
-            <li>RS232-to-USB serial drivers for digital weighing scale balances & cash drawers.</li>
-          </ul>
+      <div class="grid-3" style="grid-template-columns: 32% 36% 32%; gap: 12px; align-items: center;">
+        
+        <!-- Left: Tier 1 Edge Hardware -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid var(--border-accent); border-radius: 8px; padding: 10px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-tablet-button" style="color: #38bdf8; font-size: 16px;"></i>
+              <div>
+                <strong style="font-size: 11px; color: #fff;">2x 21.5" Self-Kiosks</strong>
+                <p style="font-size: 9px; color: #94a3b8;">Flutter • Native Kotlin • Masung 203 DPI</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid var(--border-accent); border-radius: 8px; padding: 10px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-cash-register" style="color: #f59e0b; font-size: 16px;"></i>
+              <div>
+                <strong style="font-size: 11px; color: #fff;">15.6" Cashier POS (Sunmi)</strong>
+                <p style="font-size: 9px; color: #94a3b8;">RS232 Weight Scale • BT-100U Drawer</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div class="tile accent">
-          <div class="icon-box"><i class="fa-solid fa-server"></i></div>
-          <h3 style="font-size: 15px; color: #10b981;">Tier 2: Realtime Cloud</h3>
-          <p style="font-size: 10px; color: #64748b; font-weight: 700;">SUPABASE + POSTGRESQL 15+</p>
-          <ul class="bullet-list" style="font-size: 11px; margin-top: 4px;">
-            <li>36 Logical Database Tables across 7 modules.</li>
-            <li>52 Row-Level Security (RLS) Policies partitioning branch permissions.</li>
-            <li>22 Stored RPC database functions handling atomic inventory & pricing logic.</li>
-          </ul>
+        <!-- Center: Tier 2 Cloud Database -->
+        <div style="background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.15) 0%, rgba(15, 23, 42, 0.95) 75%); border: 2px solid #38bdf8; border-radius: 12px; padding: 14px; text-align: center; box-shadow: 0 0 25px rgba(56, 189, 248, 0.2);">
+          <div style="width: 42px; height: 42px; background: linear-gradient(135deg, #0284c7, #10b981); border-radius: 10px; display: grid; place-items: center; margin: 0 auto 6px auto; font-size: 20px; color: #fff;">
+            <i class="fa-solid fa-database"></i>
+          </div>
+          <h4 style="font-size: 13px; color: #fff; font-family: 'Space Grotesk';">Supabase / Postgres 15+</h4>
+          <p style="font-size: 9.5px; color: #38bdf8; font-weight: 700;">Sub-50ms Realtime WebSocket Mesh</p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4px; margin-top: 8px; font-size: 8.5px;">
+            <div style="background: #0f172a; padding: 4px; border-radius: 4px; color: #cbd5e1;"><strong>36 Tables</strong></div>
+            <div style="background: #0f172a; padding: 4px; border-radius: 4px; color: #10b981;"><strong>52 RLS Policies</strong></div>
+            <div style="background: #0f172a; padding: 4px; border-radius: 4px; color: #f59e0b;"><strong>22 Stored RPCs</strong></div>
+            <div style="background: #0f172a; padding: 4px; border-radius: 4px; color: #818cf8;"><strong>Atomic ACID</strong></div>
+          </div>
         </div>
 
-        <div class="tile">
-          <div class="icon-box"><i class="fa-solid fa-desktop"></i></div>
-          <h3 style="font-size: 15px; color: #f59e0b;">Tiers 3 & 4: Web, KDS & TV</h3>
-          <p style="font-size: 10px; color: #64748b; font-weight: 700;">REACT 19 + NEXT.JS + CDN</p>
-          <ul class="bullet-list" style="font-size: 11px; margin-top: 4px;">
-            <li>React 19 Admin Portal & Kitchen KDS.</li>
-            <li>Next.js TV Queue display with automated Web Speech synthesis.</li>
-            <li>Digital QR E-Receipt CDN PDF pipeline for paperless checkout.</li>
-          </ul>
+        <!-- Right: Tiers 3 & 4 Operations -->
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 10px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-kitchen-set" style="color: #10b981; font-size: 16px;"></i>
+              <div>
+                <strong style="font-size: 11px; color: #fff;">React 19 Kitchen KDS</strong>
+                <p style="font-size: 9px; color: #94a3b8;">Real-time Order Grid • Prep Timers</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="background: rgba(15, 23, 42, 0.85); border: 1px solid rgba(129, 140, 248, 0.3); border-radius: 8px; padding: 10px;">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <i class="fa-solid fa-tv" style="color: #818cf8; font-size: 16px;"></i>
+              <div>
+                <strong style="font-size: 11px; color: #fff;">Next.js TV Queue & Voice</strong>
+                <p style="font-size: 9px; color: #94a3b8;">Web Speech Synthesizer • Digital QR CDN</p>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
 
-      <div style="margin-top: 14px; background: rgba(15, 23, 42, 0.9); padding: 10px 16px; border-radius: 8px; border: 1px dashed rgba(56, 189, 248, 0.4); text-align: center;">
-        <p style="color: #38bdf8; font-weight: 700; font-size: 12px;">
+      <div style="margin-top: 14px; background: rgba(15, 23, 42, 0.9); padding: 8px 14px; border-radius: 8px; border: 1px dashed rgba(56, 189, 248, 0.4); text-align: center;">
+        <p style="color: #38bdf8; font-weight: 700; font-size: 11px;">
           <i class="fa-solid fa-circle-check" style="color: #10b981; margin-right: 6px;"></i>
-          UNIFIED OPERATIONAL ECOSYSTEM — ZERO THIRD-PARTY INTEGRATION FRICTION OR RECURRING SOFTWARE MARKS
+          2 Kiosks Order $\to$ Supabase Atomic RPC $\to$ Sub-30ms Instant Broadcast to KDS & TV Queue
         </p>
       </div>
     </div>

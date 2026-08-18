@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initNotionAISimulator();
   initPresentationTimer();
   initDatabaseExplorer();
+  initTangTangSimulator();
 });
 
 // 1. Background Telemetry Particle Network
@@ -595,4 +596,155 @@ function initDatabaseExplorer() {
 
   filterInput.addEventListener('input', (e) => render(e.target.value.toLowerCase().trim()));
   render();
+}
+
+// 10. Tang Tang 4-Systems Live Interactive Architecture Simulator
+function initTangTangSimulator() {
+  const btnKiosk1 = document.getElementById('btn-sim-kiosk1');
+  const btnKiosk2 = document.getElementById('btn-sim-kiosk2');
+  const btnBump = document.getElementById('btn-sim-bump');
+  const btnAuto = document.getElementById('btn-sim-autostream');
+  const autoLabel = document.getElementById('autostream-label');
+  const ticker = document.getElementById('ticker-text');
+  const latencyMetric = document.getElementById('sim-latency-metric');
+  const kdsCounter = document.getElementById('kds-ticket-counter');
+  const tvCounter = document.getElementById('tv-ready-counter');
+
+  const nodeKiosk1 = document.getElementById('node-kiosk-1');
+  const nodeKiosk2 = document.getElementById('node-kiosk-2');
+  const nodeCloud = document.getElementById('node-cloud-core');
+  const nodeKds = document.getElementById('node-kds');
+  const nodeTv = document.getElementById('node-tv-queue');
+
+  let cookingCount = 2;
+  let readyCount = 1;
+  let orderSeq = 108;
+  let autoInterval = null;
+
+  function playChime(freq = 880, type = 'sine', duration = 0.15) {
+    try {
+      const AudioCtx = window.AudioContext || window.webkitAudioContext;
+      if (!AudioCtx) return;
+      const ctx = new AudioCtx();
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, ctx.currentTime);
+      gain.gain.setValueAtTime(0.08, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start();
+      osc.stop(ctx.currentTime + duration);
+    } catch(e) {}
+  }
+
+  function triggerKioskOrder(kioskNum, item, weight = '') {
+    const nodeKiosk = kioskNum === 1 ? nodeKiosk1 : nodeKiosk2;
+    orderSeq++;
+    const orderId = `A${orderSeq}`;
+    cookingCount++;
+    const lat = Math.floor(Math.random() * 12) + 20;
+
+    if (nodeKiosk) nodeKiosk.classList.add('active-pulse');
+    if (latencyMetric) latencyMetric.textContent = `${lat}ms`;
+
+    playChime(659, 'triangle', 0.12);
+
+    setTimeout(() => {
+      if (nodeKiosk) nodeKiosk.classList.remove('active-pulse');
+      if (nodeCloud) nodeCloud.classList.add('active-pulse');
+      playChime(880, 'sine', 0.15);
+
+      setTimeout(() => {
+        if (nodeCloud) nodeCloud.classList.remove('active-pulse');
+        if (nodeKds) nodeKds.classList.add('active-pulse');
+        if (kdsCounter) kdsCounter.textContent = `${cookingCount} Cooking`;
+
+        playChime(1046, 'sine', 0.2);
+
+        if (ticker) {
+          ticker.innerHTML = `<strong>[KIOSK ${kioskNum}]</strong> Order #${orderId} (${item} ${weight}) &rarr; <code>deduct_inventory_on_payment()</code> &rarr; <span style="color:#10b981;">Dispatched to React 19 KDS in ${lat}ms</span>.`;
+        }
+
+        setTimeout(() => {
+          if (nodeKds) nodeKds.classList.remove('active-pulse');
+        }, 600);
+      }, 250);
+    }, 200);
+  }
+
+  function triggerKitchenBump() {
+    if (cookingCount > 0) cookingCount--;
+    readyCount++;
+    const readyOrderId = `A${orderSeq - 1 > 100 ? orderSeq - 1 : 105}`;
+    const lat = Math.floor(Math.random() * 8) + 18;
+
+    if (nodeKds) nodeKds.classList.add('active-pulse');
+
+    setTimeout(() => {
+      if (nodeKds) nodeKds.classList.remove('active-pulse');
+      if (nodeCloud) nodeCloud.classList.add('active-pulse');
+
+      setTimeout(() => {
+        if (nodeCloud) nodeCloud.classList.remove('active-pulse');
+        if (nodeTv) nodeTv.classList.add('active-pulse');
+        if (kdsCounter) kdsCounter.textContent = `${cookingCount} Cooking`;
+        if (tvCounter) tvCounter.textContent = `${readyCount} Ready`;
+
+        playChime(1318, 'sine', 0.35);
+
+        if (ticker) {
+          ticker.innerHTML = `<strong>[KITCHEN KDS]</strong> Order #${readyOrderId} marked READY &rarr; <span style="color:#818cf8;">Next.js TV Board Web Speech Voice Broadcast (${lat}ms)</span>.`;
+        }
+
+        try {
+          if ('speechSynthesis' in window) {
+            const utter = new SpeechSynthesisUtterance(`Order ${readyOrderId} is ready for pickup`);
+            utter.rate = 1.05;
+            utter.volume = 0.6;
+            window.speechSynthesis.speak(utter);
+          }
+        } catch(e) {}
+
+        setTimeout(() => {
+          if (nodeTv) nodeTv.classList.remove('active-pulse');
+        }, 800);
+      }, 200);
+    }, 200);
+  }
+
+  if (btnKiosk1) {
+    btnKiosk1.addEventListener('click', () => triggerKioskOrder(1, 'Signature Mala Tang', '620g'));
+  }
+
+  if (btnKiosk2) {
+    btnKiosk2.addEventListener('click', () => triggerKioskOrder(2, 'Fried Egg Noodles', '+ Chrysanthemum Tea'));
+  }
+
+  if (btnBump) {
+    btnBump.addEventListener('click', triggerKitchenBump);
+  }
+
+  if (btnAuto) {
+    btnAuto.addEventListener('click', () => {
+      if (autoInterval) {
+        clearInterval(autoInterval);
+        autoInterval = null;
+        btnAuto.classList.remove('running');
+        if (autoLabel) autoLabel.textContent = 'Run Realtime Telemetry Demo';
+        if (ticker) ticker.textContent = 'SYSTEM READY: Listening for WebSocket events on 36 PostgreSQL tables (Latency: 26ms)...';
+      } else {
+        btnAuto.classList.add('running');
+        if (autoLabel) autoLabel.textContent = 'Stop Telemetry Demo';
+        let step = 0;
+        autoInterval = setInterval(() => {
+          if (step % 3 === 0) triggerKioskOrder(1, 'Mala Tang Bowl', `${450 + Math.floor(Math.random() * 300)}g`);
+          else if (step % 3 === 1) triggerKioskOrder(2, 'Braised Pork Rice', 'Combo Set');
+          else triggerKitchenBump();
+          step++;
+        }, 2200);
+      }
+    });
+  }
 }
