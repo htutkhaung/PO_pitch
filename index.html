@@ -820,28 +820,66 @@
     </div>
 
     
-    <!-- Interactive Map-Based CRM Visualizer -->
+    <!-- Interactive Map-Based CRM Visualizer with Dynamic Month / Season Demand Radii -->
     <div class="glass-card" style="margin-bottom: 24px; padding: 28px; background: radial-gradient(circle at 75% 30%, rgba(56, 189, 248, 0.08) 0%, #0f172a 80%);">
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 14px; margin-bottom: 20px;">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid var(--border-subtle); padding-bottom: 14px; margin-bottom: 18px; flex-wrap: wrap; gap: 12px;">
         <div>
           <h3 style="font-family: var(--font-heading); font-size: 20px; color: #fff; display: flex; align-items: center; gap: 8px;">
             <i class="fa-solid fa-earth-americas" style="color: var(--cyan-primary);"></i>
-            Interactive Map-Based Guest CRM (High-Volume Origin Radar)
+            Interactive World Map: Monthly & Seasonal Visitor Demand Radar
           </h3>
           <p style="font-size: 12.5px; color: var(--text-muted); margin-top: 4px;">
-            Click on any glowing country hub to inspect high-yield guest spending patterns, average stay, and automated direct marketing ROI.
+            Circle sizes dynamically scale in real time according to Koh Samui tourist volume, flight loads, and seasonal source market demand.
           </p>
         </div>
-        <div style="display: flex; gap: 8px;">
-          <span class="pod-badge" style="background: rgba(56,189,248,0.15); color: #38bdf8;"><i class="fa-solid fa-users"></i> 42,800+ Guest Profiles</span>
-          <span class="pod-badge" style="background: rgba(16,185,129,0.15); color: #10b981;"><i class="fa-solid fa-heart"></i> 34.2% Repeat Rate</span>
+        <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+          <span class="pod-badge" style="background: rgba(56,189,248,0.15); color: #38bdf8;"><i class="fa-solid fa-users"></i> 42,800+ Profiles</span>
+          <span class="pod-badge" id="map-demand-badge" style="background: rgba(16,185,129,0.2); color: #10b981; font-weight: 700;">DEMAND: PEAK (96.4%)</span>
+        </div>
+      </div>
+
+      <!-- Month & Season Switcher Toolbar -->
+      <div style="background: #080d1a; border: 1px solid var(--border-subtle); border-radius: 10px; padding: 12px 16px; margin-bottom: 18px; display: flex; flex-direction: column; gap: 10px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+          <span style="font-size: 11px; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px;">
+            <i class="fa-solid fa-calendar-days" style="color: var(--cyan-primary);"></i> Select Timeline / Month:
+          </span>
+          <div style="display: flex; gap: 6px; flex-wrap: wrap;">
+            <button class="season-pill-btn active" onclick="switchMapSeason('peak')" id="pill-season-peak">❄️ Peak Festive (Dec–Jan)</button>
+            <button class="season-pill-btn" onclick="switchMapSeason('cny')" id="pill-season-cny">🧧 Chinese New Year (Feb)</button>
+            <button class="season-pill-btn" onclick="switchMapSeason('songkran')" id="pill-season-songkran">💦 Songkran (Apr)</button>
+            <button class="season-pill-btn" onclick="switchMapSeason('summer')" id="pill-season-summer">☀️ EU Summer Peak (Jul–Aug)</button>
+            <button class="season-pill-btn" onclick="switchMapSeason('green')" id="pill-season-green">🌴 Green / Retreat (Sep–Nov)</button>
+          </div>
+        </div>
+
+        <!-- 12-Month Interactive Bar -->
+        <div class="month-selector-grid">
+          <button class="month-btn" onclick="switchMapMonth(0)">Jan</button>
+          <button class="month-btn" onclick="switchMapMonth(1)">Feb</button>
+          <button class="month-btn" onclick="switchMapMonth(2)">Mar</button>
+          <button class="month-btn" onclick="switchMapMonth(3)">Apr</button>
+          <button class="month-btn" onclick="switchMapMonth(4)">May</button>
+          <button class="month-btn" onclick="switchMapMonth(5)">Jun</button>
+          <button class="month-btn active" onclick="switchMapMonth(6)">Jul</button>
+          <button class="month-btn" onclick="switchMapMonth(7)">Aug</button>
+          <button class="month-btn" onclick="switchMapMonth(8)">Sep</button>
+          <button class="month-btn" onclick="switchMapMonth(9)">Oct</button>
+          <button class="month-btn" onclick="switchMapMonth(10)">Nov</button>
+          <button class="month-btn" onclick="switchMapMonth(11)">Dec</button>
         </div>
       </div>
 
       <div class="grid-2" style="grid-template-columns: 58% 39%; gap: 24px; align-items: center;">
-        <!-- Stylized Vector SVG World Map with Interactive Glowing Hubs -->
-        <div class="crm-map-container" style="background: #080d1a; border: 1px solid var(--border-accent); border-radius: 12px; padding: 18px; position: relative; min-height: 380px; display: flex; align-items: center; justify-content: center;">
-          <svg viewBox="0 0 800 420" style="width: 100%; height: 100%; filter: drop-shadow(0 0 15px rgba(56,189,248,0.1));">
+        <!-- Stylized Vector SVG World Map with Dynamically Sized Glowing Circles -->
+        <div class="crm-map-container" style="background: #080d1a; border: 1px solid var(--border-accent); border-radius: 12px; padding: 18px; position: relative; min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;">
+          
+          <div style="display: flex; justify-content: space-between; font-size: 11px; color: #94a3b8; margin-bottom: 6px;">
+            <span><strong id="active-month-label" style="color: #38bdf8;">JULY DEMAND PATTERN</strong> (European Family & Mid-East Peak)</span>
+            <span id="active-flight-load" style="color: #10b981;">Flight Load: 94.8% USM</span>
+          </div>
+
+          <svg id="world-map-svg" viewBox="0 0 800 420" style="width: 100%; height: 320px; filter: drop-shadow(0 0 15px rgba(56,189,248,0.1));">
             <defs>
               <radialGradient id="hub-glow-cyan" cx="50%" cy="50%" r="50%">
                 <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9"/>
@@ -863,6 +901,11 @@
                 <stop offset="60%" stop-color="#818cf8" stop-opacity="0.3"/>
                 <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
               </radialGradient>
+              <radialGradient id="hub-glow-rose" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.9"/>
+                <stop offset="60%" stop-color="#f43f5e" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#f43f5e" stop-opacity="0"/>
+              </radialGradient>
             </defs>
 
             <!-- Continents Outlines (Simplified Stylized SVG) -->
@@ -874,60 +917,62 @@
             <path d="M 640,270 Q 720,260 730,340 T 650,370 Q 620,320 640,270 Z" fill="#1e293b" opacity="0.35" />
 
             <!-- Connecting Flight Arcs into Koh Samui (Coords: ~600, 215) -->
-            <path class="flight-arc" d="M 410,120 Q 500,120 600,215" fill="none" stroke="rgba(56, 189, 248, 0.4)" stroke-dasharray="4,4" />
-            <path class="flight-arc" d="M 620,130 Q 620,170 600,215" fill="none" stroke="rgba(16, 185, 129, 0.4)" stroke-dasharray="4,4" />
-            <path class="flight-arc" d="M 500,170 Q 550,190 600,215" fill="none" stroke="rgba(129, 140, 248, 0.4)" stroke-dasharray="4,4" />
-            <path class="flight-arc" d="M 670,310 Q 640,260 600,215" fill="none" stroke="rgba(244, 63, 94, 0.4)" stroke-dasharray="4,4" />
+            <path id="arc-europe" class="flight-arc" d="M 410,120 Q 500,120 600,215" fill="none" stroke="rgba(56, 189, 248, 0.4)" stroke-dasharray="4,4" />
+            <path id="arc-china" class="flight-arc" d="M 620,130 Q 620,170 600,215" fill="none" stroke="rgba(16, 185, 129, 0.4)" stroke-dasharray="4,4" />
+            <path id="arc-thailand" class="flight-arc" d="M 585,195 Q 590,205 600,215" fill="none" stroke="rgba(245, 158, 11, 0.5)" stroke-dasharray="4,4" />
+            <path id="arc-gcc" class="flight-arc" d="M 500,170 Q 550,190 600,215" fill="none" stroke="rgba(129, 140, 248, 0.4)" stroke-dasharray="4,4" />
+            <path id="arc-australia" class="flight-arc" d="M 670,310 Q 640,260 600,215" fill="none" stroke="rgba(244, 63, 94, 0.4)" stroke-dasharray="4,4" />
 
             <!-- KOH SAMUI TARGET HUB -->
             <circle cx="600" cy="215" r="14" fill="rgba(245, 158, 11, 0.3)" />
             <circle cx="600" cy="215" r="6" fill="#f59e0b" filter="drop-shadow(0 0 8px #f59e0b)" />
             <text x="600" y="238" fill="#f59e0b" font-family="Space Grotesk" font-size="10" font-weight="700" text-anchor="middle">KOH SAMUI (MSG)</text>
 
-            <!-- INTERACTIVE COUNTRY HUBS (CLICKABLE) -->
+            <!-- INTERACTIVE COUNTRY HUBS (DYNAMICALLY SIZED RADII) -->
             <!-- 1. UK & Western Europe -->
             <g class="map-hub-group" onclick="selectCrmMarket('europe')" style="cursor: pointer;">
-              <circle cx="410" cy="120" r="32" fill="url(#hub-glow-cyan)" class="hub-pulse" />
-              <circle cx="410" cy="120" r="12" fill="#38bdf8" />
-              <text x="410" y="100" fill="#fff" font-family="Space Grotesk" font-size="11" font-weight="700" text-anchor="middle">🇬🇧 UK & Europe</text>
-              <text x="410" y="142" fill="#38bdf8" font-family="Space Grotesk" font-size="9" font-weight="600" text-anchor="middle">฿78.4M (31.5%)</text>
+              <circle id="hub-circle-europe-glow" cx="410" cy="120" r="38" fill="url(#hub-glow-cyan)" class="hub-pulse" />
+              <circle id="hub-circle-europe-core" cx="410" cy="120" r="14" fill="#38bdf8" />
+              <text x="410" y="96" fill="#fff" font-family="Space Grotesk" font-size="11" font-weight="700" text-anchor="middle">🇬🇧 UK & Europe</text>
+              <text id="hub-text-europe" x="410" y="146" fill="#38bdf8" font-family="Space Grotesk" font-size="9.5" font-weight="700" text-anchor="middle">38.5% Demand (High)</text>
             </g>
 
             <!-- 2. China & East Asia -->
             <g class="map-hub-group" onclick="selectCrmMarket('china')" style="cursor: pointer;">
-              <circle cx="620" cy="130" r="28" fill="url(#hub-glow-emerald)" class="hub-pulse" />
-              <circle cx="620" cy="130" r="11" fill="#10b981" />
+              <circle id="hub-circle-china-glow" cx="620" cy="130" r="26" fill="url(#hub-glow-emerald)" class="hub-pulse" />
+              <circle id="hub-circle-china-core" cx="620" cy="130" r="11" fill="#10b981" />
               <text x="620" y="110" fill="#fff" font-family="Space Grotesk" font-size="11" font-weight="700" text-anchor="middle">🇨🇳 China & HK</text>
-              <text x="620" y="152" fill="#10b981" font-family="Space Grotesk" font-size="9" font-weight="600" text-anchor="middle">฿64.2M (25.8%)</text>
+              <text id="hub-text-china" x="620" y="152" fill="#10b981" font-family="Space Grotesk" font-size="9.5" font-weight="700" text-anchor="middle">24.2% Demand</text>
             </g>
 
             <!-- 3. Thailand Domestic -->
             <g class="map-hub-group" onclick="selectCrmMarket('thailand')" style="cursor: pointer;">
-              <circle cx="585" cy="195" r="24" fill="url(#hub-glow-amber)" class="hub-pulse" />
-              <circle cx="585" cy="195" r="9" fill="#f59e0b" />
-              <text x="545" y="195" fill="#f8fafc" font-family="Space Grotesk" font-size="10" font-weight="700" text-anchor="end">🇹🇭 Thailand</text>
-              <text x="545" y="208" fill="#f59e0b" font-family="Space Grotesk" font-size="8.5" font-weight="600" text-anchor="end">฿48.6M (19.6%)</text>
+              <circle id="hub-circle-thailand-glow" cx="585" cy="195" r="20" fill="url(#hub-glow-amber)" class="hub-pulse" />
+              <circle id="hub-circle-thailand-core" cx="585" cy="195" r="8" fill="#f59e0b" />
+              <text x="540" y="195" fill="#f8fafc" font-family="Space Grotesk" font-size="10" font-weight="700" text-anchor="end">🇹🇭 Thailand</text>
+              <text id="hub-text-thailand" x="540" y="208" fill="#f59e0b" font-family="Space Grotesk" font-size="8.5" font-weight="700" text-anchor="end">14.8% Demand</text>
             </g>
 
             <!-- 4. Middle East & GCC -->
             <g class="map-hub-group" onclick="selectCrmMarket('gcc')" style="cursor: pointer;">
-              <circle cx="500" cy="170" r="22" fill="url(#hub-glow-purple)" class="hub-pulse" />
-              <circle cx="500" cy="170" r="8" fill="#818cf8" />
-              <text x="500" y="152" fill="#fff" font-family="Space Grotesk" font-size="10" font-weight="700" text-anchor="middle">🇦🇪 GCC / UAE</text>
-              <text x="500" y="190" fill="#818cf8" font-family="Space Grotesk" font-size="8.5" font-weight="600" text-anchor="middle">฿32.8M (13.2%)</text>
+              <circle id="hub-circle-gcc-glow" cx="500" cy="170" r="28" fill="url(#hub-glow-purple)" class="hub-pulse" />
+              <circle id="hub-circle-gcc-core" cx="500" cy="170" r="11" fill="#818cf8" />
+              <text x="500" y="150" fill="#fff" font-family="Space Grotesk" font-size="10" font-weight="700" text-anchor="middle">🇦🇪 GCC / UAE</text>
+              <text id="hub-text-gcc" x="500" y="190" fill="#818cf8" font-family="Space Grotesk" font-size="8.5" font-weight="700" text-anchor="middle">14.0% Demand</text>
             </g>
 
             <!-- 5. Australia & Oceania -->
             <g class="map-hub-group" onclick="selectCrmMarket('australia')" style="cursor: pointer;">
-              <circle cx="670" cy="310" r="20" fill="url(#hub-glow-cyan)" class="hub-pulse" />
-              <circle cx="670" cy="310" r="8" fill="#f43f5e" />
+              <circle id="hub-circle-australia-glow" cx="670" cy="310" r="18" fill="url(#hub-glow-rose)" class="hub-pulse" />
+              <circle id="hub-circle-australia-core" cx="670" cy="310" r="7" fill="#f43f5e" />
               <text x="670" y="292" fill="#fff" font-family="Space Grotesk" font-size="10" font-weight="700" text-anchor="middle">🇦🇺 Australia</text>
-              <text x="670" y="330" fill="#f43f5e" font-family="Space Grotesk" font-size="8.5" font-weight="600" text-anchor="middle">฿24.5M (9.9%)</text>
+              <text id="hub-text-australia" x="670" y="330" fill="#f43f5e" font-family="Space Grotesk" font-size="8.5" font-weight="700" text-anchor="middle">8.5% Demand</text>
             </g>
           </svg>
 
-          <div style="position: absolute; bottom: 12px; left: 16px; font-size: 10.5px; color: #64748b;">
-            <i class="fa-solid fa-hand-pointer" style="color: var(--cyan-primary);"></i> Click any colored hub to load detailed guest CRM cohort
+          <div style="display: flex; justify-content: space-between; font-size: 10.5px; color: #64748b; margin-top: 4px; border-top: 1px solid var(--border-subtle); padding-top: 8px;">
+            <span><i class="fa-solid fa-hand-pointer" style="color: var(--cyan-primary);"></i> Click any circle to load deep guest cohort CRM profile</span>
+            <span id="map-step-rec" style="color: #10b981; font-weight: 600;">AI Action: Enforce +18% ADR Multiplier</span>
           </div>
         </div>
 
@@ -971,6 +1016,7 @@
         </div>
       </div>
     </div>
+
 
     <!-- Live OTA Competitor Rate Scraper & Parity Intelligence Radar -->
     <div class="glass-card" style="margin-bottom: 24px; padding: 28px; background: radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.08) 0%, #0f172a 80%);">

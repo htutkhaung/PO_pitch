@@ -1137,3 +1137,244 @@ window.runLiveOtaScrape = function() {
     }
   }, 2600);
 };
+
+
+// 14. Switchable Monthly & Seasonal World Map Demand Engine
+const monthMapData = [
+  // 0: Jan
+  {
+    label: "JANUARY DEMAND PATTERN (Peak European Winter & Australia Escape)",
+    flightLoad: "Flight Load: 96.2% USM",
+    demandBadge: "DEMAND: PEAK (96.4%)",
+    demandColor: "#10b981",
+    recAction: "AI Action: Enforce +22% ADR Multiplier on Sea View Villas",
+    hubs: {
+      europe: { glowR: 38, coreR: 14, text: "38.5% Demand (Peak)" },
+      china: { glowR: 24, coreR: 10, text: "22.4% Demand" },
+      thailand: { glowR: 22, coreR: 9, text: "16.8% Demand" },
+      gcc: { glowR: 18, coreR: 8, text: "12.5% Demand" },
+      australia: { glowR: 26, coreR: 11, text: "9.8% Demand" }
+    }
+  },
+  // 1: Feb
+  {
+    label: "FEBRUARY DEMAND PATTERN (Chinese New Year Golden Week Surge)",
+    flightLoad: "Flight Load: 98.4% USM (Charters Active)",
+    demandBadge: "DEMAND: CNY SURGE (98.0%)",
+    demandColor: "#f43f5e",
+    recAction: "AI Action: Launch WeChat / Alipay Set Menus & High-Floor Upgrades",
+    hubs: {
+      europe: { glowR: 28, coreR: 11, text: "26.4% Demand" },
+      china: { glowR: 42, coreR: 16, text: "41.2% Demand (CNY Peak)" },
+      thailand: { glowR: 18, coreR: 8, text: "14.2% Demand" },
+      gcc: { glowR: 16, coreR: 7, text: "9.8% Demand" },
+      australia: { glowR: 20, coreR: 8, text: "8.4% Demand" }
+    }
+  },
+  // 2: Mar
+  {
+    label: "MARCH DEMAND PATTERN (Transition / Shoulder Season Inflow)",
+    flightLoad: "Flight Load: 78.5% USM",
+    demandBadge: "DEMAND: MODERATE (76.2%)",
+    demandColor: "#38bdf8",
+    recAction: "AI Action: Uncap 2-night minimum stay restrictions",
+    hubs: {
+      europe: { glowR: 30, coreR: 11, text: "31.2% Demand" },
+      china: { glowR: 22, coreR: 9, text: "22.5% Demand" },
+      thailand: { glowR: 24, coreR: 10, text: "23.8% Demand" },
+      gcc: { glowR: 18, coreR: 8, text: "12.5% Demand" },
+      australia: { glowR: 20, coreR: 8, text: "10.0% Demand" }
+    }
+  },
+  // 3: Apr
+  {
+    label: "APRIL DEMAND PATTERN (Songkran Water Festival Domestic Peak)",
+    flightLoad: "Flight Load: 97.5% USM (BKK Shuttle Frequency)",
+    demandBadge: "DEMAND: SONGKRAN PEAK (97.2%)",
+    demandColor: "#f59e0b",
+    recAction: "AI Action: Step Domestic Dining Bundles (Babou & Tang Tang)",
+    hubs: {
+      europe: { glowR: 22, coreR: 9, text: "21.5% Demand" },
+      china: { glowR: 24, coreR: 10, text: "22.8% Demand" },
+      thailand: { glowR: 44, coreR: 17, text: "42.5% Demand (Songkran #1)" },
+      gcc: { glowR: 16, coreR: 7, text: "6.8% Demand" },
+      australia: { glowR: 18, coreR: 8, text: "6.4% Demand" }
+    }
+  },
+  // 4: May
+  {
+    label: "MAY DEMAND PATTERN (Green Season Wellness & Family Packages)",
+    flightLoad: "Flight Load: 71.0% USM",
+    demandBadge: "DEMAND: GREEN (68.5%)",
+    demandColor: "#f59e0b",
+    recAction: "AI Action: Package Cave Rai Ra Spa credits with direct villa stays",
+    hubs: {
+      europe: { glowR: 24, coreR: 9, text: "25.2% Demand" },
+      china: { glowR: 26, coreR: 10, text: "26.8% Demand (May Labor Day)" },
+      thailand: { glowR: 28, coreR: 11, text: "28.0% Demand" },
+      gcc: { glowR: 20, coreR: 8, text: "11.5% Demand" },
+      australia: { glowR: 18, coreR: 8, text: "8.5% Demand" }
+    }
+  },
+  // 5: Jun
+  {
+    label: "JUNE DEMAND PATTERN (Early European Summer & Middle East FITs)",
+    flightLoad: "Flight Load: 82.4% USM",
+    demandBadge: "DEMAND: CLIMBING (81.0%)",
+    demandColor: "#38bdf8",
+    recAction: "AI Action: Shift Google Ad Budget to UK & Scandinavian Brand Search",
+    hubs: {
+      europe: { glowR: 32, coreR: 12, text: "33.5% Demand" },
+      china: { glowR: 24, coreR: 10, text: "23.4% Demand" },
+      thailand: { glowR: 22, coreR: 9, text: "19.2% Demand" },
+      gcc: { glowR: 26, coreR: 11, text: "15.4% Demand" },
+      australia: { glowR: 18, coreR: 8, text: "8.5% Demand" }
+    }
+  },
+  // 6: Jul
+  {
+    label: "JULY DEMAND PATTERN (European Family Holidays & Middle East Peak)",
+    flightLoad: "Flight Load: 95.8% USM",
+    demandBadge: "DEMAND: SUMMER PEAK (95.5%)",
+    demandColor: "#10b981",
+    recAction: "AI Action: Enforce 3-night minimum stay & +18% ADR step on Grand Villas",
+    hubs: {
+      europe: { glowR: 42, coreR: 16, text: "41.2% Demand (EU Summer)" },
+      china: { glowR: 26, coreR: 10, text: "24.5% Demand" },
+      thailand: { glowR: 18, coreR: 8, text: "13.5% Demand" },
+      gcc: { glowR: 30, coreR: 12, text: "16.8% Demand (GCC Escape)" },
+      australia: { glowR: 16, coreR: 7, text: "4.0% Demand" }
+    }
+  },
+  // 7: Aug
+  {
+    label: "AUGUST DEMAND PATTERN (European Peak & Italian Ferragosto Surge)",
+    flightLoad: "Flight Load: 96.4% USM",
+    demandBadge: "DEMAND: HIGH SUMMER (96.2%)",
+    demandColor: "#10b981",
+    recAction: "AI Action: Lock out OTA allotments on beachfront pool suites",
+    hubs: {
+      europe: { glowR: 44, coreR: 17, text: "43.8% Demand (Peak EU)" },
+      china: { glowR: 24, coreR: 10, text: "22.1% Demand" },
+      thailand: { glowR: 18, coreR: 8, text: "12.8% Demand" },
+      gcc: { glowR: 26, coreR: 11, text: "14.2% Demand" },
+      australia: { glowR: 16, coreR: 7, text: "7.1% Demand" }
+    }
+  },
+  // 8: Sep
+  {
+    label: "SEPTEMBER DEMAND PATTERN (Long-Stay Retirees & Direct Corporate)",
+    flightLoad: "Flight Load: 68.2% USM",
+    demandBadge: "DEMAND: SHOULDER (67.4%)",
+    demandColor: "#f59e0b",
+    recAction: "AI Action: Promote 14-day extended stay long-stay packages",
+    hubs: {
+      europe: { glowR: 28, coreR: 11, text: "30.5% Demand" },
+      china: { glowR: 24, coreR: 10, text: "24.2% Demand" },
+      thailand: { glowR: 24, coreR: 10, text: "24.5% Demand" },
+      gcc: { glowR: 18, coreR: 8, text: "11.2% Demand" },
+      australia: { glowR: 20, coreR: 9, text: "9.6% Demand" }
+    }
+  },
+  // 9: Oct
+  {
+    label: "OCTOBER DEMAND PATTERN (Chinese Golden Week National Day Peak)",
+    flightLoad: "Flight Load: 89.2% USM",
+    demandBadge: "DEMAND: GOLDEN WEEK (89.0%)",
+    demandColor: "#10b981",
+    recAction: "AI Action: Launch Chinese language dining & excursion concierge",
+    hubs: {
+      europe: { glowR: 26, coreR: 10, text: "27.5% Demand" },
+      china: { glowR: 38, coreR: 15, text: "37.8% Demand (Golden Wk)" },
+      thailand: { glowR: 22, coreR: 9, text: "19.5% Demand" },
+      gcc: { glowR: 16, coreR: 7, text: "8.2% Demand" },
+      australia: { glowR: 18, coreR: 8, text: "7.0% Demand" }
+    }
+  },
+  // 10: Nov
+  {
+    label: "NOVEMBER DEMAND PATTERN (Early Winter Inflow & Loy Krathong)",
+    flightLoad: "Flight Load: 84.5% USM",
+    demandBadge: "DEMAND: EXPANDING (84.0%)",
+    demandColor: "#38bdf8",
+    recAction: "AI Action: Open high-season rate cards with 10% early bird incentive",
+    hubs: {
+      europe: { glowR: 34, coreR: 13, text: "35.2% Demand" },
+      china: { glowR: 22, coreR: 9, text: "21.0% Demand" },
+      thailand: { glowR: 26, coreR: 10, text: "25.4% Demand (Loy Krathong)" },
+      gcc: { glowR: 18, coreR: 8, text: "10.5% Demand" },
+      australia: { glowR: 18, coreR: 8, text: "7.9% Demand" }
+    }
+  },
+  // 11: Dec
+  {
+    label: "DECEMBER DEMAND PATTERN (Global Festive Peak & New Year Eve)",
+    flightLoad: "Flight Load: 99.1% USM (Peak Capacity)",
+    demandBadge: "DEMAND: FESTIVE 100%",
+    demandColor: "#10b981",
+    recAction: "AI Action: Enforce compulsory NYE Gala Dinner package + 4-night minimum",
+    hubs: {
+      europe: { glowR: 44, coreR: 17, text: "44.2% Demand (Festive)" },
+      china: { glowR: 22, coreR: 9, text: "20.5% Demand" },
+      thailand: { glowR: 26, coreR: 10, text: "21.8% Demand (NYE)" },
+      gcc: { glowR: 22, coreR: 9, text: "8.5% Demand" },
+      australia: { glowR: 24, coreR: 10, text: "5.0% Demand" }
+    }
+  }
+];
+
+window.switchMapMonth = function(monthIdx) {
+  const data = monthMapData[monthIdx] || monthMapData[6];
+
+  // Update month buttons active state
+  document.querySelectorAll('.month-btn').forEach((btn, idx) => {
+    btn.classList.toggle('active', idx === monthIdx);
+  });
+
+  // Update header text & badges
+  document.getElementById('active-month-label').textContent = data.label.split('(')[0].trim();
+  document.getElementById('active-flight-load').textContent = data.flightLoad;
+  const badge = document.getElementById('map-demand-badge');
+  if (badge) {
+    badge.textContent = data.demandBadge;
+    badge.style.color = data.demandColor;
+  }
+  const recEl = document.getElementById('map-step-rec');
+  if (recEl) recEl.textContent = data.recAction;
+
+  // Animate SVG Circle Radii dynamically
+  for (const [key, hub] of Object.entries(data.hubs)) {
+    const glowEl = document.getElementById(`hub-circle-${key}-glow`);
+    const coreEl = document.getElementById(`hub-circle-${key}-core`);
+    const textEl = document.getElementById(`hub-text-${key}`);
+
+    if (glowEl) {
+      glowEl.setAttribute('r', hub.glowR);
+      glowEl.style.transition = 'r 0.45s ease-out';
+    }
+    if (coreEl) {
+      coreEl.setAttribute('r', hub.coreR);
+      coreEl.style.transition = 'r 0.45s ease-out';
+    }
+    if (textEl) {
+      textEl.textContent = hub.text;
+    }
+  }
+};
+
+window.switchMapSeason = function(seasonKey) {
+  document.querySelectorAll('.season-pill-btn').forEach(btn => btn.classList.remove('active'));
+  const activeBtn = document.getElementById(`pill-season-${seasonKey}`);
+  if (activeBtn) activeBtn.classList.add('active');
+
+  const seasonMap = {
+    peak: 11, // Dec
+    cny: 1,   // Feb
+    songkran: 3, // Apr
+    summer: 6, // Jul
+    green: 8   // Sep
+  };
+
+  const targetMonth = seasonMap[seasonKey] !== undefined ? seasonMap[seasonKey] : 6;
+  switchMapMonth(targetMonth);
+};

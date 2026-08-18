@@ -1183,3 +1183,62 @@ body {
 .travel-packet {
   box-shadow: 0 0 10px #38bdf8;
 }
+
+
+/* Month Selector Grid & Season Pills */
+.season-pill-btn {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--border-subtle);
+  color: #cbd5e1;
+  font-size: 10.5px;
+  font-family: var(--font-heading);
+  padding: 4px 10px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.season-pill-btn:hover, .season-pill-btn.active {
+  background: rgba(56, 189, 248, 0.2);
+  border-color: var(--cyan-primary);
+  color: #fff;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
+
+.month-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 4px;
+}
+
+.month-btn {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #94a3b8;
+  font-size: 11px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  padding: 6px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.month-btn:hover {
+  color: #fff;
+  border-color: var(--cyan-primary);
+}
+.month-btn.active {
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  color: #fff;
+  font-weight: 700;
+  border-color: var(--cyan-primary);
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+}
+
+.hub-pulse {
+  animation: hub-glow-anim 2.5s infinite alternate;
+}
+@keyframes hub-glow-anim {
+  0% { transform-origin: center; opacity: 0.7; }
+  100% { transform-origin: center; opacity: 1.0; }
+}
