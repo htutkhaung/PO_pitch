@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autonomous Hospitality & Real Asset Intelligence | MSG TECH</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Dynamic Background Canvas -->
+<canvas id="bg-telemetry-canvas"></canvas>
+
+<!-- Top Fixed Header -->
+<header class="app-header">
+  <div class="brand-badge">
+    <div class="brand-logo">MSG</div>
+    <div>
+      <h1 class="brand-title">MSG TECH LEADERSHIP</h1>
+      <p class="brand-subtitle">Muang Samui Group Transformation</p>
+    </div>
+  </div>
+
+  <div class="header-center-nav">
+    <button class="nav-mode-btn active" id="btn-mode-scrolly">
+      <i class="fa-solid fa-film"></i> Scrollytelling Journey
+    </button>
+    <button class="nav-mode-btn" id="btn-mode-deck">
+      <i class="fa-solid fa-chalkboard-user"></i> 30-Slide Executive Deck
+    </button>
+  </div>
+
+  <div class="header-actions">
+    <div class="timer-pill">
+      <i class="fa-regular fa-clock"></i>
+      <span id="presentation-timer-display">30:00</span>
+    </div>
+    <button class="btn-action-sm" onclick="window.print()">
+      <i class="fa-solid fa-file-pdf"></i> Export PDF
+    </button>
+  </div>
+</header>
+
+<!-- ========================================================================= -->
+<!-- MODE 1: SCROLLYTELLING JOURNEY (Interactive Narrative Experience)       -->
+<!-- ========================================================================= -->
+<main id="scrollytelling-mode-view" class="scrollytelling-wrapper" style="padding-top: 60px;">
+
+  <!-- SECTION 1: Sticky Scroll-Driven Canvas Scrubber Hero -->
+  <section class="scrubber-hero-section">
+    <div class="scrubber-sticky-viewport">
+      <div class="scrubber-canvas-container">
+        <canvas id="scrubber-canvas"></canvas>
+      </div>
+
+      <!-- Scrubber Overlay Content (Syncs with scroll) -->
+      <div class="scrubber-narrative-overlay" id="scrubber-narrative">
+        <span class="section-tag">EXECUTIVE TRANSFORMATIONAL BLUEPRINT</span>
+        <h2 style="font-family: var(--font-heading); font-size: 32px; color: #fff; margin: 10px 0 14px 0;">
+          Autonomous Hospitality & Real Asset Intelligence
+        </h2>
+        <p style="color: var(--text-muted); font-size: 15px; line-height: 1.6; max-width: 720px; margin: 0 auto 16px auto;">
+          Modernizing Muang Samui Group Operations from Fragmented Legacy Systems to an Integrated Enterprise Operating Engine.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 16px; font-size: 12px; color: #cbd5e1;">
+          <span><i class="fa-solid fa-hotel" style="color: var(--cyan-primary);"></i> 2 Premier 5-Star Resorts</span>
+          <span><i class="fa-solid fa-utensils" style="color: var(--emerald-primary);"></i> 4 Standalone Dining Outlets</span>
+          <span><i class="fa-solid fa-map-location-dot" style="color: var(--amber-primary);"></i> Prime Island Real Estate</span>
+        </div>
+      </div>
+
+      <!-- Live Scrubber Wheel Indicator -->
+      <div class="scrubber-progress-indicator">
+        <i class="fa-solid fa-mouse-pointer"></i>
+        <span>SCROLL TO SCRUB ARCHITECTURE</span>
+        <div class="scrubber-progress-bar">
+          <div class="scrubber-progress-fill" id="scrubber-fill"></div>
+        </div>
+        <span id="scrubber-frame-idx">FRAME 001 / 120</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: The Big 4 PO Governance Framework (PO vs. BA) -->
+  <section class="content-section" id="section-big4-po">
+    <div class="section-header">
+      <span class="section-tag">STRATEGIC GOVERNANCE</span>
+      <h2 class="section-title">Executive PO vs. Tactical BA: Big 4 Governance Model</h2>
+      <p class="section-subtitle">
+        How Deloitte, EY, PwC, and KPMG structure product leadership: Why comparing a dual PO/PM Lead to a tactical Business Analyst is comparing a tornado to a light breeze.
+      </p>
+    </div>
+
+    <!-- Interactive Big 4 Hierarchy Visualizer -->
+    <div class="glass-card highlight-cyan" style="margin-bottom: 30px;">
+      <h3 style="font-family: var(--font-heading); font-size: 18px; color: #fff; margin-bottom: 6px;">
+        <i class="fa-solid fa-sitemap" style="color: var(--cyan-primary); margin-right: 8px;"></i>
+        Big 4 Enterprise Delivery Structure
+      </h3>
+      <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">
+        The Product Owner (PO) acts as the "Mini-CEO" of the digital ecosystem, owning Backlog, Vision, API Contracts, and Financial ROI across all subunits.
+      </p>
+
+      <div class="org-chart-wrapper">
+        <div class="org-node executive">
+          <span style="font-size: 10px; color: var(--text-dim); text-transform: uppercase; font-weight: 700;">Executive Tier</span>
+          <h4 style="font-size: 15px; color: #fff;">CEO / VP / Managing Director</h4>
+          <p style="font-size: 11px; color: var(--cyan-primary);">Sets High-Level Commercial Strategy & Group Targets</p>
+        </div>
+
+        <div style="width: 2px; height: 24px; background: var(--border-accent);"></div>
+
+        <div style="display: flex; gap: 20px;">
+          <div class="org-node steering-po">
+            <span class="pod-badge" style="background: rgba(56, 189, 248, 0.2); color: var(--cyan-primary);">STEERING TIER (MINI-CEO)</span>
+            <h4 style="font-size: 16px; color: #38bdf8; margin: 4px 0;">PRODUCT OWNER (PO)</h4>
+            <p style="font-size: 11.5px; color: #cbd5e1;">Owns Entire Product Vision, Backlog Prioritization, Cross-System Architecture & Commercial ROI</p>
+          </div>
+
+          <div class="org-node steering-pm">
+            <span class="pod-badge" style="background: rgba(148, 163, 184, 0.2); color: #cbd5e1;">DELIVERY TIER</span>
+            <h4 style="font-size: 15px; color: #f8fafc; margin: 4px 0;">Project Manager / Scrum Master</h4>
+            <p style="font-size: 11px; color: var(--text-muted);">Owns Sprint Cadence, Velocity, Blocker Removal & PMO Cadence</p>
+          </div>
+        </div>
+
+        <div style="width: 2px; height: 24px; background: var(--border-subtle);"></div>
+
+        <div class="org-pods-grid">
+          <div class="pod-card">
+            <span class="pod-badge">SUBUNIT 1</span>
+            <strong style="color: #fff; font-size: 13px;">Core PMS & Folios</strong>
+            <ul style="list-style: none; font-size: 11px; color: var(--text-muted); display: flex; flex-direction: column; gap: 3px;">
+              <li><i class="fa-solid fa-user-pen" style="color: var(--emerald-primary);"></i> 1 Business Analyst (BA)</li>
+              <li><i class="fa-solid fa-code"></i> 2 FE + 1 BE Engineers</li>
+              <li><i class="fa-solid fa-vial"></i> 1 QC Test Engineer</li>
+            </ul>
+          </div>
+
+          <div class="pod-card">
+            <span class="pod-badge">SUBUNIT 2</span>
+            <strong style="color: #fff; font-size: 13px;">Data & Analytics</strong>
+            <ul style="list-style: none; font-size: 11px; color: var(--text-muted); display: flex; flex-direction: column; gap: 3px;">
+              <li><i class="fa-solid fa-user-pen" style="color: var(--emerald-primary);"></i> 1 Business Analyst (BA)</li>
+              <li><i class="fa-solid fa-code"></i> 2 FE + 1 BE Engineers</li>
+              <li><i class="fa-solid fa-vial"></i> 1 QC Test Engineer</li>
+            </ul>
+          </div>
+
+          <div class="pod-card">
+            <span class="pod-badge">SUBUNIT 3</span>
+            <strong style="color: #fff; font-size: 13px;">System Integrations</strong>
+            <ul style="list-style: none; font-size: 11px; color: var(--text-muted); display: flex; flex-direction: column; gap: 3px;">
+              <li><i class="fa-solid fa-user-pen" style="color: var(--emerald-primary);"></i> 1 Business Analyst (BA)</li>
+              <li><i class="fa-solid fa-code"></i> 2 FE + 1 BE Engineers</li>
+              <li><i class="fa-solid fa-vial"></i> 1 QC Test Engineer</li>
+            </ul>
+          </div>
+
+          <div class="pod-card">
+            <span class="pod-badge">SUBUNIT 4</span>
+            <strong style="color: #fff; font-size: 13px;">Security & Hardware</strong>
+            <ul style="list-style: none; font-size: 11px; color: var(--text-muted); display: flex; flex-direction: column; gap: 3px;">
+              <li><i class="fa-solid fa-user-pen" style="color: var(--emerald-primary);"></i> 1 Business Analyst (BA)</li>
+              <li><i class="fa-solid fa-code"></i> 2 FE + 1 BE Engineers</li>
+              <li><i class="fa-solid fa-vial"></i> 1 QC Test Engineer</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PO vs BA Direct Matrix -->
+    <div class="grid-2">
+      <div class="glass-card">
+        <h4 style="font-family: var(--font-heading); color: var(--cyan-primary); font-size: 16px; margin-bottom: 12px;">
+          Product Owner (PO) Dimension
+        </h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 13px;">
+          <li><i class="fa-solid fa-circle-check" style="color: var(--cyan-primary); margin-right: 8px;"></i> <strong>Mandate:</strong> Owns the Vision, Backlog, and Business ROI.</li>
+          <li><i class="fa-solid fa-circle-check" style="color: var(--cyan-primary); margin-right: 8px;"></i> <strong>Scope:</strong> Enterprise-wide authority above all pods.</li>
+          <li><i class="fa-solid fa-circle-check" style="color: var(--cyan-primary); margin-right: 8px;"></i> <strong>Decision Power:</strong> Final decision-maker on what gets built or discarded.</li>
+          <li><i class="fa-solid fa-circle-check" style="color: var(--cyan-primary); margin-right: 8px;"></i> <strong>Level of Experience:</strong> Requires deep multi-architecture, financial, and operational mastery.</li>
+        </ul>
+      </div>
+
+      <div class="glass-card">
+        <h4 style="font-family: var(--font-heading); color: var(--text-muted); font-size: 16px; margin-bottom: 12px;">
+          Business Analyst (BA) Dimension
+        </h4>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 10px; font-size: 13px; color: var(--text-muted);">
+          <li><i class="fa-solid fa-arrow-right" style="color: var(--emerald-primary); margin-right: 8px;"></i> <strong>Mandate:</strong> Documents requirements detail and workflow mechanics.</li>
+          <li><i class="fa-solid fa-arrow-right" style="color: var(--emerald-primary); margin-right: 8px;"></i> <strong>Scope:</strong> Pod-level; analyzes specific features inside a single sub-unit.</li>
+          <li><i class="fa-solid fa-arrow-right" style="color: var(--emerald-primary); margin-right: 8px;"></i> <strong>Decision Power:</strong> Investigator / Specifier — does not make commercial product decisions.</li>
+          <li><i class="fa-solid fa-arrow-right" style="color: var(--emerald-primary); margin-right: 8px;"></i> <strong>Execution:</strong> Reports tickets to the PO and Dev Leads for approval.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Discovery Pricing & Valuation Calculator -->
+    <div class="calc-container">
+      <div class="calc-input-group">
+        <h4 style="font-family: var(--font-heading); color: #fff; font-size: 16px;">
+          <i class="fa-solid fa-calculator" style="color: var(--cyan-primary); margin-right: 8px;"></i>
+          Pre-Project Discovery Session Valuation
+        </h4>
+        <p style="font-size: 12px; color: var(--text-muted);">
+          What top-tier consultancies charge for pre-project architecture viability and cross-system diagnostics before development begins.
+        </p>
+
+        <label style="font-size: 12px; font-weight: 700; color: #cbd5e1;">Consultant / Advisory Tier:</label>
+        <select id="calc-tier-select" style="background: #0f172a; border: 1px solid var(--border-accent); color: #fff; padding: 10px; border-radius: 8px; font-family: var(--font-heading); font-size: 12px;">
+          <option value="big4">Big 4 Senior Director / Partner ($350 – $600+/hr)</option>
+          <option value="boutique">Boutique Software Agency Lead ($200 – $350/hr)</option>
+          <option value="independent" selected>Strategic PO & Systems Architect ($175 – $300/hr)</option>
+        </select>
+
+        <div style="display: flex; justify-content: space-between; font-size: 12px; margin-top: 8px;">
+          <span>Discovery Session Duration:</span>
+          <strong id="calc-hours-val" style="color: var(--cyan-primary);">3 Hours</strong>
+        </div>
+        <input type="range" id="calc-hours-slider" min="1" max="10" value="3" class="calc-slider">
+      </div>
+
+      <div class="calc-output-box">
+        <span style="font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 1px;">Estimated Advisory Value</span>
+        <div class="calc-price-display" id="calc-total-fee">$675 USD</div>
+        <p style="font-size: 11px; color: var(--text-muted); margin-top: 8px;" id="calc-package-desc">
+          Includes: 3-hr architecture discovery workshop + cross-system data audit + executive transformation blueprint.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: The Tang Tang Benchmark (Proven Solo Mastery) -->
+  <section class="content-section" id="section-tang-tang">
+    <div class="section-header">
+      <span class="section-tag">PROVEN SOLO FULL-STACK TRACK RECORD</span>
+      <h2 class="section-title">The Tang Tang Benchmark: 4 Systems Operating as One</h2>
+      <p class="section-subtitle">
+        Proving complete end-to-end technical mastery: Building a 4-tier edge-hardware, real-time database, KDS, and Next.js TV queue engine solo.
+      </p>
+    </div>
+
+    <!-- 4-Tier Interactive System Architecture -->
+    <div class="grid-4" style="margin-bottom: 24px;">
+      <div class="glass-card highlight-cyan">
+        <div style="font-size: 24px; color: var(--cyan-primary); margin-bottom: 10px;"><i class="fa-solid fa-tablet-screen-button"></i></div>
+        <strong style="font-size: 14px; color: #fff;">Tier 1: Edge & Hardware</strong>
+        <p style="font-size: 11px; color: var(--text-muted); margin: 6px 0;">Flutter + Native Android Kotlin</p>
+        <ul style="font-size: 11px; color: #cbd5e1; list-style: none; display: flex; flex-direction: column; gap: 4px;">
+          <li>• 21.5" Self-Service Kiosks</li>
+          <li>• 15.6" Desktop Cashier Terminals</li>
+          <li>• 203 DPI Masung Bitmap Rasterizer</li>
+          <li>• RS232 Weight Scale Parser</li>
+        </ul>
+      </div>
+
+      <div class="glass-card highlight-emerald">
+        <div style="font-size: 24px; color: var(--emerald-primary); margin-bottom: 10px;"><i class="fa-solid fa-database"></i></div>
+        <strong style="font-size: 14px; color: #fff;">Tier 2: Realtime Cloud</strong>
+        <p style="font-size: 11px; color: var(--text-muted); margin: 6px 0;">Supabase / PostgreSQL 15+</p>
+        <ul style="font-size: 11px; color: #cbd5e1; list-style: none; display: flex; flex-direction: column; gap: 4px;">
+          <li>• 36 Enterprise Schemas & Tables</li>
+          <li>• 52 Row-Level Security (RLS) Policies</li>
+          <li>• 22 Stored Atomic RPC Functions</li>
+          <li>• Sub-50ms Event Mesh via WebSockets</li>
+        </ul>
+      </div>
+
+      <div class="glass-card">
+        <div style="font-size: 24px; color: var(--amber-primary); margin-bottom: 10px;"><i class="fa-solid fa-desktop"></i></div>
+        <strong style="font-size: 14px; color: #fff;">Tier 3: Admin & KDS</strong>
+        <p style="font-size: 11px; color: var(--text-muted); margin: 6px 0;">React 19 + Vite + TypeScript</p>
+        <ul style="font-size: 11px; color: #cbd5e1; list-style: none; display: flex; flex-direction: column; gap: 4px;">
+          <li>• Real-time Kitchen KDS Grid</li>
+          <li>• Recipe Costing & Inventory Audits</li>
+          <li>• Multi-Tenant Shift Reports</li>
+        </ul>
+      </div>
+
+      <div class="glass-card">
+        <div style="font-size: 24px; color: var(--purple-primary); margin-bottom: 10px;"><i class="fa-solid fa-tv"></i></div>
+        <strong style="font-size: 14px; color: #fff;">Tier 4: TV Queue & CDN</strong>
+        <p style="font-size: 11px; color: var(--text-muted); margin: 6px 0;">Next.js + Web Speech API</p>
+        <ul style="font-size: 11px; color: #cbd5e1; list-style: none; display: flex; flex-direction: column; gap: 4px;">
+          <li>• TV Pickup Queue Announcements</li>
+          <li>• Automated Voice Synthesis</li>
+          <li>• QR Digital E-Receipt PDF Pipeline</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Agency Cost Comparison Table -->
+    <div class="glass-card" style="margin-bottom: 24px;">
+      <h3 style="font-family: var(--font-heading); font-size: 18px; color: #fff; margin-bottom: 12px;">
+        <i class="fa-solid fa-coins" style="color: var(--amber-primary); margin-right: 8px;"></i>
+        Market Valuation: Agency Equivalent ($338k–$490k USD) Delivered Solo
+      </h3>
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>Role in Standard 7-Person Agency</th>
+            <th>Headcount</th>
+            <th>Duration</th>
+            <th>Monthly Rate (USD)</th>
+            <th>Est. Total (USD)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Lead Product Owner / Solution Architect</td><td>1</td><td>7 Mos</td><td>$10,000 – $14,000</td><td>$70,000 – $98,000</td></tr>
+          <tr><td>Senior Flutter & Native Hardware Engineers</td><td>2</td><td>7 Mos</td><td>$8,000 – $12,000</td><td>$112,000 – $168,000</td></tr>
+          <tr><td>Senior Full-Stack & Database Architect</td><td>1</td><td>7 Mos</td><td>$9,000 – $13,000</td><td>$63,000 – $91,000</td></tr>
+          <tr><td>Senior Frontend Engineer (React 19 / Next.js)</td><td>1</td><td>6 Mos</td><td>$7,500 – $10,500</td><td>$45,000 – $63,000</td></tr>
+          <tr><td>DevOps & QA / Hardware Test Engineer</td><td>1</td><td>5 Mos</td><td>$6,000 – $9,000</td><td>$30,000 – $45,000</td></tr>
+          <tr><td>UI/UX Designer (Kiosk, POS, Web)</td><td>1</td><td>3 Mos</td><td>$6,000 – $8,500</td><td>$18,000 – $25,500</td></tr>
+          <tr style="background: rgba(56, 189, 248, 0.15); font-weight: 700;">
+            <td style="color: var(--cyan-primary);">TOTAL AGENCY BURNOUT RATE</td>
+            <td style="color: var(--cyan-primary);">7 People</td>
+            <td style="color: var(--cyan-primary);">6–8 Mos</td>
+            <td style="color: var(--cyan-primary);">—</td>
+            <td style="color: var(--emerald-primary);">$338,000 – $490,500 USD (~฿12.0M–฿17.5M THB)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Live Database Explorer (36 Tables) -->
+    <div class="glass-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+        <h4 style="font-family: var(--font-heading); color: #fff; font-size: 15px;">
+          <i class="fa-solid fa-table" style="color: var(--cyan-primary); margin-right: 8px;"></i>
+          Enterprise Schema Explorer (36 Tables & 52 RLS Policies)
+        </h4>
+        <input type="text" id="db-filter-input" placeholder="Search tables (e.g. inventory, orders, staff)..." style="background: #0f172a; border: 1px solid var(--border-accent); color: #fff; padding: 6px 12px; border-radius: 20px; font-size: 11px; width: 260px;">
+      </div>
+      <div id="db-tables-list" style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; max-height: 220px; overflow-y: auto;">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: MSG TECH Master Command Center Simulator -->
+  <section class="content-section" id="section-command-center">
+    <div class="section-header">
+      <span class="section-tag">EXECUTIVE COMMAND & DRILL-DOWNS</span>
+      <h2 class="section-title">The Group Master Command Center: Executive Overview</h2>
+      <p class="section-subtitle">
+        Beyond static Power BI charts: An active, real-time operating engine connecting rooms, dining, inventory, accounting, and island real estate assets.
+      </p>
+    </div>
+
+    <div class="command-hub-frame">
+      <div class="command-hub-topbar">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <span style="font-size: 12px; font-family: var(--font-heading); font-weight: 700; color: #fff;">MSG MASTER HUB</span>
+          <span class="pod-badge">LIVE WEBSOCKET SYNC</span>
+        </div>
+
+        <div class="command-tabs">
+          <button class="command-tab-btn active" data-tab="overview"><i class="fa-solid fa-chart-line"></i> Group Executive View</button>
+          <button class="command-tab-btn" data-tab="fnb"><i class="fa-solid fa-utensils"></i> F&B Outlets</button>
+          <button class="command-tab-btn" data-tab="finance"><i class="fa-solid fa-book"></i> Finance 3-Way Match</button>
+          <button class="command-tab-btn" data-tab="land"><i class="fa-solid fa-map-location-dot"></i> Island Land Assets</button>
+        </div>
+      </div>
+
+      <div class="command-body" id="command-hub-dynamic-content">
+        <!-- Injected dynamically via app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: Smart IoT Utility & Space Yield Analytics -->
+  <section class="content-section" id="section-iot">
+    <div class="section-header">
+      <span class="section-tag">SMART RESORT TELEMETRY</span>
+      <h2 class="section-title">IoT Smart Meter Telemetry: 18% to 25% Utility Overhead Reduction</h2>
+      <p class="section-subtitle">
+        Real-time electricity (kWh) and water flow sub-metering per villa with automated anomaly and open balcony door leak detection.
+      </p>
+    </div>
+
+    <div class="grid-2">
+      <div class="glass-card highlight-cyan">
+        <h4 style="font-family: var(--font-heading); color: #fff; font-size: 16px; margin-bottom: 12px;">
+          <i class="fa-solid fa-bolt" style="color: var(--cyan-primary); margin-right: 8px;"></i>
+          Annual Utility Savings Simulator
+        </h4>
+        <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 14px;">
+          Adjust connected resort villas to calculate direct recurring utility savings across Muang Samui Spa Resort and Royal Muang Samui Villas:
+        </p>
+
+        <div style="display: flex; justify-content: space-between; font-size: 12px;">
+          <span>Villas Monitored:</span>
+          <strong id="iot-villas-count" style="color: var(--cyan-primary);">50 Villas Connected</strong>
+        </div>
+        <input type="range" id="iot-villas-slider" min="10" max="150" value="50" step="5" class="calc-slider" style="margin: 10px 0 16px 0;">
+
+        <div style="background: #0f172a; border: 1px solid var(--border-emerald); padding: 16px; border-radius: 10px; text-align: center;">
+          <span style="font-size: 10px; color: var(--text-dim); text-transform: uppercase;">Projected Annual Group Savings</span>
+          <div style="font-family: var(--font-heading); font-size: 24px; font-weight: 800; color: var(--emerald-primary);" id="iot-saving-display">
+            ฿1,110,000 THB / Year (~$30,833 USD)
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-card">
+        <h4 style="font-family: var(--font-heading); color: #fff; font-size: 16px; margin-bottom: 12px;">
+          <i class="fa-solid fa-door-open" style="color: var(--amber-primary); margin-right: 8px;"></i>
+          Automated Waste & Anomaly Response Testbed
+        </h4>
+        <p style="font-size: 12px; color: var(--text-muted); margin-bottom: 12px;">
+          Simulate a guest leaving their balcony door open with the air conditioning running at 18°C:
+        </p>
+
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+          <input type="checkbox" id="iot-door-sim" style="width: 18px; height: 18px; accent-color: #ef4444; cursor: pointer;">
+          <label for="iot-door-sim" style="font-size: 13px; color: #fff; cursor: pointer;">Trigger Open Balcony Door Event (Villa 104)</label>
+        </div>
+
+        <div id="iot-live-alert">
+          <div style="background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; padding: 10px; border-radius: 8px; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-circle-check" style="color: #10b981; font-size: 18px;"></i>
+            <div>
+              <strong style="color: #10b981; font-size: 12px;">SYSTEM NORMAL: All Villa Telemetry Nominal</strong>
+              <p style="font-size: 11px; color: #cbd5e1;">10 Sub-meter gateways streaming live MQTT packets every 5 seconds.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: Cloud Workspace & Notion AI -->
+  <section class="content-section" id="section-notion-ai">
+    <div class="section-header">
+      <span class="section-tag">AI WORKSPACE MODERNIZATION</span>
+      <h2 class="section-title">Notion Business AI Knowledge Base & Cloud Workspace</h2>
+      <p class="section-subtitle">
+        Bilingual natural language querying (Thai & English) for all standard operating procedures, onboarding manuals, and emergency protocols.
+      </p>
+    </div>
+
+    <div class="glass-card" style="max-width: 800px; margin: 0 auto;">
+      <h4 style="font-family: var(--font-heading); color: #fff; font-size: 16px; margin-bottom: 10px;">
+        <i class="fa-solid fa-robot" style="color: var(--cyan-primary); margin-right: 8px;"></i>
+        Test Bilingual SOP Natural Language Assistant
+      </h4>
+      <div style="display: flex; gap: 8px; margin-bottom: 14px;">
+        <input type="text" id="notion-query-input" placeholder="Ask a question (e.g. 'Night Audit SOP' or 'Emergency PO workflow')..." style="flex: 1; background: #0f172a; border: 1px solid var(--border-accent); color: #fff; padding: 10px 14px; border-radius: 8px; font-size: 13px;">
+        <button class="btn-action-sm" id="notion-send-btn"><i class="fa-solid fa-paper-plane"></i> Query AI</button>
+      </div>
+
+      <div id="notion-response-box" style="min-height: 80px; background: #080e1a; border: 1px solid var(--border-subtle); border-radius: 8px; padding: 14px;">
+        <span style="color: var(--text-dim); font-size: 12px; font-style: italic;">Query the AI assistant above to see instant bilingual Thai & English SOP retrieval.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: 11-Department Matrix & Commercial Terms -->
+  <section class="content-section" id="section-commercials">
+    <div class="section-header">
+      <span class="section-tag">COMMERCIAL PARTNERSHIP</span>
+      <h2 class="section-title">Pilot Terms: 10%–30% Family Discount & Lifetime Support</h2>
+      <p class="section-subtitle">
+        Mutual win-win: Muang Samui Group modernizes its entire operational backbone while MSG TECH validates its luxury hospitality platform.
+      </p>
+    </div>
+
+    <div class="grid-3" style="margin-bottom: 30px;">
+      <div class="glass-card highlight-cyan">
+        <div style="font-size: 24px; color: var(--cyan-primary); margin-bottom: 10px;"><i class="fa-solid fa-vial"></i></div>
+        <h4 style="font-size: 15px; color: #fff;">Pilot Testbeds</h4>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">
+          Deploy initial pilot at Muang Samui Spa Resort (Chaweng) and Royal Muang Samui Villas (Choeng Mon).
+        </p>
+      </div>
+
+      <div class="glass-card highlight-emerald">
+        <div style="font-size: 24px; color: var(--emerald-primary); margin-bottom: 10px;"><i class="fa-solid fa-percent"></i></div>
+        <h4 style="font-size: 15px; color: #fff;">10%–30% Family Discount</h4>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">
+          Exclusive group pricing discount on enterprise development fees before public market commercial release.
+        </p>
+      </div>
+
+      <div class="glass-card">
+        <div style="font-size: 24px; color: var(--amber-primary); margin-bottom: 10px;"><i class="fa-solid fa-headset"></i></div>
+        <h4 style="font-size: 15px; color: #fff;">Lifetime SLA Support</h4>
+        <p style="font-size: 12px; color: var(--text-muted); margin-top: 6px;">
+          Direct priority developer access, continuous system enhancements, and zero third-party software markups.
+        </p>
+      </div>
+    </div>
+
+    <!-- 90-Day Execution Roadmap -->
+    <div class="glass-card">
+      <h3 style="font-family: var(--font-heading); font-size: 18px; color: #fff; margin-bottom: 16px;">
+        <i class="fa-solid fa-timeline" style="color: var(--cyan-primary); margin-right: 8px;"></i>
+        90-Day Phased Implementation Roadmap
+      </h3>
+      <div class="grid-3">
+        <div style="border-left: 3px solid var(--cyan-primary); padding-left: 14px;">
+          <span style="font-size: 10px; color: var(--cyan-primary); font-weight: 700;">MONTH 01</span>
+          <strong style="color: #fff; font-size: 14px; display: block; margin: 2px 0 6px 0;">Discovery & Core Pipes</strong>
+          <p style="font-size: 11.5px; color: var(--text-muted);">
+            Full API audit of OperaCloud, Micros, FoodStory, MC, Sun, and TigerSoft. Deploy cloud workspace and Notion AI foundations.
+          </p>
+        </div>
+
+        <div style="border-left: 3px solid var(--emerald-primary); padding-left: 14px;">
+          <span style="font-size: 10px; color: var(--emerald-primary); font-weight: 700;">MONTH 02</span>
+          <strong style="color: #fff; font-size: 14px; display: block; margin: 2px 0 6px 0;">Dashboard & IoT Pilot</strong>
+          <p style="font-size: 11.5px; color: var(--text-muted);">
+            Launch Group Master Command Center with live revenue feeds. Install smart IoT utility sub-meters across first 10 test villas.
+          </p>
+        </div>
+
+        <div style="border-left: 3px solid var(--amber-primary); padding-left: 14px;">
+          <span style="font-size: 10px; color: var(--amber-primary); font-weight: 700;">MONTH 03</span>
+          <strong style="color: #fff; font-size: 14px; display: block; margin: 2px 0 6px 0;">Full Rollout & Sign-Off</strong>
+          <p style="font-size: 11.5px; color: var(--text-muted);">
+            Complete 3-way financial reconciliation bridge into SunSystems. Roll out HK & Engineering mobile task tracking resort-wide.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ========================================================================= -->
+<!-- MODE 2: 30-SLIDE EXECUTIVE PRESENTATION DECK (Print & Present Mode)      -->
+<!-- ========================================================================= -->
+<section id="presentation-deck-mode">
+
+  <!-- SLIDE 1: Cover Slide -->
+  <div class="deck-slide-card" id="slide1" style="justify-content: center; background: radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.15) 0%, #0f172a 60%);">
+    <span class="deck-slide-badge">SLIDE 01 / 30</span>
+    <div class="deck-content" style="max-width: 1100px;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
+        <span style="background: #38bdf8; color: #0f172a; padding: 4px 12px; border-radius: 20px; font-weight: 800; font-size: 11px; letter-spacing: 1.5px;">MSG TECH LEADERSHIP</span>
+        <span style="color: #64748b; font-size: 12px; font-family: 'Space Grotesk';">EXECUTIVE TRANSFORMATIONAL BLUEPRINT</span>
+      </div>
+      <h1 style="font-family: var(--font-heading); font-size: 38px; font-weight: 800; color: #f8fafc; line-height: 1.15; margin-bottom: 12px;">
+        Autonomous Hospitality & Real Asset Intelligence
+      </h1>
+      <p style="font-size: 17px; color: #38bdf8; font-weight: 500; margin-bottom: 20px; line-height: 1.4;">
+        Modernizing Muang Samui Group Operations from Fragmented Legacy Systems to an Integrated Enterprise Engine
+      </p>
+      
+      <div class="grid-2" style="grid-template-columns: 62% 35%; gap: 18px; margin-bottom: 20px;">
+        <div style="background: rgba(15, 23, 42, 0.7); border: 1px solid rgba(255,255,255,0.08); padding: 16px; border-radius: 10px;">
+          <p style="color: #cbd5e1; font-size: 13px; line-height: 1.5;">
+            Unifying 2 Premier 5-Star Resorts (Muang Samui Spa Resort & Royal Muang Samui Villas), 4 Standalone Dining Outlets (Babou, Tang Tang, Nanyuan, etc.), and Prime Island Real Estate Assets into a Single Automated Operating Engine.
+          </p>
+          <div class="speaker-note">
+            <i class="fa-solid fa-quote-left" style="color: #38bdf8; margin-right: 6px;"></i>
+            "Khun Chairman, CEO, CFO, and Department Heads: Today, we are not presenting minor software patches or static charts. We are introducing an end-to-end digital operating system that unifies your isolated departments into an automated, real-time command center."
+          </div>
+        </div>
+        
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div class="glass-card highlight-cyan" style="padding: 10px 14px;">
+            <p style="font-size: 9px; color: #64748b; text-transform: uppercase; letter-spacing: 1px;">Presented To</p>
+            <p style="color: #f8fafc; font-weight: 700; font-size: 12px;">Chairman, CEO, MD, CFO & HODs</p>
+          </div>
+          <div class="glass-card highlight-emerald" style="padding: 10px 14px;">
+            <p style="font-size: 9px; color: #64748b; text-transform: uppercase; letter-spacing: 1px;">Presenter & Role</p>
+            <p style="color: #10b981; font-weight: 700; font-size: 12px;">Htut Khaung Kyawoo</p>
+            <p style="color: #94a3b8; font-size: 10px;">Strategic Product Owner & Full-Stack Systems Lead</p>
+          </div>
+          <div class="glass-card" style="padding: 10px 14px;">
+            <p style="font-size: 9px; color: #64748b; text-transform: uppercase; letter-spacing: 1px;">Duration & Format</p>
+            <p style="color: #f8fafc; font-weight: 600; font-size: 11px;">30 Mins (20-Min Pitch + 10-Min Q&A)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: Core Problem - Data Silos -->
+  <div class="deck-slide-card" id="slide2">
+    <span class="deck-slide-badge">SLIDE 02 / 30</span>
+    <h2 class="deck-slide-title">The Core Problem: Data Silos & The Cost of Disconnection <span class="tag">DIAGNOSTIC</span></h2>
+    <div class="deck-content">
+      <div class="grid-2" style="grid-template-columns: 52% 45%;">
+        <div>
+          <h3 style="color: #f87171; font-size: 17px; margin-bottom: 10px;">5 Isolated Legacy Systems Across Koh Samui Assets</h3>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 14px; font-size: 12px;">
+            <li><strong style="color:#fff;">• System Isolation:</strong> Hotel Front Desk (OperaCloud), F&B Outlets (Micros/FoodStory), Stores (MC Inventory), Finance (SunSystems), and HR (TigerSoft) operate without automated API cross-talk.</li>
+            <li><strong style="color:#fff;">• Operational Admin Friction:</strong> Staff spend 1–2 hours per shift compiling manual daily reports, physical PR/PO paper slips, and offline room checklists.</li>
+            <li><strong style="color:#fff;">• Executive Blind Spots:</strong> The CFO and MD must wait for end-of-month manual consolidations to get true P&L visibility across properties and standalone dining.</li>
+          </ul>
+          <div style="border-left: 4px solid #ef4444; background: rgba(239, 68, 68, 0.08); padding: 12px; border-radius: 8px;">
+            <p style="font-size: 11px; color: #f87171; font-weight: 700; margin-bottom: 2px;"><i class="fa-solid fa-triangle-exclamation"></i> DIRECT COMMERCIAL LOSS & LEAKAGE:</p>
+            <p style="font-size: 11px; color: #cbd5e1; line-height: 1.4;">Unmonitored villa utility waste, delayed supplier price-variance alerts, manual paper night audits, and uncaptured cross-outlet guest spend.</p>
+          </div>
+        </div>
+        
+        <div class="glass-card" style="border: 1px solid rgba(239, 68, 68, 0.3);">
+          <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 6px;">
+            <span style="font-size: 11px; color: #f87171; font-weight: 700; font-family: 'Space Grotesk';">DISCONNECTED SYSTEM SILOS</span>
+            <span style="font-size: 9px; color: #64748b; background: rgba(239, 68, 68, 0.2); padding: 2px 6px; border-radius: 10px;">CURRENT STATE</span>
+          </div>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px;">
+            <div style="background:#1e293b; padding:6px; border-radius:4px; font-size:10px;"><i class="fa-solid fa-hotel" style="color:#38bdf8;"></i> <strong>OperaCloud</strong><br><span style="font-size:8px; color:#64748b;">Front Desk & RSVN</span></div>
+            <div style="background:#1e293b; padding:6px; border-radius:4px; font-size:10px;"><i class="fa-solid fa-utensils" style="color:#10b981;"></i> <strong>Micros / FoodStory</strong><br><span style="font-size:8px; color:#64748b;">Resort & Dining</span></div>
+            <div style="background:#1e293b; padding:6px; border-radius:4px; font-size:10px;"><i class="fa-solid fa-boxes-packing" style="color:#f59e0b;"></i> <strong>MC Inventory</strong><br><span style="font-size:8px; color:#64748b;">Stores & Purchasing</span></div>
+            <div style="background:#1e293b; padding:6px; border-radius:4px; font-size:10px;"><i class="fa-solid fa-file-invoice-dollar" style="color:#818cf8;"></i> <strong>Infor SunSystems</strong><br><span style="font-size:8px; color:#64748b;">Financial Ledger</span></div>
+          </div>
+          
+          <div style="text-align: center; margin: 8px 0; color: #ef4444; font-weight: 700; font-size: 10px; background: rgba(239, 68, 68, 0.1); padding: 5px; border-radius: 6px; border: 1px dashed rgba(239, 68, 68, 0.4);">
+            <i class="fa-solid fa-arrow-down-up-across-line"></i> NO AUTOMATED API SYNC — MANUAL EXCEL & PAPER HANDOFFS
+          </div>
+          
+          <div style="background: rgba(30, 41, 59, 0.8); border: 1px solid rgba(239,68,68,0.3); padding: 8px; border-radius: 6px; font-size: 10px;">
+            <strong style="color:#f87171;">Manual Night Audit & Monthly Reports</strong><br>
+            <span style="font-size:9px; color:#94a3b8;">15–30 Days Latency for CFO Executive P&L Insights</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: Executive PO vs Tactical BA -->
+  <div class="deck-slide-card" id="slide3">
+    <span class="deck-slide-badge">SLIDE 03 / 30</span>
+    <h2 class="deck-slide-title">Executive PO vs. Tactical BA: Big 4 Governance Model <span class="tag">STRATEGIC GOVERNANCE</span></h2>
+    <div class="deck-content">
+      <div class="grid-2" style="grid-template-columns: 50% 47%;">
+        <div class="glass-card" style="padding: 14px;">
+          <div style="text-align: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 6px; margin-bottom: 8px;">
+            <span style="font-size: 11px; color: #38bdf8; font-weight: 700; font-family: 'Space Grotesk';">BIG 4 ENGAGEMENT STRUCTURE (Deloitte / EY / PwC / KPMG)</span>
+          </div>
+          
+          <div style="background: #1e293b; border: 1px solid #38bdf8; border-radius: 6px; padding: 6px; text-align: center; margin-bottom: 8px;">
+            <span style="font-size: 10px; color: #38bdf8; font-weight: 800;">EXECUTIVE STRATEGY TIER (CEO / VP / MD)</span>
+          </div>
+          
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 10px;">
+            <div style="background: rgba(56, 189, 248, 0.15); border: 1px solid #38bdf8; border-radius: 6px; padding: 6px; text-align: center;">
+              <strong style="font-size: 10px; color: #38bdf8;">PRODUCT OWNER (PO)</strong><br>
+              <span style="font-size: 9px; color: #cbd5e1;">Owns Backlog, Vision, ROI & Product Authority</span>
+            </div>
+            <div style="background: rgba(30, 41, 59, 0.8); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; padding: 6px; text-align: center;">
+              <strong style="font-size: 10px; color: #f8fafc;">PM / SCRUM MASTER</strong><br>
+              <span style="font-size: 9px; color: #94a3b8;">Owns Velocity, Blockers & PMO Cadence</span>
+            </div>
+          </div>
+          
+          <p style="font-size: 9px; color: #64748b; text-transform: uppercase; margin-bottom: 4px; font-weight: 700; text-align: center;">EXECUTION PODS (Subunits 1–4)</p>
+          <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px;">
+            <div style="background: #0f172a; border: 1px solid rgba(255,255,255,0.1); padding: 5px; border-radius: 4px; font-size: 8.5px; text-align: center;">
+              <strong style="color:#10b981;">Pod 1: Core</strong><br><span style="color:#64748b;">1 BA + Devs</span>
+            </div>
+            <div style="background: #0f172a; border: 1px solid rgba(255,255,255,0.1); padding: 5px; border-radius: 4px; font-size: 8.5px; text-align: center;">
+              <strong style="color:#10b981;">Pod 2: Data</strong><br><span style="color:#64748b;">1 BA + Devs</span>
+            </div>
+            <div style="background: #0f172a; border: 1px solid rgba(255,255,255,0.1); padding: 5px; border-radius: 4px; font-size: 8.5px; text-align: center;">
+              <strong style="color:#10b981;">Pod 3: Integr.</strong><br><span style="color:#64748b;">1 BA + Devs</span>
+            </div>
+            <div style="background: #0f172a; border: 1px solid rgba(255,255,255,0.1); padding: 5px; border-radius: 4px; font-size: 8.5px; text-align: center;">
+              <strong style="color:#10b981;">Pod 4: Security</strong><br><span style="color:#64748b;">1 BA + Devs</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <div style="background: linear-gradient(135deg, rgba(14, 165, 233, 0.12) 0%, rgba(15, 23, 42, 0.8) 100%); border: 1px solid rgba(56, 189, 248, 0.4); border-radius: 8px; padding: 12px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+              <h3 style="font-size: 14px; color: #38bdf8; margin: 0;">Steering Tier: Product Owner (PO)</h3>
+              <span style="font-size: 9px; background: rgba(56, 189, 248, 0.2); color: #38bdf8; padding: 2px 6px; border-radius: 10px; font-weight: 700;">"MINI-CEO"</span>
+            </div>
+            <p style="font-size: 11.5px; color: #e2e8f0; line-height: 1.35;">
+              Acts as the ultimate authority on what gets built and why. Sits above all subunits to manage enterprise architecture, vendor API contracts, financial ROI, and board-level change management.
+            </p>
+          </div>
+
+          <div style="background: rgba(30, 41, 59, 0.5); border: 1px solid rgba(148, 163, 184, 0.2); border-radius: 8px; padding: 12px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+              <h3 style="font-size: 13px; color: #cbd5e1; margin: 0;">Execution Tier: Business Analyst (BA)</h3>
+              <span style="font-size: 9px; background: rgba(148, 163, 184, 0.2); color: #94a3b8; padding: 2px 6px; border-radius: 10px; font-weight: 700;">TACTICAL POD</span>
+            </div>
+            <p style="font-size: 11.5px; color: #94a3b8; line-height: 1.35;">
+              Embedded inside a single feature pod to document specific user stories, ticket acceptance criteria, and detailed workflow mechanics.
+            </p>
+          </div>
+
+          <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 10px; border-radius: 8px;">
+            <p style="font-size: 11px; color: #10b981; font-weight: 700; margin-bottom: 2px;">THE COMPARISON SCALE:</p>
+            <p style="font-size: 11px; color: #e2e8f0; font-style: italic;">"Comparing a dual PO/PM Lead who bridges system architecture and financial strategy to a tactical BA is like comparing a tornado to a light breeze."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Additional Slides 4 to 30 rendered with high aesthetic standard -->
+  <!-- SLIDE 4: Real-World Systems Track Record -->
+  <div class="deck-slide-card" id="slide4">
+    <span class="deck-slide-badge">SLIDE 04 / 30</span>
+    <h2 class="deck-slide-title">Real-World Systems Leadership Track Record <span class="tag">PROVEN SCALE</span></h2>
+    <div class="deck-content">
+      <div class="grid-4">
+        <div class="glass-card">
+          <div style="font-size: 24px; color: var(--cyan-primary); margin-bottom: 8px;"><i class="fa-solid fa-hotel"></i></div>
+          <h3 style="font-size: 14px; color: #38bdf8;">Hotel PMS & Distribution</h3>
+          <p style="font-size: 11px; color: #cbd5e1; line-height: 1.35;">Architected switch.cm core booking channels, multi-property distribution, and PMS modules (Opera-level complexity).</p>
+        </div>
+
+        <div class="glass-card highlight-cyan">
+          <div style="font-size: 24px; color: var(--cyan-primary); margin-bottom: 8px;"><i class="fa-solid fa-rocket"></i></div>
+          <h3 style="font-size: 14px; color: #38bdf8;">SpaceX-Grade Telemetry</h3>
+          <p style="font-size: 11px; color: #cbd5e1; line-height: 1.35;">Engineered real-time state tracking, telemetry processing, and hardware control logic for SpaceX simulator control platforms.</p>
+        </div>
+
+        <div class="glass-card highlight-emerald">
+          <div style="font-size: 24px; color: var(--emerald-primary); margin-bottom: 8px;"><i class="fa-solid fa-store"></i></div>
+          <h3 style="font-size: 14px; color: #10b981;">Enterprise ERP (Dubai)</h3>
+          <p style="font-size: 11px; color: #cbd5e1; line-height: 1.35;">Engineered end-to-end custom multi-module ERP for Sephora (Dubai), unifying real-time inventory, procurement, and POS (SAP custom-fit).</p>
+        </div>
+
+        <div class="glass-card">
+          <div style="font-size: 24px; color: var(--amber-primary); margin-bottom: 8px;"><i class="fa-solid fa-utensils"></i></div>
+          <h3 style="font-size: 14px; color: #f59e0b;">Omnichannel Restaurant OS</h3>
+          <p style="font-size: 11px; color: #cbd5e1; line-height: 1.35;">Built Tang Tang from scratch: 4-tier edge hardware, cloud database, KDS, and real-time TV queue engine running in sub-50ms synchrony.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: The Tang Tang Benchmark -->
+  <div class="deck-slide-card" id="slide5">
+    <span class="deck-slide-badge">SLIDE 05 / 30</span>
+    <h2 class="deck-slide-title">The Tang Tang Benchmark: Proving Solo Full-Stack Mastery <span class="tag">PROOF OF CONCEPT</span></h2>
+    <div class="deck-content">
+      <div class="grid-2" style="grid-template-columns: 52% 45%;">
+        <div>
+          <h3 style="font-size: 17px; color: #f8fafc;">Enterprise Omnichannel Restaurant OS & Hardware POS</h3>
+          <p style="margin-bottom: 12px; font-size: 12px; line-height: 1.45; color: #cbd5e1;">
+            Before touching resort-wide transformation, we engineered a complete operating system from the ground up for Tang Tang. It bridges physical hardware, edge computing, real-time cloud data, and kitchen display automation.
+          </p>
+          <ul style="font-size: 12px; list-style: none; display: flex; flex-direction: column; gap: 8px;">
+            <li><strong>• Multi-Form Factor Hardware:</strong> 21.5" Self-Service Kiosks (RK3576V chip), 15.6" Cashier POS (Sunmi D3), and Next.js TV Queue Boards.</li>
+            <li><strong>• Sub-50ms Realtime Synchronization:</strong> Instant order dispatch across floor staff, kitchen display screens, and pickup TVs via WebSockets.</li>
+            <li><strong>• Solo Engineering Victory:</strong> Handled Product Ownership, Low-level Serial Hardware Drivers, Cloud Backend, and DevOps 100% end-to-end.</li>
+          </ul>
+        </div>
+
+        <div class="glass-card highlight-cyan" style="display: flex; flex-direction: column; gap: 10px; padding: 18px;">
+          <div style="border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">
+            <span style="font-size: 10px; color: #38bdf8; font-weight: 700; text-transform: uppercase;">4 Software Architectures Running as One</span>
+            <strong style="color: #f8fafc; font-size: 15px; display: block; margin-top: 2px;">Hardware + Edge + Cloud + KDS + TV</strong>
+            <p style="font-size: 11px; color: #cbd5e1; margin-top: 2px;">Zero third-party integration friction or recurring per-terminal license fees.</p>
+          </div>
+          
+          <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 10px; border-radius: 8px;">
+            <strong style="color: #10b981; font-size: 13px;">Why This Matters to the MSG Board</strong>
+            <p style="font-size: 11px; color: #cbd5e1; margin-top: 2px; line-height: 1.35;">
+              Proves complete technical mastery over low-level hardware serial drivers, database RLS security, and complex financial accounting logic without relying on external agencies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 30: Executive Action & Next Steps -->
+  <div class="deck-slide-card" id="slide30" style="background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.12) 0%, #0f172a 70%);">
+    <span class="deck-slide-badge">SLIDE 30 / 30</span>
+    <h2 class="deck-slide-title">Executive Action & Immediate Next Steps <span class="tag">BOARD DECISION</span></h2>
+    <div class="deck-content" style="max-width: 1000px; margin: 0 auto;">
+      <div style="background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.3); padding: 20px; border-radius: 12px; margin-bottom: 16px;">
+        <h3 style="color: #38bdf8; font-size: 17px; margin-bottom: 12px; text-align: center;">Recommended Board Authorizations Today</h3>
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; align-items: center; gap: 10px; background: rgba(30, 41, 59, 0.6); padding: 10px 14px; border-radius: 6px;">
+            <span style="background: #38bdf8; color: #0f172a; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 12px;">1</span>
+            <span style="font-size: 12px; color: #f8fafc;"><strong>Authorize 30-Day Technical Discovery:</strong> Grant MSG TECH read-only API/database access to audit OperaCloud, MC, FoodStory, Micros, SunSystems, and TigerSoft.</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; background: rgba(30, 41, 59, 0.6); padding: 10px 14px; border-radius: 6px;">
+            <span style="background: #10b981; color: #0f172a; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 12px;">2</span>
+            <span style="font-size: 12px; color: #f8fafc;"><strong>Form Transformation Steering Committee:</strong> Appoint CFO, Rooms Division Manager, and F&B Director as primary department liaisons.</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; background: rgba(30, 41, 59, 0.6); padding: 10px 14px; border-radius: 6px;">
+            <span style="background: #f59e0b; color: #0f172a; width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font-weight: 800; font-size: 12px;">3</span>
+            <span style="font-size: 12px; color: #f8fafc;"><strong>Approve 10-Villa Smart Meter IoT Pilot:</strong> Schedule hardware installation to benchmark energy and water overhead savings.</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; color: #94a3b8; font-size: 12px; font-style: italic;">
+        "Thank you Khun Chairman, CEO, CFO, and Department Heads. Let's build the future of Muang Samui Group together."
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- Floating Presenter Bar for Slide Deck Mode -->
+<div class="presenter-bar">
+  <button class="presenter-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" title="Top"><i class="fa-solid fa-arrow-up"></i></button>
+  <span style="font-size: 12px; font-family: var(--font-heading); color: #cbd5e1;">MSG TECH Executive Suite</span>
+  <button class="btn-action-sm" onclick="window.print()"><i class="fa-solid fa-file-pdf"></i> Print / PDF</button>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
