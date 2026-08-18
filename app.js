@@ -315,17 +315,17 @@ function initDiscoveryCalculator() {
     const tier = tierSelect.value;
     document.getElementById('calc-hours-val').textContent = `${hours} Hours`;
 
-    let rate = 350;
+    let rate = 8000;
     if (tier === 'big4') {
-      rate = 500;
+      rate = 16000;
     } else if (tier === 'boutique') {
-      rate = 275;
+      rate = 10000;
     } else {
-      rate = 225;
+      rate = 8000;
     }
 
     const total = hours * rate;
-    feeDisplay.textContent = `$${total.toLocaleString()} USD (~฿${(total * 36).toLocaleString()} THB)`;
+    feeDisplay.textContent = `฿${total.toLocaleString()} THB (~$${Math.round(total / 36).toLocaleString()} USD)`;
     if (packageDisplay) {
       packageDisplay.textContent = `Includes: ${hours}-hr architecture discovery workshop + cross-system data audit + executive transformation blueprint.`;
     }

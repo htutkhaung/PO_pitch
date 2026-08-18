@@ -238,9 +238,9 @@
 
         <label style="font-size: 12px; font-weight: 700; color: #cbd5e1;">Consultant / Advisory Tier:</label>
         <select id="calc-tier-select" style="background: #0f172a; border: 1px solid var(--border-accent); color: #fff; padding: 10px; border-radius: 8px; font-family: var(--font-heading); font-size: 12px;">
-          <option value="big4">Big 4 Senior Director / Partner ($350 – $600+/hr)</option>
-          <option value="boutique">Boutique Software Agency Lead ($200 – $350/hr)</option>
-          <option value="independent" selected>Strategic PO & Systems Architect ($175 – $300/hr)</option>
+          <option value="big4">Big 4 Senior Director / Partner (฿12,000 – ฿20,000+/hr)</option>
+          <option value="boutique">Boutique Software Agency Lead (฿7,000 – ฿12,000/hr)</option>
+          <option value="independent" selected>Strategic PO & Systems Architect (฿6,000 – ฿10,000/hr)</option>
         </select>
 
         <div style="display: flex; justify-content: space-between; font-size: 12px; margin-top: 8px;">
@@ -460,38 +460,46 @@
       </div>
     </div>
 
-    <!-- Agency Cost Comparison Table -->
+    <!-- Agency Cost Comparison Table (Thai Market Rates) -->
     <div class="glass-card" style="margin-bottom: 24px;">
-      <h3 style="font-family: var(--font-heading); font-size: 18px; color: #fff; margin-bottom: 12px;">
+      <h3 style="font-family: var(--font-heading); font-size: 20px; color: #fff; margin-bottom: 14px;">
         <i class="fa-solid fa-coins" style="color: var(--amber-primary); margin-right: 8px;"></i>
-        Market Valuation: Agency Equivalent ($338k–$490k USD) Delivered Solo
+        Market Valuation: Thai Software Agency Equivalent (฿6.0M – ฿8.5M+ THB) Delivered Solo
       </h3>
+      <p style="font-size: 13px; color: #cbd5e1; margin-bottom: 14px;">
+        Building an enterprise OS of this scope in Thailand typically requires an entire dedicated software agency or a 7-person full-stack engineering team:
+      </p>
       <table class="styled-table">
         <thead>
           <tr>
-            <th>Role in Standard 7-Person Agency</th>
+            <th>Role in Standard Thai Software Agency / Tech Team</th>
             <th>Headcount</th>
             <th>Duration</th>
-            <th>Monthly Rate (USD)</th>
-            <th>Est. Total (USD)</th>
+            <th>Market Rate (Monthly THB)</th>
+            <th>Total Est. Cost (THB)</th>
           </tr>
         </thead>
         <tbody>
-          <tr><td>Lead Product Owner / Solution Architect</td><td>1</td><td>7 Mos</td><td>$10,000 – $14,000</td><td>$70,000 – $98,000</td></tr>
-          <tr><td>Senior Flutter & Native Hardware Engineers</td><td>2</td><td>7 Mos</td><td>$8,000 – $12,000</td><td>$112,000 – $168,000</td></tr>
-          <tr><td>Senior Full-Stack & Database Architect</td><td>1</td><td>7 Mos</td><td>$9,000 – $13,000</td><td>$63,000 – $91,000</td></tr>
-          <tr><td>Senior Frontend Engineer (React 19 / Next.js)</td><td>1</td><td>6 Mos</td><td>$7,500 – $10,500</td><td>$45,000 – $63,000</td></tr>
-          <tr><td>DevOps & QA / Hardware Test Engineer</td><td>1</td><td>5 Mos</td><td>$6,000 – $9,000</td><td>$30,000 – $45,000</td></tr>
-          <tr><td>UI/UX Designer (Kiosk, POS, Web)</td><td>1</td><td>3 Mos</td><td>$6,000 – $8,500</td><td>$18,000 – $25,500</td></tr>
-          <tr style="background: rgba(56, 189, 248, 0.15); font-weight: 700;">
-            <td style="color: var(--cyan-primary);">TOTAL AGENCY BURNOUT RATE</td>
+          <tr><td><strong>Lead Product Owner / Solution Architect</strong></td><td>1</td><td>7 Months</td><td>฿180,000 – ฿250,000</td><td>฿1,260,000 – ฿1,750,000</td></tr>
+          <tr><td><strong>Senior Mobile / Flutter & Hardware Engineers</strong></td><td>2</td><td>7 Months</td><td>฿140,000 – ฿200,000 / ea</td><td>฿1,960,000 – ฿2,800,000</td></tr>
+          <tr><td><strong>Senior Full-Stack & Database Architect</strong></td><td>1</td><td>7 Months</td><td>฿150,000 – ฿220,000</td><td>฿1,050,000 – ฿1,540,000</td></tr>
+          <tr><td><strong>Senior Frontend Engineer (React 19 / Next.js)</strong></td><td>1</td><td>6 Months</td><td>฿120,000 – ฿170,000</td><td>฿720,000 – ฿1,020,000</td></tr>
+          <tr><td><strong>DevOps & QA / Hardware Test Engineer</strong></td><td>1</td><td>5 Months</td><td>฿90,000 – ฿140,000</td><td>฿450,000 – ฿700,000</td></tr>
+          <tr><td><strong>Senior UI/UX Designer (Kiosk, POS, Web Admin)</strong></td><td>1</td><td>3 Months</td><td>฿90,000 – ฿130,000</td><td>฿270,000 – ฿390,000</td></tr>
+          <tr style="background: rgba(56, 189, 248, 0.15); font-weight: 700; font-size: 13.5px;">
+            <td style="color: var(--cyan-primary);">AGENCY EQUIVALENT TOTAL COST</td>
             <td style="color: var(--cyan-primary);">7 People</td>
-            <td style="color: var(--cyan-primary);">6–8 Mos</td>
+            <td style="color: var(--cyan-primary);">6–8 Months</td>
             <td style="color: var(--cyan-primary);">—</td>
-            <td style="color: var(--emerald-primary);">$338,000 – $490,500 USD (~฿12.0M–฿17.5M THB)</td>
+            <td style="color: var(--emerald-primary);">฿5,710,000 – ฿8,200,000 THB (~$160k–$230k USD)</td>
           </tr>
         </tbody>
       </table>
+      <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 12px 16px; border-radius: 8px; margin-top: 14px;">
+        <p style="color: #10b981; font-weight: 700; font-size: 13px; line-height: 1.5;">
+          <i class="fa-solid fa-gem" style="margin-right: 6px;"></i> SOLO EXECUTION VALUE: Delivering this complete 4-tier enterprise ecosystem as a single Strategic PO & Systems Lead eliminated over ฿6.0M – ฿8.0M+ THB in agency overhead and 6+ months of cross-team coordination delay.
+        </p>
+      </div>
     </div>
 
     <!-- Live Database Explorer (36 Tables) -->
@@ -1171,19 +1179,19 @@
 
 <div class="deck-slide-card" id="slide11">
     <span class="deck-slide-badge">SLIDE 11 / 31</span>
-    <h2 class="deck-slide-title">Market Valuation: What This Build Costs in the Open Market <span class="tag">FINANCIAL VALUE</span></h2>
+    <h2 class="deck-slide-title">Market Valuation: Thai Software Agency Equivalent <span class="tag">THAI MARKET VALUE</span></h2>
     <div class="deck-content">
-      <p style="margin-bottom: 10px; font-size: 12px; color: #cbd5e1;">
-        Building an enterprise OS of this scope typically requires an entire software agency or a 7-person engineering team:
+      <p style="font-size: 13.5px; color: #cbd5e1; margin-bottom: 12px;">
+        Building an enterprise OS of this scope in Thailand typically requires an entire software agency or a 7-person engineering team:
       </p>
-      <table class="custom-table" style="margin-bottom: 12px;">
+      <table class="custom-table">
         <thead>
           <tr>
-            <th>Role in Standard Software Agency</th>
+            <th>Role in Standard Thai Software Agency</th>
             <th>Headcount</th>
             <th>Duration</th>
-            <th>Market Rate (Monthly)</th>
-            <th>Total Est. Cost (USD)</th>
+            <th>Thai Market Rate (Monthly THB)</th>
+            <th>Total Est. Cost (THB)</th>
           </tr>
         </thead>
         <tbody>
@@ -1191,56 +1199,56 @@
             <td><strong>Lead Product Owner / Solution Architect</strong></td>
             <td>1</td>
             <td>7 Months</td>
-            <td>$10,000 – $14,000</td>
-            <td>$70,000 – $98,000</td>
+            <td>฿180,000 – ฿250,000</td>
+            <td>฿1,260,000 – ฿1,750,000</td>
           </tr>
           <tr>
-            <td><strong>Senior Mobile / Flutter & Hardware Engineer</strong></td>
+            <td><strong>Senior Mobile / Flutter & Hardware Engineers</strong></td>
             <td>2</td>
             <td>7 Months</td>
-            <td>$8,000 – $12,000</td>
-            <td>$112,000 – $168,000</td>
+            <td>฿140,000 – ฿200,000 / ea</td>
+            <td>฿1,960,000 – ฿2,800,000</td>
           </tr>
           <tr>
             <td><strong>Senior Full-Stack & Database Architect</strong></td>
             <td>1</td>
             <td>7 Months</td>
-            <td>$9,000 – $13,000</td>
-            <td>$63,000 – $91,000</td>
+            <td>฿150,000 – ฿220,000</td>
+            <td>฿1,050,000 – ฿1,540,000</td>
           </tr>
           <tr>
             <td><strong>Senior Frontend Engineer (React 19 / Next.js)</strong></td>
             <td>1</td>
             <td>6 Months</td>
-            <td>$7,500 – $10,500</td>
-            <td>$45,000 – $63,000</td>
+            <td>฿120,000 – ฿170,000</td>
+            <td>฿720,000 – ฿1,020,000</td>
           </tr>
           <tr>
             <td><strong>DevOps & QA / Hardware Test Engineer</strong></td>
             <td>1</td>
             <td>5 Months</td>
-            <td>$6,000 – $9,000</td>
-            <td>$30,000 – $45,000</td>
+            <td>฿90,000 – ฿140,000</td>
+            <td>฿450,000 – ฿700,000</td>
           </tr>
           <tr>
             <td><strong>UI/UX Designer (Kiosk, POS, Admin)</strong></td>
             <td>1</td>
             <td>3 Months</td>
-            <td>$6,000 – $8,500</td>
-            <td>$18,000 – $25,500</td>
+            <td>฿90,000 – ฿130,000</td>
+            <td>฿270,000 – ฿390,000</td>
           </tr>
           <tr style="background: rgba(56, 189, 248, 0.15); font-weight: 700;">
             <td style="color: #38bdf8;">AGENCY EQUIVALENT TOTAL COST</td>
             <td style="color: #38bdf8;">7 People</td>
             <td style="color: #38bdf8;">6–8 Months</td>
             <td style="color: #38bdf8;">—</td>
-            <td style="color: #38bdf8;">$338,000 – $490,500 USD (~฿12M–฿17.5M THB)</td>
+            <td style="color: #38bdf8;">฿5,710,000 – ฿8,200,000 THB (~$160k–$230k USD)</td>
           </tr>
         </tbody>
       </table>
-      <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 10px 14px; border-radius: 6px; text-align: center;">
-        <p style="color: #10b981; font-weight: 700; font-size: 12px;">
-          <i class="fa-solid fa-gem"></i> SOLO EXECUTION VALUE: Delivering this complete 4-tier ecosystem as a single PO/Architect eliminated $300k+ in agency bloat and 6+ months of cross-team coordination delay.
+      <div style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); padding: 14px 18px; border-radius: 8px; text-align: center;">
+        <p style="color: #10b981; font-weight: 700; font-size: 13.5px; line-height: 1.5;">
+          <i class="fa-solid fa-gem" style="margin-right: 6px;"></i> SOLO EXECUTION VALUE: Delivering this complete 4-tier ecosystem as a single PO/Architect eliminated ฿6.0M – ฿8.0M+ THB in agency bloat and 6+ months of cross-team coordination delay.
         </p>
       </div>
     </div>
