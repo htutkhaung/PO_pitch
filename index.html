@@ -290,6 +290,66 @@
       <!-- Main Visual Stage with 3 Columns & Connecting SVG Canvas -->
       <div class="arch-visual-stage">
         
+        <!-- Live Animated SVG Linkage Conduit Layer -->
+        <svg class="stage-svg-flow-layer" viewBox="0 0 1000 480" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="pipe-grad-in" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.4"/>
+              <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.9"/>
+              <stop offset="100%" stop-color="#10b981" stop-opacity="1"/>
+            </linearGradient>
+            <linearGradient id="pipe-grad-out" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#10b981" stop-opacity="1"/>
+              <stop offset="60%" stop-color="#818cf8" stop-opacity="0.9"/>
+              <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.5"/>
+            </linearGradient>
+            <filter id="packet-glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+          </defs>
+
+          <!-- Input Conduits (Tier 1 -> Tier 2 Cloud) -->
+          <!-- Kiosk 1 Conduit -->
+          <path class="flow-conduit in-pipe-1" d="M 285 95 C 380 95, 410 240, 500 240" stroke="url(#pipe-grad-in)" />
+          <!-- Kiosk 2 Conduit -->
+          <path class="flow-conduit in-pipe-2" d="M 285 205 C 380 205, 430 240, 500 240" stroke="url(#pipe-grad-in)" />
+          <!-- Cashier POS Conduit -->
+          <path class="flow-conduit in-pipe-3" d="M 285 315 C 380 315, 410 240, 500 240" stroke="url(#pipe-grad-in)" />
+
+          <!-- Output Conduits (Tier 2 Cloud -> Tiers 3 & 4 Operations) -->
+          <!-- Kitchen KDS Conduit -->
+          <path class="flow-conduit out-pipe-1" d="M 500 240 C 590 240, 620 95, 715 95" stroke="url(#pipe-grad-out)" />
+          <!-- Next.js TV Queue Conduit -->
+          <path class="flow-conduit out-pipe-2" d="M 500 240 C 570 240, 620 205, 715 205" stroke="url(#pipe-grad-out)" />
+          <!-- E-Receipt CDN Conduit -->
+          <path class="flow-conduit out-pipe-3" d="M 500 240 C 590 240, 620 315, 715 315" stroke="url(#pipe-grad-out)" />
+
+          <!-- Animated Data Flow Packets (Glowing traveling pulses) -->
+          <circle class="travel-packet packet-in-1" r="5" fill="#38bdf8" filter="url(#packet-glow)">
+            <animateMotion dur="1.8s" repeatCount="indefinite" path="M 285 95 C 380 95, 410 240, 500 240" />
+          </circle>
+          <circle class="travel-packet packet-in-2" r="5" fill="#38bdf8" filter="url(#packet-glow)">
+            <animateMotion dur="1.6s" repeatCount="indefinite" path="M 285 205 C 380 205, 430 240, 500 240" />
+          </circle>
+          <circle class="travel-packet packet-in-3" r="5" fill="#f59e0b" filter="url(#packet-glow)">
+            <animateMotion dur="2.1s" repeatCount="indefinite" path="M 285 315 C 380 315, 410 240, 500 240" />
+          </circle>
+
+          <circle class="travel-packet packet-out-1" r="5" fill="#10b981" filter="url(#packet-glow)">
+            <animateMotion dur="1.7s" repeatCount="indefinite" path="M 500 240 C 590 240, 620 95, 715 95" />
+          </circle>
+          <circle class="travel-packet packet-out-2" r="5" fill="#818cf8" filter="url(#packet-glow)">
+            <animateMotion dur="1.9s" repeatCount="indefinite" path="M 500 240 C 570 240, 620 205, 715 205" />
+          </circle>
+          <circle class="travel-packet packet-out-3" r="5" fill="#38bdf8" filter="url(#packet-glow)">
+            <animateMotion dur="2.2s" repeatCount="indefinite" path="M 500 240 C 590 240, 620 315, 715 315" />
+          </circle>
+        </svg>
+        
         <!-- Left: Tier 1 Edge Hardware (2 Kiosks + POS) -->
         <div class="tier-column">
           <span style="font-size: 10px; color: var(--cyan-primary); font-weight: 700; font-family: var(--font-heading); text-transform: uppercase; letter-spacing: 1px;">
