@@ -1018,3 +1018,122 @@ function initGeoSeasonalityFilter() {
   // Initial render with current selected value
   renderSeasonData(filterSelect.value || 'all');
 }
+
+
+// 13. Map-Based CRM & OTA Competitor Rate Scraper Controllers
+const crmCohortData = {
+  europe: {
+    title: "🇬🇧 UK & Western Europe Guest Cohort",
+    badge: "TOP REVENUE COHORT (31.5%)",
+    badgeColor: "#38bdf8",
+    repeatRate: "38.4% Repeat Guest Rate",
+    desc: "High-stay luxury travelers booking 60–90 days in advance. Highest ancillary spend in Cave Rai Ra Spa and beachfront dining at Babou.",
+    spend: "฿78,400,000 THB",
+    stay: "11.4 Nights",
+    room: "Grand Pool Villa",
+    direct: "42.8% (Target: 60%)",
+    action: "Automated email nurture triggers 45 days prior to winter escape with complimentary airport VIP transfer."
+  },
+  china: {
+    title: "🇨🇳 China & East Asia Guest Cohort",
+    badge: "FASTEST GROWING COHORT (25.8%)",
+    badgeColor: "#10b981",
+    repeatRate: "28.2% Repeat Guest Rate",
+    desc: "High-yield FIT and multi-generational family travelers booking 14–21 days in advance. Heavy users of WeChat Pay / Alipay and social dining packages.",
+    spend: "฿64,200,000 THB",
+    stay: "5.8 Nights",
+    room: "Family 2-Bedroom Pool Villa",
+    direct: "54.2% (Xiaohongshu & Direct)",
+    action: "Launch Xiaohongshu influencer voucher campaign 30 days ahead of Golden Week holidays."
+  },
+  thailand: {
+    title: "🇹🇭 Domestic Thailand Guest Cohort",
+    badge: "RESILIENT WEEKEND COHORT (19.6%)",
+    badgeColor: "#f59e0b",
+    repeatRate: "46.5% Repeat Guest Rate",
+    desc: "Short-stay high-frequency Bangkok professionals and wedding parties booking 3–7 days out. High F&B affinity for Tang Tang and Babou.",
+    spend: "฿48,600,000 THB",
+    stay: "2.8 Nights",
+    room: "Deluxe Suite & Pool Access",
+    direct: "68.4% (LINE Official Direct)",
+    action: "Deploy LINE Official flash sales on Tuesday afternoons for upcoming weekend getaway packages."
+  },
+  gcc: {
+    title: "🇦🇪 Middle East & GCC Guest Cohort",
+    badge: "HIGHEST ADR COHORT (13.2%)",
+    badgeColor: "#818cf8",
+    repeatRate: "32.0% Repeat Guest Rate",
+    desc: "Ultra-luxury extended families booking long stays post-Ramadan and summer peaks. Complete privacy demand with private in-villa chef dining.",
+    spend: "฿32,800,000 THB",
+    stay: "8.2 Nights",
+    room: "Presidential Royal Beachfront Villa",
+    direct: "38.6% (Direct Concierge)",
+    action: "Provide Arabic language direct concierge on WhatsApp with halal-certified private BBQ packages."
+  },
+  australia: {
+    title: "🇦🇺 Australia & Oceania Guest Cohort",
+    badge: "LONG-STAY ESCAPE COHORT (9.9%)",
+    badgeColor: "#f43f5e",
+    repeatRate: "35.1% Repeat Guest Rate",
+    desc: "Seasonal winter escapees from Sydney and Melbourne seeking beachfront wellness, watersports, and extended honeymoon retreats.",
+    spend: "฿24,500,000 THB",
+    stay: "7.6 Nights",
+    room: "Oceanview Pool Villa",
+    direct: "49.0% (Brand Search)",
+    action: "Target Australian Google Search with 7-night wellness package bundles via Singapore Airlines transits."
+  }
+};
+
+window.selectCrmMarket = function(marketKey) {
+  const data = crmCohortData[marketKey] || crmCohortData.europe;
+  const display = document.getElementById('crm-cohort-display');
+  if (!display) return;
+
+  display.style.opacity = '0';
+  display.style.transform = 'scale(0.98)';
+  display.style.transition = 'all 0.2s ease';
+
+  setTimeout(() => {
+    document.getElementById('crm-cohort-title').textContent = data.title;
+    document.getElementById('crm-cohort-badge').textContent = data.badge;
+    document.getElementById('crm-cohort-badge').style.color = data.badgeColor;
+    document.getElementById('crm-cohort-repeat').innerHTML = `<i class="fa-solid fa-arrow-rotate-right"></i> ${data.repeatRate}`;
+    document.getElementById('crm-cohort-desc').textContent = data.desc;
+    document.getElementById('crm-cohort-spend').textContent = data.spend;
+    document.getElementById('crm-cohort-stay').textContent = data.stay;
+    document.getElementById('crm-cohort-room').textContent = data.room;
+    document.getElementById('crm-cohort-direct').textContent = data.direct;
+    document.getElementById('crm-cohort-action-box').innerHTML = `
+      <i class="fa-solid fa-robot" style="color: ${data.badgeColor}; margin-right: 6px;"></i>
+      <strong>AI Retargeting Action:</strong> ${data.action}
+    `;
+
+    display.style.opacity = '1';
+    display.style.transform = 'scale(1)';
+  }, 180);
+};
+
+window.runLiveOtaScrape = function() {
+  const btn = document.getElementById('btn-trigger-scrape');
+  const ticker = document.getElementById('scraper-ticker-text');
+  const table = document.getElementById('competitor-rate-table');
+  if (!btn || !ticker) return;
+
+  btn.innerHTML = `<i class="fa-solid fa-spinner fa-spin"></i> Ingesting OTA Feeds...`;
+  ticker.textContent = "SCRAPING IN PROGRESS: Dispatched headless crawlers to Agoda, Booking.com, and Trip.com for Koh Samui 5-star comp-set...";
+
+  setTimeout(() => {
+    ticker.textContent = "PARSING 7,490 LISTINGS: Comparing SALA Samui, Anantara, Vana Belle, W Koh Samui, Banyan Tree, and Nora Buri...";
+  }, 1200);
+
+  setTimeout(() => {
+    btn.innerHTML = `<i class="fa-solid fa-check" style="color: #10b981;"></i> Scrape Complete (0 Parity Violations)`;
+    ticker.textContent = "SCRAPE COMPLETE (28ms latency): 6 competitors analyzed. AI identified +฿1,200/night yield window on Royal Muang Samui Grand Pool Villas during upcoming full moon peak!";
+    
+    if (table) {
+      table.style.transition = 'box-shadow 0.4s ease';
+      table.style.boxShadow = '0 0 25px rgba(16, 185, 129, 0.4)';
+      setTimeout(() => { table.style.boxShadow = 'none'; }, 1500);
+    }
+  }, 2600);
+};

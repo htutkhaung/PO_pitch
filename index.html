@@ -30,7 +30,7 @@
       <i class="fa-solid fa-film"></i> Scrollytelling Journey
     </button>
     <button class="nav-mode-btn" id="btn-mode-deck">
-      <i class="fa-solid fa-chalkboard-user"></i> 39-Slide Executive Deck
+      <i class="fa-solid fa-chalkboard-user"></i> 41-Slide Executive Deck
     </button>
   </div>
 
@@ -819,7 +819,281 @@
       </div>
     </div>
 
-    <!-- Interactive MD Autonomous AI Agent Prompt Console -->
+    
+    <!-- Interactive Map-Based CRM Visualizer -->
+    <div class="glass-card" style="margin-bottom: 24px; padding: 28px; background: radial-gradient(circle at 75% 30%, rgba(56, 189, 248, 0.08) 0%, #0f172a 80%);">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 14px; margin-bottom: 20px;">
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 20px; color: #fff; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-earth-americas" style="color: var(--cyan-primary);"></i>
+            Interactive Map-Based Guest CRM (High-Volume Origin Radar)
+          </h3>
+          <p style="font-size: 12.5px; color: var(--text-muted); margin-top: 4px;">
+            Click on any glowing country hub to inspect high-yield guest spending patterns, average stay, and automated direct marketing ROI.
+          </p>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <span class="pod-badge" style="background: rgba(56,189,248,0.15); color: #38bdf8;"><i class="fa-solid fa-users"></i> 42,800+ Guest Profiles</span>
+          <span class="pod-badge" style="background: rgba(16,185,129,0.15); color: #10b981;"><i class="fa-solid fa-heart"></i> 34.2% Repeat Rate</span>
+        </div>
+      </div>
+
+      <div class="grid-2" style="grid-template-columns: 58% 39%; gap: 24px; align-items: center;">
+        <!-- Stylized Vector SVG World Map with Interactive Glowing Hubs -->
+        <div class="crm-map-container" style="background: #080d1a; border: 1px solid var(--border-accent); border-radius: 12px; padding: 18px; position: relative; min-height: 380px; display: flex; align-items: center; justify-content: center;">
+          <svg viewBox="0 0 800 420" style="width: 100%; height: 100%; filter: drop-shadow(0 0 15px rgba(56,189,248,0.1));">
+            <defs>
+              <radialGradient id="hub-glow-cyan" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.9"/>
+                <stop offset="60%" stop-color="#38bdf8" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="hub-glow-emerald" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#10b981" stop-opacity="0.9"/>
+                <stop offset="60%" stop-color="#10b981" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="hub-glow-amber" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.9"/>
+                <stop offset="60%" stop-color="#f59e0b" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#f59e0b" stop-opacity="0"/>
+              </radialGradient>
+              <radialGradient id="hub-glow-purple" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#818cf8" stop-opacity="0.9"/>
+                <stop offset="60%" stop-color="#818cf8" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+
+            <!-- Continents Outlines (Simplified Stylized SVG) -->
+            <path d="M 120,90 Q 180,70 230,110 T 210,210 Q 160,240 100,180 Z" fill="#1e293b" opacity="0.35" />
+            <path d="M 180,230 Q 230,240 220,340 T 170,390 Q 140,320 180,230 Z" fill="#1e293b" opacity="0.35" />
+            <path d="M 380,80 Q 450,70 470,140 T 400,190 Q 360,140 380,80 Z" fill="#1e293b" opacity="0.4" />
+            <path d="M 390,200 Q 460,210 450,330 T 380,360 Q 370,260 390,200 Z" fill="#1e293b" opacity="0.35" />
+            <path d="M 480,70 Q 640,60 700,130 T 650,220 Q 540,240 480,170 Z" fill="#1e293b" opacity="0.4" />
+            <path d="M 640,270 Q 720,260 730,340 T 650,370 Q 620,320 640,270 Z" fill="#1e293b" opacity="0.35" />
+
+            <!-- Connecting Flight Arcs into Koh Samui (Coords: ~600, 215) -->
+            <path class="flight-arc" d="M 410,120 Q 500,120 600,215" fill="none" stroke="rgba(56, 189, 248, 0.4)" stroke-dasharray="4,4" />
+            <path class="flight-arc" d="M 620,130 Q 620,170 600,215" fill="none" stroke="rgba(16, 185, 129, 0.4)" stroke-dasharray="4,4" />
+            <path class="flight-arc" d="M 500,170 Q 550,190 600,215" fill="none" stroke="rgba(129, 140, 248, 0.4)" stroke-dasharray="4,4" />
+            <path class="flight-arc" d="M 670,310 Q 640,260 600,215" fill="none" stroke="rgba(244, 63, 94, 0.4)" stroke-dasharray="4,4" />
+
+            <!-- KOH SAMUI TARGET HUB -->
+            <circle cx="600" cy="215" r="14" fill="rgba(245, 158, 11, 0.3)" />
+            <circle cx="600" cy="215" r="6" fill="#f59e0b" filter="drop-shadow(0 0 8px #f59e0b)" />
+            <text x="600" y="238" fill="#f59e0b" font-family="Space Grotesk" font-size="10" font-weight="700" text-anchor="middle">KOH SAMUI (MSG)</text>
+
+            <!-- INTERACTIVE COUNTRY HUBS (CLICKABLE) -->
+            <!-- 1. UK & Western Europe -->
+            <g class="map-hub-group" onclick="selectCrmMarket('europe')" style="cursor: pointer;">
+              <circle cx="410" cy="120" r="32" fill="url(#hub-glow-cyan)" class="hub-pulse" />
+              <circle cx="410" cy="120" r="12" fill="#38bdf8" />
+              <text x="410" y="100" fill="#fff" font-family="Space Grotesk" font-size="11" font-weight="700" text-anchor="middle">🇬🇧 UK & Europe</text>
+              <text x="410" y="142" fill="#38bdf8" font-family="Space Grotesk" font-size="9" font-weight="600" text-anchor="middle">฿78.4M (31.5%)</text>
+            </g>
+
+            <!-- 2. China & East Asia -->
+            <g class="map-hub-group" onclick="selectCrmMarket('china')" style="cursor: pointer;">
+              <circle cx="620" cy="130" r="28" fill="url(#hub-glow-emerald)" class="hub-pulse" />
+              <circle cx="620" cy="130" r="11" fill="#10b981" />
+              <text x="620" y="110" fill="#fff" font-family="Space Grotesk" font-size="11" font-weight="700" text-anchor="middle">🇨🇳 China & HK</text>
+              <text x="620" y="152" fill="#10b981" font-family="Space Grotesk" font-size="9" font-weight="600" text-anchor="middle">฿64.2M (25.8%)</text>
+            </g>
+
+            <!-- 3. Thailand Domestic -->
+            <g class="map-hub-group" onclick="selectCrmMarket('thailand')" style="cursor: pointer;">
+              <circle cx="585" cy="195" r="24" fill="url(#hub-glow-amber)" class="hub-pulse" />
+              <circle cx="585" cy="195" r="9" fill="#f59e0b" />
+              <text x="545" y="195" fill="#f8fafc" font-family="Space Grotesk" font-size="10" font-weight="700" text-anchor="end">🇹🇭 Thailand</text>
+              <text x="545" y="208" fill="#f59e0b" font-family="Space Grotesk" font-size="8.5" font-weight="600" text-anchor="end">฿48.6M (19.6%)</text>
+            </g>
+
+            <!-- 4. Middle East & GCC -->
+            <g class="map-hub-group" onclick="selectCrmMarket('gcc')" style="cursor: pointer;">
+              <circle cx="500" cy="170" r="22" fill="url(#hub-glow-purple)" class="hub-pulse" />
+              <circle cx="500" cy="170" r="8" fill="#818cf8" />
+              <text x="500" y="152" fill="#fff" font-family="Space Grotesk" font-size="10" font-weight="700" text-anchor="middle">🇦🇪 GCC / UAE</text>
+              <text x="500" y="190" fill="#818cf8" font-family="Space Grotesk" font-size="8.5" font-weight="600" text-anchor="middle">฿32.8M (13.2%)</text>
+            </g>
+
+            <!-- 5. Australia & Oceania -->
+            <g class="map-hub-group" onclick="selectCrmMarket('australia')" style="cursor: pointer;">
+              <circle cx="670" cy="310" r="20" fill="url(#hub-glow-cyan)" class="hub-pulse" />
+              <circle cx="670" cy="310" r="8" fill="#f43f5e" />
+              <text x="670" y="292" fill="#fff" font-family="Space Grotesk" font-size="10" font-weight="700" text-anchor="middle">🇦🇺 Australia</text>
+              <text x="670" y="330" fill="#f43f5e" font-family="Space Grotesk" font-size="8.5" font-weight="600" text-anchor="middle">฿24.5M (9.9%)</text>
+            </g>
+          </svg>
+
+          <div style="position: absolute; bottom: 12px; left: 16px; font-size: 10.5px; color: #64748b;">
+            <i class="fa-solid fa-hand-pointer" style="color: var(--cyan-primary);"></i> Click any colored hub to load detailed guest CRM cohort
+          </div>
+        </div>
+
+        <!-- Dynamic CRM Guest Cohort Detail Card -->
+        <div id="crm-cohort-display" style="background: #080d1a; border: 1px solid var(--border-accent); border-radius: 12px; padding: 22px; transition: all 0.3s ease;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+            <span id="crm-cohort-badge" class="pod-badge" style="background: rgba(56,189,248,0.2); color: #38bdf8;">TOP REVENUE COHORT</span>
+            <span id="crm-cohort-repeat" style="font-size: 11px; color: #10b981; font-weight: 600;"><i class="fa-solid fa-arrow-rotate-right"></i> 38.4% Repeat Guest Rate</span>
+          </div>
+
+          <h4 id="crm-cohort-title" style="font-family: var(--font-heading); font-size: 18px; color: #fff; margin-bottom: 6px;">
+            🇬🇧 UK & Western Europe Guest Cohort
+          </h4>
+          <p id="crm-cohort-desc" style="font-size: 12px; color: #cbd5e1; line-height: 1.45; margin-bottom: 16px;">
+            High-stay luxury travelers booking 60–90 days in advance. Highest ancillary spend in Cave Rai Ra Spa and beachfront dining at Babou.
+          </p>
+
+          <div class="grid-2" style="gap: 10px; margin-bottom: 16px;">
+            <div style="background: rgba(15,23,42,0.8); border: 1px solid var(--border-subtle); padding: 10px; border-radius: 8px;">
+              <span style="font-size: 10px; color: #94a3b8; text-transform: uppercase;">YTD Total Spend</span>
+              <div id="crm-cohort-spend" style="font-size: 17px; font-weight: 800; color: #38bdf8;">฿78,400,000 THB</div>
+            </div>
+            <div style="background: rgba(15,23,42,0.8); border: 1px solid var(--border-subtle); padding: 10px; border-radius: 8px;">
+              <span style="font-size: 10px; color: #94a3b8; text-transform: uppercase;">Avg Length of Stay</span>
+              <div id="crm-cohort-stay" style="font-size: 17px; font-weight: 800; color: #10b981;">11.4 Nights</div>
+            </div>
+            <div style="background: rgba(15,23,42,0.8); border: 1px solid var(--border-subtle); padding: 10px; border-radius: 8px;">
+              <span style="font-size: 10px; color: #94a3b8; text-transform: uppercase;">Preferred Room</span>
+              <div id="crm-cohort-room" style="font-size: 13px; font-weight: 700; color: #f8fafc;">Grand Pool Villa</div>
+            </div>
+            <div style="background: rgba(15,23,42,0.8); border: 1px solid var(--border-subtle); padding: 10px; border-radius: 8px;">
+              <span style="font-size: 10px; color: #94a3b8; text-transform: uppercase;">Direct Booking %</span>
+              <div id="crm-cohort-direct" style="font-size: 13px; font-weight: 700; color: #f59e0b;">42.8% (Target: 60%)</div>
+            </div>
+          </div>
+
+          <div id="crm-cohort-action-box" style="background: rgba(56,189,248,0.1); border-left: 3px solid #38bdf8; padding: 10px 12px; border-radius: 6px; font-size: 11.5px; color: #e2e8f0;">
+            <i class="fa-solid fa-robot" style="color: #38bdf8; margin-right: 6px;"></i>
+            <strong>AI Retargeting Action:</strong> Automated email nurture triggers 45 days prior to winter escape with complimentary airport VIP transfer.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Live OTA Competitor Rate Scraper & Parity Intelligence Radar -->
+    <div class="glass-card" style="margin-bottom: 24px; padding: 28px; background: radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.08) 0%, #0f172a 80%);">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-subtle); padding-bottom: 14px; margin-bottom: 20px;">
+        <div>
+          <h3 style="font-family: var(--font-heading); font-size: 20px; color: #fff; display: flex; align-items: center; gap: 8px;">
+            <i class="fa-solid fa-binoculars" style="color: var(--emerald-primary);"></i>
+            Automated Competitor Rate Scraping & OTA Parity Radar
+          </h3>
+          <p style="font-size: 12.5px; color: var(--text-muted); margin-top: 4px;">
+            Real-time web scraping ingestion from <strong>Agoda</strong>, <strong>Booking.com</strong>, and <strong>Trip.com</strong> to defend rate parity and identify yield hike opportunities.
+          </p>
+        </div>
+        <div>
+          <button class="sim-trigger-btn" id="btn-trigger-scrape" onclick="runLiveOtaScrape()" style="background: rgba(16,185,129,0.2); border-color: var(--emerald-primary); color: #fff; font-size: 11.5px;">
+            <i class="fa-solid fa-rotate" style="color: var(--emerald-primary);"></i> Run Live Comp-Set Scrape
+          </button>
+        </div>
+      </div>
+
+      <!-- Scraper Status Bar -->
+      <div style="display: flex; gap: 14px; margin-bottom: 18px; flex-wrap: wrap;">
+        <div style="background: rgba(15,23,42,0.85); border: 1px solid var(--border-subtle); padding: 8px 14px; border-radius: 8px; font-size: 11px; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-bolt" style="color: #38bdf8;"></i>
+          <span><strong>Agoda Bot:</strong> 2,480 Koh Samui listings scraped (12m ago)</span>
+        </div>
+        <div style="background: rgba(15,23,42,0.85); border: 1px solid var(--border-subtle); padding: 8px 14px; border-radius: 8px; font-size: 11px; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-bolt" style="color: #3b82f6;"></i>
+          <span><strong>Booking.com Bot:</strong> 1,890 rates matched (8m ago)</span>
+        </div>
+        <div style="background: rgba(15,23,42,0.85); border: 1px solid var(--border-subtle); padding: 8px 14px; border-radius: 8px; font-size: 11px; display: flex; align-items: center; gap: 8px;">
+          <i class="fa-solid fa-bolt" style="color: #f59e0b;"></i>
+          <span><strong>Trip.com Bot:</strong> 3,120 Chinese package rates scraped (15m ago)</span>
+        </div>
+      </div>
+
+      <!-- Competitor Comparison Table -->
+      <table class="styled-table" id="competitor-rate-table">
+        <thead>
+          <tr>
+            <th>5-Star Resort Competitor</th>
+            <th>Location</th>
+            <th>Direct Web ADR</th>
+            <th>Agoda Price</th>
+            <th>Booking.com</th>
+            <th>Trip.com</th>
+            <th>Parity Status</th>
+            <th>AI Yield Recommendation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>SALA Samui Choengmon Resort</strong></td>
+            <td>Choeng Mon</td>
+            <td>฿13,800</td>
+            <td>฿13,200</td>
+            <td>฿13,800</td>
+            <td>฿13,400</td>
+            <td><span class="pod-badge" style="background: rgba(244,63,94,0.2); color: #f43f5e;">-4.3% Disparity</span></td>
+            <td><span style="color: #10b981; font-weight: 600;">Step Royal Muang +฿1,200</span></td>
+          </tr>
+          <tr>
+            <td><strong>Anantara Lawana Koh Samui</strong></td>
+            <td>Chaweng North</td>
+            <td>฿12,400</td>
+            <td>฿12,400</td>
+            <td>฿12,400</td>
+            <td>฿12,500</td>
+            <td><span class="pod-badge" style="background: rgba(16,185,129,0.2); color: #10b981;">100% Parity</span></td>
+            <td><span style="color: #94a3b8;">Maintain Floor Rate</span></td>
+          </tr>
+          <tr>
+            <td><strong>Vana Belle, Luxury Collection</strong></td>
+            <td>Chaweng Noi</td>
+            <td>฿16,500</td>
+            <td>฿15,900</td>
+            <td>฿16,500</td>
+            <td>฿15,800</td>
+            <td><span class="pod-badge" style="background: rgba(245,158,11,0.2); color: #f59e0b;">-3.6% Disparity</span></td>
+            <td><span style="color: #10b981; font-weight: 600;">Push Pool Villa Value-Add</span></td>
+          </tr>
+          <tr>
+            <td><strong>W Koh Samui</strong></td>
+            <td>Mae Nam</td>
+            <td>฿19,200</td>
+            <td>฿18,800</td>
+            <td>฿19,200</td>
+            <td>฿18,900</td>
+            <td><span class="pod-badge" style="background: rgba(245,158,11,0.2); color: #f59e0b;">-2.1% Disparity</span></td>
+            <td><span style="color: #38bdf8;">Upsell Sunset Dining</span></td>
+          </tr>
+          <tr>
+            <td><strong>Banyan Tree Samui</strong></td>
+            <td>Lamai</td>
+            <td>฿22,000</td>
+            <td>฿22,000</td>
+            <td>฿22,000</td>
+            <td>฿22,200</td>
+            <td><span class="pod-badge" style="background: rgba(16,185,129,0.2); color: #10b981;">100% Parity</span></td>
+            <td><span style="color: #94a3b8;">Ultra-Luxury Benchmark</span></td>
+          </tr>
+          <tr>
+            <td><strong>Nora Buri Resort & Spa</strong></td>
+            <td>Chaweng North</td>
+            <td>฿6,800</td>
+            <td>฿6,200</td>
+            <td>฿6,800</td>
+            <td>฿6,100</td>
+            <td><span class="pod-badge" style="background: rgba(244,63,94,0.2); color: #f43f5e;">-8.8% Disparity</span></td>
+            <td><span style="color: #10b981; font-weight: 600;">Capture Direct Family FITs</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Scraper Ticker Console -->
+      <div class="live-feed-ticker" id="scraper-live-ticker" style="margin-top: 14px;">
+        <i class="fa-solid fa-radar" style="color: var(--emerald-primary);"></i>
+        <span id="scraper-ticker-text">SCRAPER IDLE: Next automated rate crawl scheduled in 14 mins across 18 Koh Samui 5-star properties.</span>
+      </div>
+    </div>
+
+
+<!-- Interactive MD Autonomous AI Agent Prompt Console -->
     <div class="glass-card" style="border: 1px solid rgba(16, 185, 129, 0.4); background: #080d1a; margin-bottom: 24px; padding: 24px;">
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
         <h4 style="font-family: var(--font-heading); color: #fff; font-size: 16px; display: flex; align-items: center; gap: 8px;">
@@ -1160,7 +1434,7 @@
 <section id="presentation-deck-mode">
 
 <div class="deck-slide-card" id="slide1" style="justify-content: center; background: radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.15) 0%, #0f172a 60%);">
-    <span class="deck-slide-badge">SLIDE 01 / 39</span>
+    <span class="deck-slide-badge">SLIDE 01 / 41</span>
     <div class="deck-content" style="max-width: 1100px;">
       <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 14px;">
         <span style="background: #38bdf8; color: #0f172a; padding: 4px 12px; border-radius: 20px; font-weight: 800; font-size: 11px; letter-spacing: 1.5px;">MSG TECH LEADERSHIP</span>
@@ -1206,7 +1480,7 @@
   <!-- SLIDE 2: 30-Minute Executive Agenda -->
 
 <div class="deck-slide-card" id="slide2">
-    <span class="deck-slide-badge">SLIDE 02 / 39</span>
+    <span class="deck-slide-badge">SLIDE 02 / 41</span>
     <h2 class="deck-slide-title">30-Minute Executive Agenda <span class="tag">SESSION STRUCTURE</span></h2>
     <div class="deck-content">
       <div class="grid-4" style="gap: 16px; margin-bottom: 20px;">
@@ -1253,7 +1527,7 @@
 <!-- SLIDE 2: Core Problem - Data Silos -->
 
 <div class="deck-slide-card" id="slide3">
-    <span class="deck-slide-badge">SLIDE 03 / 39</span>
+    <span class="deck-slide-badge">SLIDE 03 / 41</span>
     <h2 class="deck-slide-title">The Core Problem: Data Silos & The Cost of Disconnection <span class="tag">DIAGNOSTIC</span></h2>
     <div class="deck-content">
       <div class="grid-2" style="grid-template-columns: 52% 45%;">
@@ -1302,7 +1576,7 @@
 <!-- SLIDE 3: Executive PO vs Tactical BA -->
 
 <div class="deck-slide-card" id="slide4">
-    <span class="deck-slide-badge">SLIDE 04 / 39</span>
+    <span class="deck-slide-badge">SLIDE 04 / 41</span>
     <h2 class="deck-slide-title">Executive PO vs. Tactical BA: Roles & Governance <span class="tag">STRATEGIC GOVERNANCE</span></h2>
     <div class="deck-content">
       <div class="grid-2" style="grid-template-columns: 50% 47%; gap: 20px; align-items: start;">
@@ -1351,7 +1625,7 @@
 <!-- SLIDE 4: Full-Page Big 4 Organizational Hierarchy Chart -->
 
 <div class="deck-slide-card" id="slide5" style="justify-content: space-between;">
-    <span class="deck-slide-badge">SLIDE 05 / 39</span>
+    <span class="deck-slide-badge">SLIDE 05 / 41</span>
     <h2 class="deck-slide-title">Big 4 Governance Model: Product Owner Organizational Hierarchy <span class="tag">FULL ORG CHART</span></h2>
     <div class="deck-content" style="align-items: center; justify-content: center; width: 100%;">
       <div style="background: #080e1a; border: 1px solid var(--border-accent); border-radius: 14px; padding: 20px; width: 100%; max-width: 1380px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 20px 50px rgba(0,0,0,0.7);">
@@ -1368,7 +1642,7 @@
 <!-- SLIDE 5: Real-World Systems Track Record -->
 
 <div class="deck-slide-card" id="slide6">
-    <span class="deck-slide-badge">SLIDE 06 / 39</span>
+    <span class="deck-slide-badge">SLIDE 06 / 41</span>
     <h2 class="deck-slide-title">Real-World Systems Leadership Track Record <span class="tag">PROVEN SCALE</span></h2>
     <div class="deck-content">
       <p style="margin-bottom: 14px; color: #cbd5e1; font-size: 13px;">
@@ -1417,7 +1691,7 @@
 <!-- SLIDE 6: The Tang Tang Benchmark -->
 
 <div class="deck-slide-card" id="slide7">
-    <span class="deck-slide-badge">SLIDE 07 / 39</span>
+    <span class="deck-slide-badge">SLIDE 07 / 41</span>
     <h2 class="deck-slide-title">The Tang Tang Benchmark: Proving Solo Full-Stack Mastery <span class="tag">PROOFS OF CONCEPT</span></h2>
     <div class="deck-content">
       <div class="grid-2" style="grid-template-columns: 52% 45%;">
@@ -1454,7 +1728,7 @@
 <!-- SLIDE 7: Tang Tang Multi-Architecture Diagram -->
 
 <div class="deck-slide-card" id="slide8">
-    <span class="deck-slide-badge">SLIDE 08 / 39</span>
+    <span class="deck-slide-badge">SLIDE 08 / 41</span>
     <h2 class="deck-slide-title">Tang Tang Architecture: 4 Systems Operating as One <span class="tag">SYSTEM BLUEPRINT</span></h2>
     <div class="deck-content">
       <div class="grid-3" style="grid-template-columns: 32% 36% 32%; gap: 12px; align-items: center;">
@@ -1534,7 +1808,7 @@
 <!-- SLIDE 8: Hardware Driver Engineering -->
 
 <div class="deck-slide-card" id="slide9">
-    <span class="deck-slide-badge">SLIDE 09 / 39</span>
+    <span class="deck-slide-badge">SLIDE 09 / 41</span>
     <h2 class="deck-slide-title">Deep Hardware Driver Engineering: Beyond Simple iPad Apps <span class="tag">NATIVE INTERACTION</span></h2>
     <div class="deck-content">
       <div class="grid-2" style="grid-template-columns: 48% 49%;">
@@ -1572,7 +1846,7 @@
 <!-- SLIDE 9: Database Engine Schema -->
 
 <div class="deck-slide-card" id="slide10">
-    <span class="deck-slide-badge">SLIDE 10 / 39</span>
+    <span class="deck-slide-badge">SLIDE 10 / 41</span>
     <h2 class="deck-slide-title">Enterprise Database Engine: 36 Tables Across 7 Modules <span class="tag">DATA ARCHITECTURE</span></h2>
     <div class="deck-content">
       <table class="custom-table">
@@ -1627,7 +1901,7 @@
 <!-- SLIDE 10: Security & Atomic Logic -->
 
 <div class="deck-slide-card" id="slide11">
-    <span class="deck-slide-badge">SLIDE 11 / 39</span>
+    <span class="deck-slide-badge">SLIDE 11 / 41</span>
     <h2 class="deck-slide-title">Mission-Critical Security & Atomic Business Logic <span class="tag">ACID COMPLIANCE</span></h2>
     <div class="deck-content">
       <div class="grid-2" style="grid-template-columns: 48% 49%;">
@@ -1672,7 +1946,7 @@
 <!-- SLIDE 11: Market Valuation -->
 
 <div class="deck-slide-card" id="slide12">
-    <span class="deck-slide-badge">SLIDE 12 / 39</span>
+    <span class="deck-slide-badge">SLIDE 12 / 41</span>
     <h2 class="deck-slide-title">Market Valuation: Thai Software Agency Equivalent <span class="tag">THAI MARKET VALUE</span></h2>
     <div class="deck-content">
       <p style="font-size: 13.5px; color: #cbd5e1; margin-bottom: 12px;">
@@ -1751,7 +2025,7 @@
 <!-- SLIDE 12: On-Site Audit Findings -->
 
 <div class="deck-slide-card" id="slide13">
-    <span class="deck-slide-badge">SLIDE 13 / 39</span>
+    <span class="deck-slide-badge">SLIDE 13 / 41</span>
     <h2 class="deck-slide-title">On-Site Strategy Audit: Muang Samui System Topology <span class="tag">SYSTEM MAP</span></h2>
     <div class="deck-content">
       <div class="grid-2" style="grid-template-columns: 50% 47%;">
@@ -1784,7 +2058,7 @@
 <!-- SLIDE 13: Ingestion Bottlenecks -->
 
 <div class="deck-slide-card" id="slide14">
-    <span class="deck-slide-badge">SLIDE 14 / 39</span>
+    <span class="deck-slide-badge">SLIDE 14 / 41</span>
     <h2 class="deck-slide-title">The Ingestion Bottlenecks: Where Revenue & Time Leaks <span class="tag">FRICTION ANALYSIS</span></h2>
     <div class="deck-content">
       <div class="grid-3" style="gap: 14px; margin-bottom: 14px;">
@@ -1823,7 +2097,7 @@
 <!-- SLIDE 14: Group Master Command Center -->
 
 <div class="deck-slide-card" id="slide15">
-    <span class="deck-slide-badge">SLIDE 15 / 39</span>
+    <span class="deck-slide-badge">SLIDE 15 / 41</span>
     <h2 class="deck-slide-title">The Group Master Command Center: Executive Overview <span class="tag">COMMAND CENTER</span></h2>
     <div class="deck-content">
       <div class="grid-2" style="grid-template-columns: 58% 39%;">
@@ -1881,7 +2155,7 @@
 <!-- SLIDE 15: Custom Software vs Power BI -->
 
 <div class="deck-slide-card" id="slide16">
-    <span class="deck-slide-badge">SLIDE 16 / 39</span>
+    <span class="deck-slide-badge">SLIDE 16 / 41</span>
     <h2 class="deck-slide-title">Why Custom Software Engine Outperforms Passive Power BI <span class="tag">ACTIVE ENGINE</span></h2>
     <div class="deck-content">
       <table class="custom-table">
@@ -1926,7 +2200,7 @@
 <!-- SLIDE 16: Drill-Down 1 - F&B & Outlets -->
 
 <div class="deck-slide-card" id="slide17">
-    <span class="deck-slide-badge">SLIDE 17 / 39</span>
+    <span class="deck-slide-badge">SLIDE 17 / 41</span>
     <h2 class="deck-slide-title">Department Drill-Down 1: F&B & Outlets Command <span class="tag">DRILL-DOWN 01</span></h2>
     <div class="deck-content">
       <div class="grid-3" style="gap: 14px;">
@@ -1960,7 +2234,7 @@
 <!-- SLIDE 17: Drill-Down 2 - Front Office & RSVN -->
 
 <div class="deck-slide-card" id="slide18">
-    <span class="deck-slide-badge">SLIDE 18 / 39</span>
+    <span class="deck-slide-badge">SLIDE 18 / 41</span>
     <h2 class="deck-slide-title">Department Drill-Down 2: Front Office & Central Reservations <span class="tag">DRILL-DOWN 02</span></h2>
     <div class="deck-content">
       <div class="grid-2" style="grid-template-columns: 50% 47%;">
@@ -1991,7 +2265,7 @@
 <!-- SLIDE 18: Drill-Down 3 - Spa & Wellness -->
 
 <div class="deck-slide-card" id="slide19">
-    <span class="deck-slide-badge">SLIDE 19 / 39</span>
+    <span class="deck-slide-badge">SLIDE 19 / 41</span>
     <h2 class="deck-slide-title">Department Drill-Down 3: Spa, Wellness & Facility Utilization <span class="tag">DRILL-DOWN 03</span></h2>
     <div class="deck-content">
       <div class="grid-3" style="gap: 14px;">
@@ -2025,7 +2299,7 @@
 <!-- SLIDE 19: Drill-Down 4 - Housekeeping & HK -->
 
 <div class="deck-slide-card" id="slide20">
-    <span class="deck-slide-badge">SLIDE 20 / 39</span>
+    <span class="deck-slide-badge">SLIDE 20 / 41</span>
     <h2 class="deck-slide-title">Department Drill-Down 4: Housekeeping & Maintenance Mobile SLAs <span class="tag">DRILL-DOWN 04</span></h2>
     <div class="deck-content">
       <div class="grid-2" style="grid-template-columns: 50% 47%;">
@@ -2054,7 +2328,7 @@
 <!-- SLIDE 20: Drill-Down 5 - Procurement & MC Stores -->
 
 <div class="deck-slide-card" id="slide21">
-    <span class="deck-slide-badge">SLIDE 21 / 39</span>
+    <span class="deck-slide-badge">SLIDE 21 / 41</span>
     <h2 class="deck-slide-title">Department Drill-Down 5: Procurement, Stores & MC Control <span class="tag">DRILL-DOWN 05</span></h2>
     <div class="deck-content">
       <div class="grid-3" style="gap: 14px;">
@@ -2088,7 +2362,7 @@
 <!-- SLIDE 21: Drill-Down 6 - Finance & SunSystems -->
 
 <div class="deck-slide-card" id="slide22">
-    <span class="deck-slide-badge">SLIDE 22 / 39</span>
+    <span class="deck-slide-badge">SLIDE 22 / 41</span>
     <h2 class="deck-slide-title">Department Drill-Down 6: Finance, Audit & Infor SunSystems <span class="tag">DRILL-DOWN 06</span></h2>
     <div class="deck-content">
       <div class="grid-2" style="grid-template-columns: 52% 45%;">
@@ -2115,10 +2389,127 @@
     </div>
   </div>
 
+
+  <!-- SLIDE 23: Interactive Map CRM & High-Volume Visitor Origin Radar -->
+
+<div class="deck-slide-card" id="slide-deck-crm">
+    <span class="deck-slide-badge">SLIDE 23 / 41</span>
+    <h2 class="deck-slide-title">Interactive Map-Based CRM: Global Visitor Intelligence <span class="tag">GUEST RADAR</span></h2>
+    <div class="deck-content">
+      <div class="grid-2" style="grid-template-columns: 55% 42%; gap: 20px; align-items: start;">
+        <div style="background: rgba(15,23,42,0.8); border: 1px solid var(--border-accent); border-radius: 12px; padding: 18px;">
+          <h4 style="color: #38bdf8; font-size: 14px; font-family: var(--font-heading); margin-bottom: 12px;">
+            <i class="fa-solid fa-earth-americas"></i> High-Volume Origin Radar (42,800+ Guest Profiles)
+          </h4>
+          <div style="display: flex; flex-direction: column; gap: 10px; font-size: 12.5px;">
+            <div style="background: #080d1a; padding: 10px 14px; border-radius: 8px; border-left: 4px solid #38bdf8; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <strong style="color: #fff;">🇬🇧 UK & Western Europe (31.5%)</strong>
+                <p style="font-size: 11px; color: #94a3b8;">11.4 Nights Avg Stay • ฿8,850 ADR • Cave Rai Ra Spa Affinity</p>
+              </div>
+              <span style="font-weight: 700; color: #38bdf8; font-size: 14px;">฿78.4M</span>
+            </div>
+            <div style="background: #080d1a; padding: 10px 14px; border-radius: 8px; border-left: 4px solid #10b981; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <strong style="color: #fff;">🇨🇳 China & East Asia (25.8%)</strong>
+                <p style="font-size: 11px; color: #94a3b8;">5.8 Nights Avg Stay • ฿7,400 ADR • Babou Seafood & Social Dining</p>
+              </div>
+              <span style="font-weight: 700; color: #10b981; font-size: 14px;">฿64.2M</span>
+            </div>
+            <div style="background: #080d1a; padding: 10px 14px; border-radius: 8px; border-left: 4px solid #f59e0b; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <strong style="color: #fff;">🇹🇭 Domestic Thailand (19.6%)</strong>
+                <p style="font-size: 11px; color: #94a3b8;">2.8 Nights Avg Stay • ฿5,200 ADR • High Repeat (46.5%) on LINE Direct</p>
+              </div>
+              <span style="font-weight: 700; color: #f59e0b; font-size: 14px;">฿48.6M</span>
+            </div>
+            <div style="background: #080d1a; padding: 10px 14px; border-radius: 8px; border-left: 4px solid #818cf8; display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <strong style="color: #fff;">🇦🇪 Middle East & GCC (13.2%)</strong>
+                <p style="font-size: 11px; color: #94a3b8;">8.2 Nights Avg Stay • ฿12,400 ADR • Presidential & Multi-Bedroom Villas</p>
+              </div>
+              <span style="font-weight: 700; color: #818cf8; font-size: 14px;">฿32.8M</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+          <div class="tile highlight" style="padding: 16px;">
+            <span style="font-size: 10px; font-weight: 700; color: #38bdf8;">CRM LOYALTY LIFECYCLE</span>
+            <h3 style="font-size: 15px; color: #fff; margin-top: 4px;">Automated Cross-Outlet Upsell</h3>
+            <p style="font-size: 12px; color: #cbd5e1; line-height: 1.4; margin-top: 6px;">
+              Digital guest profiles auto-trigger tailored dining vouchers for Babou and Tang Tang upon check-in, converting <strong>28.4% of in-house guests</strong> to off-site outlet patrons.
+            </p>
+          </div>
+          <div class="tile accent" style="padding: 16px;">
+            <span style="font-size: 10px; font-weight: 700; color: #10b981;">DIRECT CAMPAIGN ATTRIBUTION</span>
+            <h3 style="font-size: 15px; color: #fff; margin-top: 4px;">High-ROAS Direct Booking</h3>
+            <p style="font-size: 12px; color: #cbd5e1; line-height: 1.4; margin-top: 6px;">
+              AI identifies repeat guest cohorts and delivers automated WhatsApp & Email direct booking incentives with zero OTA commission.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SLIDE 24: Real-Time OTA Competitor Rate Scraping & Parity Radar -->
+
+<div class="deck-slide-card" id="slide-deck-scraper">
+    <span class="deck-slide-badge">SLIDE 24 / 41</span>
+    <h2 class="deck-slide-title">Competitor Rate Scraping & OTA Parity Radar <span class="tag">MARKET SCRAPING</span></h2>
+    <div class="deck-content">
+      <div class="grid-3" style="gap: 14px; margin-bottom: 18px;">
+        <div class="tile" style="border-top: 3px solid #38bdf8; padding: 14px;">
+          <strong style="color: #38bdf8; font-size: 13px;"><i class="fa-solid fa-robot"></i> Agoda Web Scraper</strong>
+          <p style="font-size: 11.5px; color: #cbd5e1; margin-top: 4px;">Crawls 2,480 Koh Samui hotel listings every 30 mins to flag rate parity undercutting.</p>
+        </div>
+        <div class="tile" style="border-top: 3px solid #3b82f6; padding: 14px;">
+          <strong style="color: #3b82f6; font-size: 13px;"><i class="fa-solid fa-robot"></i> Booking.com Scraper</strong>
+          <p style="font-size: 11.5px; color: #cbd5e1; margin-top: 4px;">Extracts live European & Domestic flash promotions and mobile-only discount rates.</p>
+        </div>
+        <div class="tile" style="border-top: 3px solid #f59e0b; padding: 14px;">
+          <strong style="color: #f59e0b; font-size: 13px;"><i class="fa-solid fa-robot"></i> Trip.com Scraper</strong>
+          <p style="font-size: 11.5px; color: #cbd5e1; margin-top: 4px;">Monitors Chinese mainland package prices, flight+hotel bundles, and live stream vouchers.</p>
+        </div>
+      </div>
+
+      <div style="background: rgba(15,23,42,0.85); border: 1px solid var(--border-subtle); border-radius: 10px; padding: 16px;">
+        <h4 style="color: #10b981; font-size: 14px; margin-bottom: 10px; font-family: var(--font-heading);">
+          <i class="fa-solid fa-shield-halved"></i> 5-Star Comp-Set Rate Intelligence Barometer
+        </h4>
+        <div class="grid-3" style="gap: 12px; font-size: 12px;">
+          <div style="background: #080d1a; padding: 10px; border-radius: 6px;">
+            <strong style="color: #fff;">SALA Samui Choengmon</strong>
+            <p style="color: #94a3b8; font-size: 11px;">ADR: ฿13,800 • Agoda: ฿13,200</p>
+            <span style="color: #f43f5e; font-size: 10.5px;">-4.3% Parity Disparity Flagged</span>
+          </div>
+          <div style="background: #080d1a; padding: 10px; border-radius: 6px;">
+            <strong style="color: #fff;">Anantara Lawana Chaweng</strong>
+            <p style="color: #94a3b8; font-size: 11px;">ADR: ฿12,400 • Booking: ฿12,400</p>
+            <span style="color: #10b981; font-size: 10.5px;">100% Rate Parity Matched</span>
+          </div>
+          <div style="background: #080d1a; padding: 10px; border-radius: 6px;">
+            <strong style="color: #fff;">Vana Belle Luxury Resort</strong>
+            <p style="color: #94a3b8; font-size: 11px;">ADR: ฿16,500 • Trip.com: ฿15,800</p>
+            <span style="color: #f59e0b; font-size: 10.5px;">-4.2% Flash Sale Detected</span>
+          </div>
+        </div>
+        <div class="speaker-note" style="margin-top: 12px; font-size: 11.5px;">
+          <i class="fa-solid fa-chart-line" style="color: #10b981; margin-right: 6px;"></i>
+          <strong>AI Yield Optimization:</strong> Automatically alerts the Revenue Manager when competitors sell out high-tier room categories, stepping MSG villa rates by +12% to +18% to capture maximum market surplus.
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
 <!-- SLIDE 22: Drill-Down 7 - HR & TigerSoft -->
 
-<div class="deck-slide-card" id="slide23">
-    <span class="deck-slide-badge">SLIDE 23 / 39</span>
+<div class="deck-slide-card" id="slide25">
+    <span class="deck-slide-badge">SLIDE 25 / 41</span>
     <h2 class="deck-slide-title">Department Drill-Down 7: HR, Overtime & Labor Productivity <span class="tag">DRILL-DOWN 07</span></h2>
     <div class="deck-content">
       <div class="grid-3" style="gap: 14px;">
@@ -2151,8 +2542,8 @@
 
 <!-- SLIDE 23: Drill-Down 8 - Island Land & Real Estate Assets -->
 
-<div class="deck-slide-card" id="slide24">
-    <span class="deck-slide-badge">SLIDE 24 / 39</span>
+<div class="deck-slide-card" id="slide26">
+    <span class="deck-slide-badge">SLIDE 26 / 41</span>
     <h2 class="deck-slide-title">Department Drill-Down 8: Island Land & Real Estate Assets <span class="tag">DRILL-DOWN 08</span></h2>
     <div class="deck-content">
       <div class="grid-2" style="grid-template-columns: 50% 47%;">
@@ -2181,8 +2572,8 @@
 
 <!-- SLIDE 24: Smart Utility Conversions -->
 
-<div class="deck-slide-card" id="slide25">
-    <span class="deck-slide-badge">SLIDE 25 / 39</span>
+<div class="deck-slide-card" id="slide27">
+    <span class="deck-slide-badge">SLIDE 27 / 41</span>
     <h2 class="deck-slide-title">Smart Infrastructure: IoT Room Telemetry & Utility Tracking <span class="tag">IOT TELEMETRY</span></h2>
     <div class="deck-content">
       <div class="grid-2" style="grid-template-columns: 52% 45%;">
@@ -2215,8 +2606,8 @@
 
 <!-- SLIDE 25: Facility Space Analytics -->
 
-<div class="deck-slide-card" id="slide26">
-    <span class="deck-slide-badge">SLIDE 26 / 39</span>
+<div class="deck-slide-card" id="slide28">
+    <span class="deck-slide-badge">SLIDE 28 / 41</span>
     <h2 class="deck-slide-title">Facility Space Analytics: Revenue Per Square Meter <span class="tag">SPACE YIELD</span></h2>
     <div class="deck-content">
       <div class="grid-3" style="gap: 14px;">
@@ -2249,8 +2640,8 @@
 
 <!-- SLIDE 26: Cloud Modernization & Notion AI -->
 
-<div class="deck-slide-card" id="slide27">
-    <span class="deck-slide-badge">SLIDE 27 / 39</span>
+<div class="deck-slide-card" id="slide29">
+    <span class="deck-slide-badge">SLIDE 29 / 41</span>
     <h2 class="deck-slide-title">Cloud Workspace & Notion Business AI Knowledge Base <span class="tag">AI WORKSPACE</span></h2>
     <div class="deck-content">
       <div class="grid-2" style="grid-template-columns: 50% 47%;">
@@ -2282,7 +2673,7 @@
 <!-- SLIDE 27: 11-Department Modernization Matrix -->
 
 <div class="deck-slide-card">
-    <span class="deck-slide-badge">SLIDE 28 / 39</span>
+    <span class="deck-slide-badge">SLIDE 30 / 41</span>
     <h2 class="deck-slide-title">AI Predictive Forecasting: Market Demand & Origin Telemetry <span class="tag">PREDICTIVE AI</span></h2>
     <div class="deck-content">
       <div class="grid-2" style="grid-template-columns: 50% 47%; gap: 24px;">
@@ -2312,7 +2703,7 @@
   </div>
 
 <div class="deck-slide-card">
-    <span class="deck-slide-badge">SLIDE 29 / 39</span>
+    <span class="deck-slide-badge">SLIDE 31 / 41</span>
     <h2 class="deck-slide-title">Automated Dynamic Pricing & RevPAR Maximization Engine <span class="tag">YIELD ENGINE</span></h2>
     <div class="deck-content">
       <div class="grid-2" style="grid-template-columns: 48% 49%; gap: 24px;">
@@ -2357,7 +2748,7 @@
   </div>
 
 <div class="deck-slide-card">
-    <span class="deck-slide-badge">SLIDE 30 / 39</span>
+    <span class="deck-slide-badge">SLIDE 32 / 41</span>
     <h2 class="deck-slide-title">Cross-Outlet Data Lake: Total Guest Lifetime Value (RevPAG) <span class="tag">CROSS-SELLING</span></h2>
     <div class="deck-content">
       <div class="grid-3" style="gap: 16px;">
@@ -2387,7 +2778,7 @@
   </div>
 
 <div class="deck-slide-card">
-    <span class="deck-slide-badge">SLIDE 31 / 39</span>
+    <span class="deck-slide-badge">SLIDE 33 / 41</span>
     <h2 class="deck-slide-title">Predictive Operations: Kitchen Prep & Labor Staffing Alignment <span class="tag">LABOR & WASTE ROI</span></h2>
     <div class="deck-content">
       <div class="grid-2" style="grid-template-columns: 50% 47%; gap: 24px;">
@@ -2416,7 +2807,7 @@
   </div>
 
 <div class="deck-slide-card">
-    <span class="deck-slide-badge">SLIDE 32 / 39</span>
+    <span class="deck-slide-badge">SLIDE 34 / 41</span>
     <h2 class="deck-slide-title">Autonomous AI Agent Swarm: Replacing Manual Department Latency <span class="tag">MD AI AGENTS</span></h2>
     <div class="deck-content">
       <div class="grid-4" style="gap: 14px;">
@@ -2453,7 +2844,7 @@
   </div>
 
 <div class="deck-slide-card">
-    <span class="deck-slide-badge">SLIDE 33 / 39</span>
+    <span class="deck-slide-badge">SLIDE 35 / 41</span>
     <h2 class="deck-slide-title">2026 Group Annual Sales Target & Pacing Gauge <span class="tag">OWNER SCORECARD</span></h2>
     <div class="deck-content">
       <div class="grid-2" style="grid-template-columns: 48% 49%; gap: 24px;">
@@ -2490,7 +2881,7 @@
   </div>
 
 <div class="deck-slide-card">
-    <span class="deck-slide-badge">SLIDE 34 / 39</span>
+    <span class="deck-slide-badge">SLIDE 36 / 41</span>
     <h2 class="deck-slide-title">Geo-Targeted Sales Map & Global Marketing Mix (MMM) <span class="tag">MARKET ATTRIBUTION</span></h2>
     <div class="deck-content">
       <div class="grid-2" style="grid-template-columns: 50% 47%; gap: 24px;">
@@ -2520,8 +2911,8 @@
     </div>
   </div>
 
-<div class="deck-slide-card" id="slide35">
-    <span class="deck-slide-badge">SLIDE 35 / 39</span>
+<div class="deck-slide-card" id="slide37">
+    <span class="deck-slide-badge">SLIDE 37 / 41</span>
     <h2 class="deck-slide-title">11-Department Operational Modernization Matrix <span class="tag">FULL SCOPE</span></h2>
     <div class="deck-content">
       <table class="custom-table">
@@ -2607,8 +2998,8 @@
 
 <!-- SLIDE 28: Commercial Partnership -->
 
-<div class="deck-slide-card" id="slide36">
-    <span class="deck-slide-badge">SLIDE 36 / 39</span>
+<div class="deck-slide-card" id="slide38">
+    <span class="deck-slide-badge">SLIDE 38 / 41</span>
     <h2 class="deck-slide-title">Commercial Partnership: Pilot Terms & Family Advantage <span class="tag">WIN-WIN MODEL</span></h2>
     <div class="deck-content">
       <div class="grid-3" style="gap: 14px;">
@@ -2641,8 +3032,8 @@
 
 <!-- SLIDE 29: 90-Day Roadmap -->
 
-<div class="deck-slide-card" id="slide37">
-    <span class="deck-slide-badge">SLIDE 37 / 39</span>
+<div class="deck-slide-card" id="slide39">
+    <span class="deck-slide-badge">SLIDE 39 / 41</span>
     <h2 class="deck-slide-title">90-Day Phased Implementation Roadmap <span class="tag">EXECUTION PLAN</span></h2>
     <div class="deck-content">
       <div class="grid-3" style="gap: 14px;">
@@ -2681,8 +3072,8 @@
 
 <!-- SLIDE 30: Board Risk Management & Q&A -->
 
-<div class="deck-slide-card" id="slide38">
-    <span class="deck-slide-badge">SLIDE 38 / 39</span>
+<div class="deck-slide-card" id="slide40">
+    <span class="deck-slide-badge">SLIDE 40 / 41</span>
     <h2 class="deck-slide-title">Executive Q&A & Board Risk Mitigation <span class="tag">RISK GOVERNANCE</span></h2>
     <div class="deck-content">
       <div class="grid-2" style="grid-template-columns: 50% 47%; gap: 20px;">
@@ -2705,8 +3096,8 @@
     </div>
   </div>
 
-<div class="deck-slide-card" id="slide39" style="background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.12) 0%, #0f172a 70%);">
-    <span class="deck-slide-badge">SLIDE 39 / 39</span>
+<div class="deck-slide-card" id="slide41" style="background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.12) 0%, #0f172a 70%);">
+    <span class="deck-slide-badge">SLIDE 41 / 41</span>
     <h2 class="deck-slide-title">Executive Action & Immediate Next Steps <span class="tag">BOARD DECISION</span></h2>
     <div class="deck-content" style="max-width: 1000px; margin: 0 auto; width: 100%;">
       <div style="background: rgba(15, 23, 42, 0.9); border: 1px solid rgba(56, 189, 248, 0.3); padding: 20px; border-radius: 12px; margin-bottom: 16px;">
