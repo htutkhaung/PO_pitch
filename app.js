@@ -377,6 +377,21 @@ function initCommandCenter() {
         </div>
       </div>
     `,
+    sales: `
+      <div class="kpi-row">
+        <div class="kpi-box"><span style="font-size:11px; color:#94a3b8;">Direct Web Booking Share</span><span class="kpi-val emerald">48.2%</span><span style="font-size:10px; color:#10b981;">▲ +12.4% vs 2025</span></div>
+        <div class="kpi-box"><span style="font-size:11px; color:#94a3b8;">OTA Commission Savings</span><span class="kpi-val cyan">฿3,840,000</span><span style="font-size:10px; color:#38bdf8;">Saved YTD</span></div>
+        <div class="kpi-box"><span style="font-size:11px; color:#94a3b8;">Blended Marketing ROAS</span><span class="kpi-val emerald">8.4x</span><span style="font-size:10px; color:#10b981;">Google & Xiaohongshu</span></div>
+        <div class="kpi-box"><span style="font-size:11px; color:#94a3b8;">Average Lead Time</span><span class="kpi-val amber">44 Days</span><span style="font-size:10px; color:#cbd5e1;">Europe Long-Haul</span></div>
+      </div>
+      <table class="styled-table">
+        <tr><th>Marketing Channel</th><th>Monthly Ad Spend</th><th>Attributed Bookings</th><th>Revenue Generated</th><th>Channel ROAS</th></tr>
+        <tr><td>Google Hotel Ads & Direct PPC</td><td>฿240,000</td><td>142 Bookings</td><td>฿2,112,000</td><td><strong style="color:#10b981;">8.8x ROAS</strong></td></tr>
+        <tr><td>Xiaohongshu & Ctrip Live (China)</td><td>฿150,000</td><td>98 Bookings</td><td>฿1,410,000</td><td><strong style="color:#10b981;">9.4x ROAS</strong></td></tr>
+        <tr><td>Meta (Instagram / Reels Luxury)</td><td>฿110,000</td><td>64 Bookings</td><td>฿792,000</td><td><strong style="color:#10b981;">7.2x ROAS</strong></td></tr>
+        <tr><td>LINE Official & Guest Club (Direct)</td><td>฿35,000</td><td>118 Bookings</td><td>฿885,000</td><td><strong style="color:#10b981;">25.2x ROAS</strong></td></tr>
+      </table>
+    `,
     fnb: `
       <div class="kpi-row">
         <div class="kpi-box"><span style="font-size:11px; color:#94a3b8;">Total F&B Outlets Revenue</span><span class="kpi-val emerald">฿384,500</span></div>
@@ -415,6 +430,21 @@ function initCommandCenter() {
         </div>
       </div>
     `,
+    hr: `
+      <div class="kpi-row">
+        <div class="kpi-box"><span style="font-size:11px; color:#94a3b8;">Total Active Headcount</span><span class="kpi-val cyan">284 Staff</span></div>
+        <div class="kpi-box"><span style="font-size:11px; color:#94a3b8;">Monthly Overtime Reduction</span><span class="kpi-val emerald">-24.2%</span><span style="font-size:10px; color:#10b981;">Saved ฿84k/mo</span></div>
+        <div class="kpi-box"><span style="font-size:11px; color:#94a3b8;">TigerSoft Sync Latency</span><span class="kpi-val emerald">Real-time</span></div>
+        <div class="kpi-box"><span style="font-size:11px; color:#94a3b8;">Shift Roster Coverage</span><span class="kpi-val emerald">99.4%</span></div>
+      </div>
+      <table class="styled-table">
+        <tr><th>Department</th><th>Active Staff</th><th>Overtime Trend</th><th>Pace Alignment</th><th>Status</th></tr>
+        <tr><td>Housekeeping & Laundry</td><td>68 Staff</td><td style="color:#10b981;">-32.5% OT</td><td>Aligned to Flight Arrivals</td><td><span class="pod-badge">Optimized</span></td></tr>
+        <tr><td>Food & Beverage Service</td><td>84 Staff</td><td style="color:#10b981;">-18.4% OT</td><td>Table Turn Dynamic Shifts</td><td><span class="pod-badge">Optimized</span></td></tr>
+        <tr><td>Front Desk & Concierge</td><td>36 Staff</td><td style="color:#10b981;">-14.2% OT</td><td>Check-in Surge Stagger</td><td><span class="pod-badge">Optimized</span></td></tr>
+        <tr><td>Engineering & Grounds</td><td>42 Staff</td><td style="color:#10b981;">-20.1% OT</td><td>Preventative Maintenance SLAs</td><td><span class="pod-badge">Optimized</span></td></tr>
+      </table>
+    `,
     land: `
       <div class="kpi-row">
         <div class="kpi-box"><span style="font-size:11px; color:#94a3b8;">Total Registered Parcels</span><span class="kpi-val cyan">14 Plots</span></div>
@@ -446,6 +476,54 @@ function initCommandCenter() {
 
   render('overview');
 }
+
+// Global AI Agent Query Function for Managing Director Console
+window.runAiAgentQuery = function(type) {
+  const out = document.getElementById('ai-agent-console-output');
+  if (!out) return;
+
+  out.innerHTML = `<span style="color:#38bdf8;"><i class="fa-solid fa-spinner fa-spin"></i> Dispatching Autonomous AI Agent across PostgreSQL 15+ Cluster (Tables: orders, reservations, marketing_attrib, staff_shifts)...</span>`;
+
+  setTimeout(() => {
+    if (type === 'mmm') {
+      out.innerHTML = `
+        <div style="display:flex; flex-direction:column; gap:6px; color:#f8fafc;">
+          <div style="color:#10b981; font-weight:700;"><i class="fa-solid fa-check"></i> AGENT 03: Marketing Mix Attribution Completed (8.4x Blended ROAS)</div>
+          <div>• <strong>Google Hotel Ads & Brand Search:</strong> ฿240,000 ad spend generated ฿2,112,000 direct revenue (8.8x ROAS, CAC: ฿840).</div>
+          <div>• <strong>Xiaohongshu & Ctrip Luxury Live:</strong> ฿150,000 spend generated ฿1,410,000 revenue (9.4x ROAS, CAC: ฿780).</div>
+          <div>• <strong>OTA Share:</strong> 18.5% Commission load. <em>Recommendation: Re-route ฿80,000 from generic OTAs to direct Google Ads to save ฿380,000 THB in commissions this quarter.</em></div>
+        </div>
+      `;
+    } else if (type === 'rate_hike') {
+      out.innerHTML = `
+        <div style="display:flex; flex-direction:column; gap:6px; color:#f8fafc;">
+          <div style="color:#10b981; font-weight:700;"><i class="fa-solid fa-check"></i> AGENT 01: Dynamic Rate Elasticity Simulation (+15% ADR Hike for Songkran)</div>
+          <div>• <strong>Current Base ADR:</strong> ฿7,800 THB | <strong>Proposed Dynamic ADR:</strong> ฿8,970 THB</div>
+          <div>• <strong>Projected Occupancy Impact:</strong> 94.2% &rarr; 91.8% (-2.4% volume drop, but +12.6% total net revenue lift).</div>
+          <div>• <strong>Incremental GOPPAR:</strong> <span style="color:#10b981; font-weight:700;">+฿2,140,000 THB Net Profit</span> across 7-day festive holiday. <em>Execution status: Approved for automated staging.</em></div>
+        </div>
+      `;
+    } else if (type === 'overtime') {
+      out.innerHTML = `
+        <div style="display:flex; flex-direction:column; gap:6px; color:#f8fafc;">
+          <div style="color:#10b981; font-weight:700;"><i class="fa-solid fa-check"></i> AGENT 04: Housekeeping Overtime & Flight Arrival Roster Audit</div>
+          <div>• <strong>Root Cause Identified:</strong> 64% of OT hours occurred on Fridays & Sundays due to 5 delayed Bangkok Airways flights arriving post 18:00.</div>
+          <div>• <strong>Automated Remediation:</strong> Shifted 4 HK morning cleaners to a flexible 14:00–22:00 staggered evening roster.</div>
+          <div>• <strong>Estimated Overtime Cost Reduction:</strong> <span style="color:#10b981; font-weight:700;">-฿84,000 THB / Month (-24.2% OT expenses)</span>.</div>
+        </div>
+      `;
+    } else if (type === 'babou_cost') {
+      out.innerHTML = `
+        <div style="display:flex; flex-direction:column; gap:6px; color:#f8fafc;">
+          <div style="color:#10b981; font-weight:700;"><i class="fa-solid fa-check"></i> AGENT 04: Babou F&B Recipe & MC Store Margin Audit</div>
+          <div>• <strong>Variance Detected:</strong> Fresh seafood cost increased from 28.2% to 32.8% due to supplier price adjustments on King Prawns and Sea Bass (+16% market index).</div>
+          <div>• <strong>Recipe Adjustment:</strong> Auto-recalculated menu gross profit margins on FoodStory POS; recommended adjusting signature platter pricing +40 THB or switching to pre-contracted local fishers.</div>
+          <div>• <strong>Margin Recovery:</strong> Restores target food cost to 28.0% (<span style="color:#10b981; font-weight:700;">+฿62,000 THB / Month margin defense</span>).</div>
+        </div>
+      `;
+    }
+  }, 600);
+};
 
 // 6. IoT Telemetry Simulator
 function initIoTSimulator() {
