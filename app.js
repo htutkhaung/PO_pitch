@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPresentationTimer();
   initDatabaseExplorer();
   initTangTangSimulator();
+  initForecastingSimulator();
 });
 
 // 1. Background Telemetry Particle Network
@@ -747,4 +748,98 @@ function initTangTangSimulator() {
       }
     });
   }
+}
+
+// 11. AI Yield Management & Market Demand Forecasting Simulator
+function initForecastingSimulator() {
+  const seasonSelect = document.getElementById('forecast-season-select');
+  const marketSelect = document.getElementById('forecast-market-select');
+  const pacingSlider = document.getElementById('forecast-pacing-slider');
+  const pacingVal = document.getElementById('forecast-pacing-val');
+
+  const occDisplay = document.getElementById('fc-occupancy-display');
+  const adrDisplay = document.getElementById('fc-adr-display');
+  const revDisplay = document.getElementById('fc-revenue-display');
+  const revparDisplay = document.getElementById('fc-revpar-display');
+  const actionText = document.getElementById('fc-action-text');
+
+  if (!seasonSelect || !marketSelect || !pacingSlider) return;
+
+  const marketProfiles = {
+    europe: {
+      name: 'European Long-Haul',
+      baseAdr: 7200,
+      leadDays: 75,
+      fnbSpaMult: 1.35,
+      action: 'High European forward demand detected. Restricting low-yield OTA allotments; reserving 40% beachfront pool villas for direct channel packages with inclusive airport transfers and Babou dining credits.'
+    },
+    china: {
+      name: 'East Asia (China/HK/KR/TW)',
+      baseAdr: 6800,
+      leadDays: 18,
+      fnbSpaMult: 1.28,
+      action: 'Compressed 18-day Asian booking surge identified. Activating WeChat Pay & Alipay dynamic promotions across Tang Tang & Nanyuan; auto-stepping villa rates +16% for holiday dates.'
+    },
+    domestic: {
+      name: 'Domestic Thailand & ASEAN',
+      baseAdr: 5400,
+      leadDays: 5,
+      fnbSpaMult: 1.18,
+      action: 'Short-lead domestic weekend pattern detected. Triggering targeted LINE Official & direct guest club perks; unlocking spa & beach club voucher packages to maximize non-room spend.'
+    },
+    mideast: {
+      name: 'Middle East & Australia',
+      baseAdr: 8800,
+      leadDays: 45,
+      fnbSpaMult: 1.45,
+      action: 'High-net-worth multi-bedroom villa long-stay queries surging. Locking premium oceanfront inventory with bespoke private yacht excursions and in-villa private chef packages.'
+    }
+  };
+
+  const seasonMultipliers = {
+    peak: { adrMult: 1.35, occBase: 78 },
+    high: { adrMult: 1.18, occBase: 65 },
+    shoulder: { adrMult: 1.0, occBase: 52 },
+    green: { adrMult: 0.85, occBase: 44 }
+  };
+
+  function update() {
+    const season = seasonSelect.value;
+    const market = marketSelect.value;
+    const pacing = parseInt(pacingSlider.value);
+
+    pacingVal.textContent = `${pacing}% Reserved (45 Days Out)`;
+
+    const prof = marketProfiles[market] || marketProfiles.europe;
+    const seas = seasonMultipliers[season] || seasonMultipliers.high;
+
+    // Calculate final forecasted occupancy
+    const finalOcc = Math.min(98.5, (pacing * 0.75) + (seas.occBase * 0.55)).toFixed(1);
+
+    // Calculate dynamic ADR step
+    let occStepMult = 1.0;
+    if (finalOcc > 90) occStepMult = 1.28;
+    else if (finalOcc > 80) occStepMult = 1.18;
+    else if (finalOcc > 70) occStepMult = 1.08;
+
+    const dynamicAdr = Math.round(prof.baseAdr * seas.adrMult * occStepMult);
+    const totalRooms = 136; // Total rooms across both resorts (57 Spa + 79 Villas)
+    const daysInMonth = 30;
+
+    const monthlyRoomsRev = Math.round(totalRooms * daysInMonth * (finalOcc / 100) * dynamicAdr);
+    const ancillarySpend = Math.round(monthlyRoomsRev * 0.28 * prof.fnbSpaMult);
+    const totalMonthlyRev = monthlyRoomsRev + ancillarySpend;
+    const revpar = Math.round(dynamicAdr * (finalOcc / 100));
+
+    if (occDisplay) occDisplay.textContent = `${finalOcc}%`;
+    if (adrDisplay) adrDisplay.textContent = `฿${dynamicAdr.toLocaleString()} THB`;
+    if (revDisplay) revDisplay.textContent = `฿${totalMonthlyRev.toLocaleString()} THB`;
+    if (revparDisplay) revparDisplay.textContent = `฿${revpar.toLocaleString()}`;
+    if (actionText) actionText.textContent = prof.action;
+  }
+
+  seasonSelect.addEventListener('change', update);
+  marketSelect.addEventListener('change', update);
+  pacingSlider.addEventListener('input', update);
+  update();
 }
