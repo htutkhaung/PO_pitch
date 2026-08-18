@@ -1378,3 +1378,38 @@ window.switchMapSeason = function(seasonKey) {
   const targetMonth = seasonMap[seasonKey] !== undefined ? seasonMap[seasonKey] : 6;
   switchMapMonth(targetMonth);
 };
+
+
+// 15. Org Chart Lightbox Modal Controller
+window.openOrgChartModal = function() {
+  const modal = document.getElementById('orgchart-lightbox-modal');
+  const modalImg = document.getElementById('modal-org-img');
+  const sourceImg = document.querySelector('img[alt*="Big 4 Product Owner Organizational Hierarchy Diagram"]');
+  if (!modal) return;
+
+  if (sourceImg && modalImg) {
+    modalImg.src = sourceImg.src;
+  }
+  modal.style.display = 'grid';
+  document.body.style.overflow = 'hidden';
+};
+
+window.closeOrgChartModal = function() {
+  const modal = document.getElementById('orgchart-lightbox-modal');
+  if (modal) {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+};
+
+window.switchToDeckSlide = function(slideIndex) {
+  const btnDeck = document.getElementById('btn-mode-deck');
+  if (btnDeck) btnDeck.click();
+
+  setTimeout(() => {
+    const slides = document.querySelectorAll('.deck-slide-card');
+    if (slides[slideIndex - 1]) {
+      slides[slideIndex - 1].scrollIntoView({ behavior: 'smooth' });
+    }
+  }, 100);
+};
